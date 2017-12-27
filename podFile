@@ -6,5 +6,9 @@ target 'BaiSiBuDeJie' do
   pod 'YYCache'
   pod 'IQKeyboardManager'
   pod 'CYLTabBarController'
+  pod 'YYCategories'
+  pod 'SVProgressHUD'
+  pod 'AFNetworking'
+  pod 'SDWebImage'
 end
 

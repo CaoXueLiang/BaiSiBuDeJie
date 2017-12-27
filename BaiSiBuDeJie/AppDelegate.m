@@ -7,16 +7,41 @@
 //
 
 #import "AppDelegate.h"
+#import <CYLTabBarController/CYLTabBarController.h>
+#import "CXLTabBarControllerConfig.h"
+#import "CXLPlusButtonAddButton.h"
 
-@interface AppDelegate ()
-
+@interface AppDelegate ()<UITabBarControllerDelegate,CYLTabBarControllerDelegate>
+@property (nonatomic,strong) CYLTabBarController *mainTabBarController;
 @end
 
 @implementation AppDelegate
 
-
+#pragma mark - Application Menthod
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    /*设置主控制器*/
+    [CXLPlusButtonAddButton registerPlusButton];
+    CXLTabBarControllerConfig *tabBarControllerConfig = [[CXLTabBarControllerConfig alloc] init];
+    _mainTabBarController = tabBarControllerConfig.tabBarController;
+    _mainTabBarController.delegate = self;
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController = self.mainTabBarController;
+    [self.window makeKeyAndVisible];
+    
+    /*提示框设置*/
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD setForegroundColor:[UIColor colorWithRGB:0 alpha:0.5]];
+    [SVProgressHUD setMinimumDismissTimeInterval:1];
+    
+    /*设置键盘*/
+    [[IQKeyboardManager sharedManager]setEnableAutoToolbar:NO];
+    [[IQKeyboardManager sharedManager]setShouldResignOnTouchOutside:YES];
+    
+    /*设置导航栏*/
+    [self setUpNavigationBarAppearance];
+    
     return YES;
 }
 
@@ -47,5 +72,28 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - TabarController delegate
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    [[self cyl_tabBarController] updateSelectionStatusIfNeededForTabBarController:tabBarController shouldSelectViewController:viewController];
+    
+    return YES;
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectControl:(UIControl *)control {
+    
+}
+
+#pragma mark - Setting Menthod
+- (void)setUpNavigationBarAppearance {
+    UINavigationBar *navigationBarAppearance = [UINavigationBar appearance];
+    UIImage *barBgImage = [UIImage imageWithColor:MainColor];
+    NSDictionary *textAttributes = @{
+                                     NSFontAttributeName: [UIFont boldSystemFontOfSize:17],
+                                     NSForegroundColorAttributeName: [UIColor whiteColor],
+                                     };
+    [navigationBarAppearance setBackgroundImage:barBgImage
+                                  forBarMetrics:UIBarMetricsDefault];
+    [navigationBarAppearance setTitleTextAttributes:textAttributes];
+}
 
 @end

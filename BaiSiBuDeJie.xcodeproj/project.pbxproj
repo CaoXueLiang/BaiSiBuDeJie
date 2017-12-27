@@ -8,17 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		2DD7E84E401D2B7E2127C017 /* libPods-BaiSiBuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 078690BBEAB22059E7C18C16 /* libPods-BaiSiBuDeJie.a */; };
+		5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB8E1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m */; };
+		5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB941FF38DE500D457A9 /* CXLEssenceViewController.m */; };
+		5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB971FF38ED500D457A9 /* CXLNewestViewController.m */; };
+		5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB9A1FF38EE800D457A9 /* CXLAttentionViewController.m */; };
+		5807BB9E1FF38EFB00D457A9 /* CXLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB9D1FF38EFB00D457A9 /* CXLMineViewController.m */; };
+		5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BBA01FF3902200D457A9 /* CXLBaseNavigationController.m */; };
+		5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */; };
+		5893EB701FF3A42C00C59F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */; };
 		58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A92F661FF349D600E5D60C /* AppDelegate.m */; };
-		58A92F6F1FF349D600E5D60C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58A92F6E1FF349D600E5D60C /* Assets.xcassets */; };
 		58A92F751FF349D600E5D60C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A92F741FF349D600E5D60C /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		078690BBEAB22059E7C18C16 /* libPods-BaiSiBuDeJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaiSiBuDeJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5807BB8D1FF38C5C00D457A9 /* CXLTabBarControllerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLTabBarControllerConfig.h; sourceTree = "<group>"; };
+		5807BB8E1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLTabBarControllerConfig.m; sourceTree = "<group>"; };
+		5807BB931FF38DE500D457A9 /* CXLEssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLEssenceViewController.h; sourceTree = "<group>"; };
+		5807BB941FF38DE500D457A9 /* CXLEssenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLEssenceViewController.m; sourceTree = "<group>"; };
+		5807BB961FF38ED500D457A9 /* CXLNewestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLNewestViewController.h; sourceTree = "<group>"; };
+		5807BB971FF38ED500D457A9 /* CXLNewestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLNewestViewController.m; sourceTree = "<group>"; };
+		5807BB991FF38EE800D457A9 /* CXLAttentionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLAttentionViewController.h; sourceTree = "<group>"; };
+		5807BB9A1FF38EE800D457A9 /* CXLAttentionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLAttentionViewController.m; sourceTree = "<group>"; };
+		5807BB9C1FF38EFB00D457A9 /* CXLMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineViewController.h; sourceTree = "<group>"; };
+		5807BB9D1FF38EFB00D457A9 /* CXLMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMineViewController.m; sourceTree = "<group>"; };
+		5807BB9F1FF3902200D457A9 /* CXLBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLBaseNavigationController.h; sourceTree = "<group>"; };
+		5807BBA01FF3902200D457A9 /* CXLBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLBaseNavigationController.m; sourceTree = "<group>"; };
+		5807BBA21FF3949600D457A9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5893EB6C1FF39F1A00C59F40 /* CXLPlusButtonAddButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLPlusButtonAddButton.h; sourceTree = "<group>"; };
+		5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLPlusButtonAddButton.m; sourceTree = "<group>"; };
+		5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58A92F621FF349D600E5D60C /* BaiSiBuDeJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiSiBuDeJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A92F651FF349D600E5D60C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58A92F661FF349D600E5D60C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		58A92F6E1FF349D600E5D60C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58A92F731FF349D600E5D60C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58A92F741FF349D600E5D60C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D65824FBAA1EE02F1635486 /* Pods-BaiSiBuDeJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +93,7 @@
 				58A92F661FF349D600E5D60C /* AppDelegate.m */,
 				58A92F741FF349D600E5D60C /* main.m */,
 				58A92F731FF349D600E5D60C /* Info.plist */,
+				5807BBA21FF3949600D457A9 /* PrefixHeader.pch */,
 				58A92F9B1FF34AB800E5D60C /* Main */,
 				58A92F971FF34A5600E5D60C /* module */,
 				58A92F9A1FF34AA400E5D60C /* vendor */,
@@ -90,7 +113,7 @@
 		58A92F981FF34A6300E5D60C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				58A92F6E1FF349D600E5D60C /* Assets.xcassets */,
+				5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -112,6 +135,20 @@
 		58A92F9B1FF34AB800E5D60C /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5893EB6C1FF39F1A00C59F40 /* CXLPlusButtonAddButton.h */,
+				5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */,
+				5807BB8D1FF38C5C00D457A9 /* CXLTabBarControllerConfig.h */,
+				5807BB8E1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m */,
+				5807BB9F1FF3902200D457A9 /* CXLBaseNavigationController.h */,
+				5807BBA01FF3902200D457A9 /* CXLBaseNavigationController.m */,
+				5807BB931FF38DE500D457A9 /* CXLEssenceViewController.h */,
+				5807BB941FF38DE500D457A9 /* CXLEssenceViewController.m */,
+				5807BB961FF38ED500D457A9 /* CXLNewestViewController.h */,
+				5807BB971FF38ED500D457A9 /* CXLNewestViewController.m */,
+				5807BB991FF38EE800D457A9 /* CXLAttentionViewController.h */,
+				5807BB9A1FF38EE800D457A9 /* CXLAttentionViewController.m */,
+				5807BB9C1FF38EFB00D457A9 /* CXLMineViewController.h */,
+				5807BB9D1FF38EFB00D457A9 /* CXLMineViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -185,7 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58A92F6F1FF349D600E5D60C /* Assets.xcassets in Resources */,
+				5893EB701FF3A42C00C59F40 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,8 +281,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */,
+				5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */,
+				5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */,
+				5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */,
+				5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */,
 				58A92F751FF349D600E5D60C /* main.m in Sources */,
 				58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */,
+				5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */,
+				5807BB9E1FF38EFB00D457A9 /* CXLMineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,8 +405,11 @@
 			baseConfigurationReference = E4BE72135AF97B716991F3DA /* Pods-BaiSiBuDeJie.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49YMBTW8W3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BaiSiBuDeJie/PrefixHeader.pch";
 				INFOPLIST_FILE = BaiSiBuDeJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -377,8 +424,11 @@
 			baseConfigurationReference = 8D65824FBAA1EE02F1635486 /* Pods-BaiSiBuDeJie.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49YMBTW8W3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/BaiSiBuDeJie/PrefixHeader.pch";
 				INFOPLIST_FILE = BaiSiBuDeJie/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

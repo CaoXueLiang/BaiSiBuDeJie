@@ -1,0 +1,34 @@
+//
+//  PrefixHeader.pch
+//  BaiSiBuDeJie
+//
+//  Created by bjovov on 2017/12/27.
+//  Copyright © 2017年 caoxueliang.cn. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <Masonry/Masonry.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+#import <YYCategories/YYCategories.h>
+
+/*主要颜色宏定义*/
+#define RGBColor(r, g, b, a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
+#define RGBLINE RGBColor(220, 220, 220, 1)
+#define MainColor RGBColor(251, 12, 68, 1)
+#define MainGrayTextColor RGBColor(118, 111, 110, 1)
+
+
+/*适配iPhoneX需要用到的宏定义*/
+#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+#define kNavBarHeight 44.0
+#define KTopHeight (kStatusBarHeight + kNavBarHeight)
+#define KTarbarHeight (kDevice_Is_iPhoneX ? 83 : 49)
+#define KTabbarSafeBottomMargin (kDevice_Is_iPhoneX ? 34 : 0)
+
+#endif /* PrefixHeader_pch */
+
+
