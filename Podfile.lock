@@ -1,0 +1,24 @@
+PODS:
+  - CYLTabBarController (1.17.4)
+  - IQKeyboardManager (5.0.7)
+  - Masonry (1.1.0)
+  - YYCache (1.0.4)
+  - YYText (1.0.7)
+
+DEPENDENCIES:
+  - CYLTabBarController
+  - IQKeyboardManager
+  - Masonry
+  - YYCache
+  - YYText
+
+SPEC CHECKSUMS:
+  CYLTabBarController: c4d5a175200915f10763b19c2e0b1f3b40b01849
+  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  YYCache: 8105b6638f5e849296c71f331ff83891a4942952
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
+
+PODFILE CHECKSUM: 8316ec0dc8677ac49e210526416aecab23f749da
+
+COCOAPODS: 1.2.1
