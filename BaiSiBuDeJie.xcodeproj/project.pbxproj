@@ -18,6 +18,7 @@
 		5893EB701FF3A42C00C59F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */; };
 		58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A92F661FF349D600E5D60C /* AppDelegate.m */; };
 		58A92F751FF349D600E5D60C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A92F741FF349D600E5D60C /* main.m */; };
+		58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DDD6E41FF4EE2A00652015 /* CXLTweetListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		58A92F661FF349D600E5D60C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		58A92F731FF349D600E5D60C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58A92F741FF349D600E5D60C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		58DDD6E31FF4EE2A00652015 /* CXLTweetListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLTweetListViewController.h; sourceTree = "<group>"; };
+		58DDD6E41FF4EE2A00652015 /* CXLTweetListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLTweetListViewController.m; sourceTree = "<group>"; };
 		8D65824FBAA1EE02F1635486 /* Pods-BaiSiBuDeJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.release.xcconfig"; sourceTree = "<group>"; };
 		E4BE72135AF97B716991F3DA /* Pods-BaiSiBuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,25 +92,16 @@
 		58A92F641FF349D600E5D60C /* BaiSiBuDeJie */ = {
 			isa = PBXGroup;
 			children = (
+				58DDD6DF1FF4E9D200652015 /* Module */,
 				58A92F651FF349D600E5D60C /* AppDelegate.h */,
 				58A92F661FF349D600E5D60C /* AppDelegate.m */,
 				58A92F741FF349D600E5D60C /* main.m */,
 				58A92F731FF349D600E5D60C /* Info.plist */,
 				5807BBA21FF3949600D457A9 /* PrefixHeader.pch */,
 				58A92F9B1FF34AB800E5D60C /* Main */,
-				58A92F971FF34A5600E5D60C /* module */,
-				58A92F9A1FF34AA400E5D60C /* vendor */,
-				58A92F991FF34A7D00E5D60C /* Utility */,
 				58A92F981FF34A6300E5D60C /* Resources */,
 			);
 			path = BaiSiBuDeJie;
-			sourceTree = "<group>";
-		};
-		58A92F971FF34A5600E5D60C /* module */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = module;
 			sourceTree = "<group>";
 		};
 		58A92F981FF34A6300E5D60C /* Resources */ = {
@@ -116,20 +110,6 @@
 				5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		58A92F991FF34A7D00E5D60C /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utility;
-			sourceTree = "<group>";
-		};
-		58A92F9A1FF34AA400E5D60C /* vendor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = vendor;
 			sourceTree = "<group>";
 		};
 		58A92F9B1FF34AB800E5D60C /* Main */ = {
@@ -151,6 +131,39 @@
 				5807BB9D1FF38EFB00D457A9 /* CXLMineViewController.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		58DDD6DF1FF4E9D200652015 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				58DDD6E01FF4EA1000652015 /* Dynamic */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		58DDD6E01FF4EA1000652015 /* Dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				58DDD6E21FF4EDD100652015 /* Controller */,
+				58DDD6E11FF4ED9900652015 /* View */,
+			);
+			path = Dynamic;
+			sourceTree = "<group>";
+		};
+		58DDD6E11FF4ED9900652015 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		58DDD6E21FF4EDD100652015 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				58DDD6E31FF4EE2A00652015 /* CXLTweetListViewController.h */,
+				58DDD6E41FF4EE2A00652015 /* CXLTweetListViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		AB55EA5539A1253FB971696B /* Frameworks */ = {
@@ -283,6 +296,7 @@
 			files = (
 				5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */,
 				5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */,
+				58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */,
 				5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */,
 				5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */,
 				5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */,

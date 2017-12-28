@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 最新控制器
+ */
 @interface CXLNewestViewController : UIViewController
 
 @end

@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 关注控制器
+ */
 @interface CXLAttentionViewController : UIViewController
 
 @end

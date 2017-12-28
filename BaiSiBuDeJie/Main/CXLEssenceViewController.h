@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 精华控制器
+ */
 @interface CXLEssenceViewController : UIViewController
-
 @end

@@ -94,6 +94,7 @@
     [navigationBarAppearance setBackgroundImage:barBgImage
                                   forBarMetrics:UIBarMetricsDefault];
     [navigationBarAppearance setTitleTextAttributes:textAttributes];
+    [navigationBarAppearance setShadowImage:[UIImage new]];
 }
 
 @end

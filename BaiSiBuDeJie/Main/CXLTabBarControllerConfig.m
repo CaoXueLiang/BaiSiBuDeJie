@@ -103,7 +103,7 @@
     
     [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar-light_320x49_"]];
     [[UITabBar appearance] setBackgroundColor:[UIColor clearColor]];
-    //[[UITabBar appearance] setShadowImage:[UIImage new]];
+    [[UITabBar appearance] setShadowImage:[UIImage new]];
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0.0,-2)];
   
     CAShapeLayer *layer = [CAShapeLayer layer];

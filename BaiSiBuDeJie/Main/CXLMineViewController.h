@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 我的控制器
+ */
 @interface CXLMineViewController : UIViewController
 
 @end

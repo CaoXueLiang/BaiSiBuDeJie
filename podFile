@@ -10,5 +10,7 @@ target 'BaiSiBuDeJie' do
   pod 'SVProgressHUD'
   pod 'AFNetworking'
   pod 'SDWebImage'
+  pod 'TYPagerController'
+  pod 'MJRefresh'
 end
 
