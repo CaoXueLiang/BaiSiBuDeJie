@@ -24,9 +24,14 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blueColor];
+    [self setNavigaton];
     [self addTabPageBar];
     [self addPagerController];
     [self loadData];
+}
+
+- (void)setNavigaton{
+    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle_107x19_"]];
 }
 
 - (void)addTabPageBar {
@@ -35,8 +40,8 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
     tabBar.dataSource = self;
     tabBar.delegate = self;
     tabBar.backgroundColor = MainColor;
-    tabBar.layout.normalTextColor = [UIColor lightTextColor];
-    tabBar.layout.selectedTextColor = [UIColor lightTextColor];
+    tabBar.layout.normalTextColor = [UIColor whiteColor];
+    tabBar.layout.selectedTextColor = [UIColor whiteColor];
     tabBar.layout.progressColor = [UIColor whiteColor];
     tabBar.layout.normalTextFont = [UIFont systemFontOfSize:15];
     tabBar.layout.selectedTextFont = [UIFont systemFontOfSize:18];
