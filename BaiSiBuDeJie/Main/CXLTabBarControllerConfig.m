@@ -74,8 +74,7 @@
                                                  };
     NSDictionary *fourthTabBarItemsAttributes = @{
                                                   CYLTabBarItemTitle : @"我",
-                                                  CYLTabBarItemImage : @"tabBar_me_iconN_27x27_",
-                                                  CYLTabBarItemSelectedImage : @"tabBar_me_click_icon_27x27_"
+                                                  CYLTabBarItemImage : @"tabBar_me_iconN_27x27_", CYLTabBarItemSelectedImage : @"tabBar_me_click_icon_27x27_"
                                                   };
     NSArray *tabBarItemsAttributes = @[
                                        firstTabBarItemsAttributes,
@@ -102,13 +101,13 @@
     [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
     [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
     
-    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
-    [[UITabBar appearance] setBackgroundColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tabbar-light_320x49_"]];
+    [[UITabBar appearance] setBackgroundColor:[UIColor clearColor]];
     //[[UITabBar appearance] setShadowImage:[UIImage new]];
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0.0,-2)];
   
     CAShapeLayer *layer = [CAShapeLayer layer];
-    layer.frame = CGRectMake(0, 0, kScreenWidth, CGFloatFromPixel(1));
+    layer.frame = CGRectMake(0, 0, kScreenWidth, CGFloatFromPixel(0.5));
     layer.backgroundColor = RGBLINE.CGColor;
     [tabBarController.tabBar.layer addSublayer:layer];
 }
