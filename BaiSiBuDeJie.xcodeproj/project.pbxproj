@@ -19,6 +19,10 @@
 		58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A92F661FF349D600E5D60C /* AppDelegate.m */; };
 		58A92F751FF349D600E5D60C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A92F741FF349D600E5D60C /* main.m */; };
 		58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DDD6E41FF4EE2A00652015 /* CXLTweetListViewController.m */; };
+		58E90C631FF610C7007E1ED5 /* CXLCustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E90C621FF610C7007E1ED5 /* CXLCustomHeader.m */; };
+		58E90C691FF624E9007E1ED5 /* CXLCustomFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E90C681FF624E9007E1ED5 /* CXLCustomFooter.m */; };
+		58E90C6F1FF6425B007E1ED5 /* MLNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E90C6E1FF637B0007E1ED5 /* MLNetWorkHelper.m */; };
+		58E90C701FF6426D007E1ED5 /* MLNetWorkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E90C6D1FF637B0007E1ED5 /* MLNetWorkCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,14 @@
 		58A92F741FF349D600E5D60C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		58DDD6E31FF4EE2A00652015 /* CXLTweetListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLTweetListViewController.h; sourceTree = "<group>"; };
 		58DDD6E41FF4EE2A00652015 /* CXLTweetListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLTweetListViewController.m; sourceTree = "<group>"; };
+		58E90C611FF610C7007E1ED5 /* CXLCustomHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLCustomHeader.h; sourceTree = "<group>"; };
+		58E90C621FF610C7007E1ED5 /* CXLCustomHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLCustomHeader.m; sourceTree = "<group>"; };
+		58E90C671FF624E9007E1ED5 /* CXLCustomFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLCustomFooter.h; sourceTree = "<group>"; };
+		58E90C681FF624E9007E1ED5 /* CXLCustomFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLCustomFooter.m; sourceTree = "<group>"; };
+		58E90C6B1FF637AF007E1ED5 /* MLNetWorkCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLNetWorkCache.h; sourceTree = "<group>"; };
+		58E90C6C1FF637B0007E1ED5 /* MLNetWorkHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLNetWorkHelper.h; sourceTree = "<group>"; };
+		58E90C6D1FF637B0007E1ED5 /* MLNetWorkCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLNetWorkCache.m; sourceTree = "<group>"; };
+		58E90C6E1FF637B0007E1ED5 /* MLNetWorkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLNetWorkHelper.m; sourceTree = "<group>"; };
 		8D65824FBAA1EE02F1635486 /* Pods-BaiSiBuDeJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.release.xcconfig"; sourceTree = "<group>"; };
 		E4BE72135AF97B716991F3DA /* Pods-BaiSiBuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +104,7 @@
 		58A92F641FF349D600E5D60C /* BaiSiBuDeJie */ = {
 			isa = PBXGroup;
 			children = (
+				58E90C5F1FF6100C007E1ED5 /* Other */,
 				58DDD6DF1FF4E9D200652015 /* Module */,
 				58A92F651FF349D600E5D60C /* AppDelegate.h */,
 				58A92F661FF349D600E5D60C /* AppDelegate.m */,
@@ -164,6 +177,37 @@
 				58DDD6E41FF4EE2A00652015 /* CXLTweetListViewController.m */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		58E90C5F1FF6100C007E1ED5 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				58E90C6A1FF6378A007E1ED5 /* NetHelper */,
+				58E90C601FF6101D007E1ED5 /* DIYRefresh */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		58E90C601FF6101D007E1ED5 /* DIYRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				58E90C611FF610C7007E1ED5 /* CXLCustomHeader.h */,
+				58E90C621FF610C7007E1ED5 /* CXLCustomHeader.m */,
+				58E90C671FF624E9007E1ED5 /* CXLCustomFooter.h */,
+				58E90C681FF624E9007E1ED5 /* CXLCustomFooter.m */,
+			);
+			path = DIYRefresh;
+			sourceTree = "<group>";
+		};
+		58E90C6A1FF6378A007E1ED5 /* NetHelper */ = {
+			isa = PBXGroup;
+			children = (
+				58E90C6B1FF637AF007E1ED5 /* MLNetWorkCache.h */,
+				58E90C6D1FF637B0007E1ED5 /* MLNetWorkCache.m */,
+				58E90C6C1FF637B0007E1ED5 /* MLNetWorkHelper.h */,
+				58E90C6E1FF637B0007E1ED5 /* MLNetWorkHelper.m */,
+			);
+			path = NetHelper;
 			sourceTree = "<group>";
 		};
 		AB55EA5539A1253FB971696B /* Frameworks */ = {
@@ -294,6 +338,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E90C701FF6426D007E1ED5 /* MLNetWorkCache.m in Sources */,
+				58E90C6F1FF6425B007E1ED5 /* MLNetWorkHelper.m in Sources */,
+				58E90C631FF610C7007E1ED5 /* CXLCustomHeader.m in Sources */,
 				5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */,
 				5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */,
 				58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */,
@@ -303,6 +350,7 @@
 				58A92F751FF349D600E5D60C /* main.m in Sources */,
 				58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */,
 				5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */,
+				58E90C691FF624E9007E1ED5 /* CXLCustomFooter.m in Sources */,
 				5807BB9E1FF38EFB00D457A9 /* CXLMineViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

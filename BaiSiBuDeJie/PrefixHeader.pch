@@ -14,6 +14,11 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import <YYCategories/YYCategories.h>
 #import <MJRefresh/MJRefresh.h>
+#import <AFNetworking/AFNetworking.h>
+#import <SDWebImage/SDWebImageManager.h>
+#import "CXLCustomHeader.h"
+#import "CXLCustomFooter.h"
+#import "MLNetWorkHelper.h"
 
 /*主要颜色宏定义*/
 #define RGBColor(r, g, b, a) [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:(a)]
@@ -29,6 +34,16 @@
 #define KTopHeight (kStatusBarHeight + kNavBarHeight)
 #define KTarbarHeight (kDevice_Is_iPhoneX ? 83 : 49)
 #define KTabbarSafeBottomMargin (kDevice_Is_iPhoneX ? 34 : 0)
+
+
+#define SLog(format, ...) printf("class: <%p %s:(%d) > method: %s \n%s\n", self, [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __PRETTY_FUNCTION__, [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] )
+
+
+#ifdef DEBUG
+#define PPLog(...) printf("[%s] %s [第%d行]: %s\n", __TIME__ ,__PRETTY_FUNCTION__ ,__LINE__, [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
+#else
+#define PPLog(...)
+#endif
 
 #endif /* PrefixHeader_pch */
 

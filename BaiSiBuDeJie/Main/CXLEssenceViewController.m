@@ -11,23 +11,25 @@
 #import "TYPagerController.h"
 #import "CXLTweetListViewController.h"
 
+/*TarBar高度*/
+static const CGFloat KTarBarHeight = 50;
 @interface CXLEssenceViewController()
 <TYTabPagerBarDataSource,TYTabPagerBarDelegate,
 TYPagerControllerDataSource,TYPagerControllerDelegate>
 @property (nonatomic,weak) TYTabPagerBar *tabBar;
 @property (nonatomic,weak) TYPagerController *pagerController;
-@property (nonatomic,strong) NSArray *datas;
+@property (nonatomic,strong) NSArray *itermArray;
 @end
 
 @implementation CXLEssenceViewController
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self setNavigaton];
     [self addTabPageBar];
     [self addPagerController];
-    [self loadData];
+    [self reloadData];
 }
 
 - (void)setNavigaton{
@@ -43,8 +45,8 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
     tabBar.layout.normalTextColor = [UIColor whiteColor];
     tabBar.layout.selectedTextColor = [UIColor whiteColor];
     tabBar.layout.progressColor = [UIColor whiteColor];
-    tabBar.layout.normalTextFont = [UIFont systemFontOfSize:15];
-    tabBar.layout.selectedTextFont = [UIFont systemFontOfSize:18];
+    tabBar.layout.normalTextFont = [UIFont systemFontOfSize:16];
+    tabBar.layout.selectedTextFont = [UIFont systemFontOfSize:19];
     [tabBar registerClass:[TYTabPagerBarCell class] forCellWithReuseIdentifier:[TYTabPagerBarCell cellIdentifier]];
     [self.view addSubview:tabBar];
     _tabBar = tabBar;
@@ -65,33 +67,31 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    _tabBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 50);
-    _pagerController.view.frame = CGRectMake(0, CGRectGetMaxY(_tabBar.frame), CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame)- CGRectGetMaxY(_tabBar.frame));
+    _tabBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), KTarBarHeight);
+    _pagerController.view.frame = CGRectMake(0, KTarBarHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight);
 }
 
-- (void)loadData {
-    NSMutableArray *datas = [NSMutableArray array];
-    for (NSInteger i = 0; i < 20; ++i) {
-        [datas addObject:i%2 == 0 ? [NSString stringWithFormat:@"Tab %ld",i]:[NSString stringWithFormat:@"Tab Tab %ld",i]];
+- (NSArray *)itermArray{
+    if (!_itermArray) {
+        _itermArray = @[@"推荐",@"视频",@"图片",@"段子",@"排行",@"社会",@"影视分享",@"游戏",@"8090",@"互动区",];
     }
-    _datas = [datas copy];
-    [self reloadData];
+    return _itermArray;
 }
 
 #pragma mark - TYTabPagerBarDataSource
 - (NSInteger)numberOfItemsInPagerTabBar {
-    return _datas.count;
+    return self.itermArray.count;
 }
 
 - (UICollectionViewCell<TYTabPagerBarCellProtocol> *)pagerTabBar:(TYTabPagerBar *)pagerTabBar cellForItemAtIndex:(NSInteger)index {
     UICollectionViewCell<TYTabPagerBarCellProtocol> *cell = [pagerTabBar dequeueReusableCellWithReuseIdentifier:[TYTabPagerBarCell cellIdentifier] forIndex:index];
-    cell.titleLabel.text = _datas[index];
+    cell.titleLabel.text = self.itermArray[index];
     return cell;
 }
 
 #pragma mark - TYTabPagerBarDelegate
 - (CGFloat)pagerTabBar:(TYTabPagerBar *)pagerTabBar widthForItemAtIndex:(NSInteger)index {
-    NSString *title = _datas[index];
+    NSString *title = self.itermArray[index];
     return [pagerTabBar cellWidthForTitle:title];
 }
 

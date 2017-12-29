@@ -10,6 +10,7 @@
 #import <CYLTabBarController/CYLTabBarController.h>
 #import "CXLTabBarControllerConfig.h"
 #import "CXLPlusButtonAddButton.h"
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
 
 @interface AppDelegate ()<UITabBarControllerDelegate,CYLTabBarControllerDelegate>
 @property (nonatomic,strong) CYLTabBarController *mainTabBarController;
@@ -29,6 +30,10 @@
     self.window.backgroundColor = [UIColor whiteColor];
     self.window.rootViewController = self.mainTabBarController;
     [self.window makeKeyAndVisible];
+    
+    /*设置网络请求*/
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     /*提示框设置*/
     [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
