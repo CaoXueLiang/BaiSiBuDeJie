@@ -7,6 +7,7 @@
 //
 
 #import "CXLTweetListViewController.h"
+#import "PostsModel.h"
 @interface CXLTweetListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @property (nonatomic,strong) UITableView *myTable;
@@ -64,11 +65,16 @@
     NSString *URLString = @"http://s.budejie.com/topic/list/jingxuan/1/bs0315-iphone-4.5.7/0-20.json";
     [MLNetWorkHelper GET:URLString parameters:@{} responseCache:^(id responseCache) {
         
-        
     } success:^(id responseObject) {
         
         [self.myTable.mj_header endRefreshing];
-        SLog(@"%@",responseObject);
+        SLog(@"%@",[responseObject yy_modelToJSONString]);
+        NSArray *array = responseObject[@"list"];
+        [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            PostsModel *model = [PostsModel yy_modelWithJSON:obj];
+            [self.dataArray addObject:model];
+        }];
+        
         
     } failure:^(NSError *error) {
         
@@ -87,4 +93,12 @@
     return _myTable;
 }
 
+- (NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [[NSMutableArray alloc]init];
+    }
+    return _dataArray;
+}
+
 @end
+

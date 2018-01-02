@@ -27,6 +27,7 @@ PODS:
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
   - YYCategories/no-arc (1.0.4)
+  - YYModel (1.0.4)
   - YYText (1.0.7)
 
 DEPENDENCIES:
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - TYPagerController
   - YYCache
   - YYCategories
+  - YYModel
   - YYText
 
 SPEC CHECKSUMS:
@@ -53,8 +55,9 @@ SPEC CHECKSUMS:
   TYPagerController: 4b9dd419853e299f4390107d4c67de6949a52014
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
 
-PODFILE CHECKSUM: e53bebb3a188dd832df2479803496249663d0b16
+PODFILE CHECKSUM: 309718632e51c6f6617d881dd150a56ccbe0e54d
 
 COCOAPODS: 1.2.1

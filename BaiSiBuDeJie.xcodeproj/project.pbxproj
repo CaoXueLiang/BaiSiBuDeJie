@@ -16,6 +16,15 @@
 		5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BBA01FF3902200D457A9 /* CXLBaseNavigationController.m */; };
 		5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */; };
 		5893EB701FF3A42C00C59F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */; };
+		5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4E01FFB550E00AA3D4E /* PostsModel.m */; };
+		5899E4E41FFB6AED00AA3D4E /* PostsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4E31FFB6AED00AA3D4E /* PostsCell.m */; };
+		5899E4EB1FFB885B00AA3D4E /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4EA1FFB866900AA3D4E /* DALabeledCircularProgressView.m */; };
+		5899E4EC1FFB885F00AA3D4E /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4E81FFB866900AA3D4E /* DACircularProgressView.m */; };
+		5899E4EF1FFB892700AA3D4E /* PostsProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4EE1FFB892700AA3D4E /* PostsProfileView.m */; };
+		5899E4F21FFB893A00AA3D4E /* PostsVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4F11FFB893A00AA3D4E /* PostsVideoView.m */; };
+		5899E4F51FFB896400AA3D4E /* PostsImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4F41FFB896400AA3D4E /* PostsImageView.m */; };
+		5899E4F81FFB8E5000AA3D4E /* PostsToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4F71FFB8E5000AA3D4E /* PostsToolBarView.m */; };
+		5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4FA1FFB985900AA3D4E /* PostsCommentView.m */; };
 		58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A92F661FF349D600E5D60C /* AppDelegate.m */; };
 		58A92F751FF349D600E5D60C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A92F741FF349D600E5D60C /* main.m */; };
 		58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DDD6E41FF4EE2A00652015 /* CXLTweetListViewController.m */; };
@@ -43,6 +52,24 @@
 		5893EB6C1FF39F1A00C59F40 /* CXLPlusButtonAddButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLPlusButtonAddButton.h; sourceTree = "<group>"; };
 		5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLPlusButtonAddButton.m; sourceTree = "<group>"; };
 		5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5899E4DF1FFB550E00AA3D4E /* PostsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsModel.h; sourceTree = "<group>"; };
+		5899E4E01FFB550E00AA3D4E /* PostsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsModel.m; sourceTree = "<group>"; };
+		5899E4E21FFB6AED00AA3D4E /* PostsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCell.h; sourceTree = "<group>"; };
+		5899E4E31FFB6AED00AA3D4E /* PostsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCell.m; sourceTree = "<group>"; };
+		5899E4E71FFB866900AA3D4E /* DACircularProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		5899E4E81FFB866900AA3D4E /* DACircularProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		5899E4E91FFB866900AA3D4E /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
+		5899E4EA1FFB866900AA3D4E /* DALabeledCircularProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DALabeledCircularProgressView.m; sourceTree = "<group>"; };
+		5899E4ED1FFB892700AA3D4E /* PostsProfileView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsProfileView.h; sourceTree = "<group>"; };
+		5899E4EE1FFB892700AA3D4E /* PostsProfileView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsProfileView.m; sourceTree = "<group>"; };
+		5899E4F01FFB893A00AA3D4E /* PostsVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsVideoView.h; sourceTree = "<group>"; };
+		5899E4F11FFB893A00AA3D4E /* PostsVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsVideoView.m; sourceTree = "<group>"; };
+		5899E4F31FFB896400AA3D4E /* PostsImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsImageView.h; sourceTree = "<group>"; };
+		5899E4F41FFB896400AA3D4E /* PostsImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsImageView.m; sourceTree = "<group>"; };
+		5899E4F61FFB8E5000AA3D4E /* PostsToolBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsToolBarView.h; sourceTree = "<group>"; };
+		5899E4F71FFB8E5000AA3D4E /* PostsToolBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsToolBarView.m; sourceTree = "<group>"; };
+		5899E4F91FFB985900AA3D4E /* PostsCommentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentView.h; sourceTree = "<group>"; };
+		5899E4FA1FFB985900AA3D4E /* PostsCommentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentView.m; sourceTree = "<group>"; };
 		58A92F621FF349D600E5D60C /* BaiSiBuDeJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BaiSiBuDeJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58A92F651FF349D600E5D60C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		58A92F661FF349D600E5D60C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -83,6 +110,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5899E4DE1FFB54F500AA3D4E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5899E4DF1FFB550E00AA3D4E /* PostsModel.h */,
+				5899E4E01FFB550E00AA3D4E /* PostsModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5899E4E51FFB865A00AA3D4E /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				5899E4E61FFB866900AA3D4E /* DACircularProgress */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		5899E4E61FFB866900AA3D4E /* DACircularProgress */ = {
+			isa = PBXGroup;
+			children = (
+				5899E4E71FFB866900AA3D4E /* DACircularProgressView.h */,
+				5899E4E81FFB866900AA3D4E /* DACircularProgressView.m */,
+				5899E4E91FFB866900AA3D4E /* DALabeledCircularProgressView.h */,
+				5899E4EA1FFB866900AA3D4E /* DALabeledCircularProgressView.m */,
+			);
+			path = DACircularProgress;
+			sourceTree = "<group>";
+		};
 		58A92F591FF349D600E5D60C = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +159,7 @@
 		58A92F641FF349D600E5D60C /* BaiSiBuDeJie */ = {
 			isa = PBXGroup;
 			children = (
+				5899E4E51FFB865A00AA3D4E /* Vendor */,
 				58E90C5F1FF6100C007E1ED5 /* Other */,
 				58DDD6DF1FF4E9D200652015 /* Module */,
 				58A92F651FF349D600E5D60C /* AppDelegate.h */,
@@ -157,6 +213,7 @@
 		58DDD6E01FF4EA1000652015 /* Dynamic */ = {
 			isa = PBXGroup;
 			children = (
+				5899E4DE1FFB54F500AA3D4E /* Model */,
 				58DDD6E21FF4EDD100652015 /* Controller */,
 				58DDD6E11FF4ED9900652015 /* View */,
 			);
@@ -166,6 +223,18 @@
 		58DDD6E11FF4ED9900652015 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5899E4E21FFB6AED00AA3D4E /* PostsCell.h */,
+				5899E4E31FFB6AED00AA3D4E /* PostsCell.m */,
+				5899E4ED1FFB892700AA3D4E /* PostsProfileView.h */,
+				5899E4EE1FFB892700AA3D4E /* PostsProfileView.m */,
+				5899E4F01FFB893A00AA3D4E /* PostsVideoView.h */,
+				5899E4F11FFB893A00AA3D4E /* PostsVideoView.m */,
+				5899E4F31FFB896400AA3D4E /* PostsImageView.h */,
+				5899E4F41FFB896400AA3D4E /* PostsImageView.m */,
+				5899E4F61FFB8E5000AA3D4E /* PostsToolBarView.h */,
+				5899E4F71FFB8E5000AA3D4E /* PostsToolBarView.m */,
+				5899E4F91FFB985900AA3D4E /* PostsCommentView.h */,
+				5899E4FA1FFB985900AA3D4E /* PostsCommentView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -338,20 +407,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5899E4EC1FFB885F00AA3D4E /* DACircularProgressView.m in Sources */,
+				5899E4EB1FFB885B00AA3D4E /* DALabeledCircularProgressView.m in Sources */,
 				58E90C701FF6426D007E1ED5 /* MLNetWorkCache.m in Sources */,
+				5899E4F51FFB896400AA3D4E /* PostsImageView.m in Sources */,
 				58E90C6F1FF6425B007E1ED5 /* MLNetWorkHelper.m in Sources */,
 				58E90C631FF610C7007E1ED5 /* CXLCustomHeader.m in Sources */,
 				5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */,
 				5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */,
 				58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */,
+				5899E4EF1FFB892700AA3D4E /* PostsProfileView.m in Sources */,
 				5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */,
 				5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */,
 				5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */,
 				58A92F751FF349D600E5D60C /* main.m in Sources */,
+				5899E4F81FFB8E5000AA3D4E /* PostsToolBarView.m in Sources */,
+				5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */,
+				5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */,
 				58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */,
 				5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */,
 				58E90C691FF624E9007E1ED5 /* CXLCustomFooter.m in Sources */,
 				5807BB9E1FF38EFB00D457A9 /* CXLMineViewController.m in Sources */,
+				5899E4F21FFB893A00AA3D4E /* PostsVideoView.m in Sources */,
+				5899E4E41FFB6AED00AA3D4E /* PostsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

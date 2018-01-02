@@ -12,5 +12,6 @@ target 'BaiSiBuDeJie' do
   pod 'SDWebImage'
   pod 'TYPagerController'
   pod 'MJRefresh'
+  pod 'YYModel'
 end
 
