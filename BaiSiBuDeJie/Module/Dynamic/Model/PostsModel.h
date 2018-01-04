@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+/*发布的帖子的类型*/
+typedef NS_ENUM(NSInteger,postsContentType) {
+    postsContentTypeText,
+    postsContentTypeImage,
+    postsContentTypeVideo,
+};
+
 /**
  单个图片
  */
@@ -26,8 +33,8 @@
 @property (nonatomic,assign) CGFloat height;
 @property (nonatomic,assign) CGFloat width;
 @property (nonatomic,assign) CGFloat playfcount;
-@property (nonatomic,assign) CGFloat playcount;
-@property (nonatomic,assign) CGFloat duration;
+@property (nonatomic,assign) NSInteger playcount;
+@property (nonatomic,assign) NSInteger duration;
 @property (nonatomic,strong) NSArray *thumbnailArray;
 @property (nonatomic,strong) NSArray *downloadArray;
 @property (nonatomic,strong) NSArray *thumbnailSmallArray;
@@ -100,6 +107,7 @@
 @property (nonatomic,copy) NSString *type;
 @property (nonatomic,copy) NSString *text;
 @property (nonatomic,copy) NSString *share_url;
+@property (nonatomic,assign) postsContentType contentType;
 @property (nonatomic,strong) PostsVideoModel *video;
 @property (nonatomic,strong) PostsImageModel *image;
 @property (nonatomic,strong) PostsUserModel *u;

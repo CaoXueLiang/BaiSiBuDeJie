@@ -38,10 +38,13 @@
 - (void)initializeLabel
 {
     self.progressLabel = [[UILabel alloc] initWithFrame:self.bounds];
-    self.progressLabel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.progressLabel.textAlignment = NSTextAlignmentCenter;
-    self.progressLabel.backgroundColor = [UIColor clearColor];
+    //self.progressLabel.backgroundColor = [UIColor clearColor];
     [self addSubview:self.progressLabel];
+    [self.progressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
 }
 
 @end
+

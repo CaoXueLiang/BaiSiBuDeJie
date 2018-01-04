@@ -8,12 +8,13 @@
 
 #import "PostsToolBarView.h"
 #import "PostsModel.h"
+#import "UIButton+Aliment.h"
 
 @interface PostsToolBarView()
-@property (nonatomic,strong) UIButton *upButton;
-@property (nonatomic,strong) UIButton *downButton;
-@property (nonatomic,strong) UIButton *transpondButton;
-@property (nonatomic,strong) UIButton *commentButton;
+@property (nonatomic,strong) UIButton *upButton;         //顶按钮
+@property (nonatomic,strong) UIButton *downButton;       //踩按钮
+@property (nonatomic,strong) UIButton *transpondButton;  //转发按钮
+@property (nonatomic,strong) UIButton *commentButton;    //评论按钮
 @end
 
 @implementation PostsToolBarView
@@ -36,8 +37,9 @@
     [_upButton setBackgroundImage:[UIImage imageWithColor:kWBCellHighlightColor] forState:UIControlStateHighlighted];
     [_upButton setImage:[UIImage imageNamed:@"mainCellDing_17x17_"] forState:UIControlStateNormal];
     [_upButton setImage:[UIImage imageNamed:@"mainCellDingClick_17x17_"] forState:UIControlStateHighlighted];
-    [_upButton setTitleColor:MainGrayTextColor forState:UIControlStateNormal];
+    [_upButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [_upButton setTitleColor:MainColor forState:UIControlStateHighlighted];
+    _upButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [_upButton addTarget:self action:@selector(upButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     
     _downButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -46,8 +48,9 @@
     [_downButton setBackgroundImage:[UIImage imageWithColor:kWBCellHighlightColor] forState:UIControlStateHighlighted];
     [_downButton setImage:[UIImage imageNamed:@"mainCellCai_17x17_"] forState:UIControlStateNormal];
     [_downButton setImage:[UIImage imageNamed:@"mainCellCaiClick_17x17_"] forState:UIControlStateHighlighted];
-    [_downButton setTitleColor:MainGrayTextColor forState:UIControlStateNormal];
+    [_downButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [_downButton setTitleColor:MainColor forState:UIControlStateHighlighted];
+    _downButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [_downButton addTarget:self action:@selector(downButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     
     _transpondButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -56,8 +59,9 @@
     [_transpondButton setBackgroundImage:[UIImage imageWithColor:kWBCellHighlightColor] forState:UIControlStateHighlighted];
     [_transpondButton setImage:[UIImage imageNamed:@"mainCellShare_17x17_"] forState:UIControlStateNormal];
     [_transpondButton setImage:[UIImage imageNamed:@"mainCellShareClick_17x17_"] forState:UIControlStateHighlighted];
-    [_transpondButton setTitleColor:MainGrayTextColor forState:UIControlStateNormal];
+    [_transpondButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [_transpondButton setTitleColor:MainColor forState:UIControlStateHighlighted];
+    _transpondButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [_transpondButton addTarget:self action:@selector(transpondButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     
     _commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -66,10 +70,19 @@
     [_commentButton setBackgroundImage:[UIImage imageWithColor:kWBCellHighlightColor] forState:UIControlStateHighlighted];
     [_commentButton setImage:[UIImage imageNamed:@"mainCellComment_17x17_"] forState:UIControlStateNormal];
     [_commentButton setImage:[UIImage imageNamed:@"mainCellCommentClick_17x17_"] forState:UIControlStateHighlighted];
-    [_commentButton setTitleColor:MainGrayTextColor forState:UIControlStateNormal];
+    [_commentButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     [_commentButton setTitleColor:MainColor forState:UIControlStateHighlighted];
+    _commentButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [_commentButton addTarget:self action:@selector(commentButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     
+    [self addSubview:self.upButton];
+    [self addSubview:self.downButton];
+    [self addSubview:self.transpondButton];
+    [self addSubview:self.commentButton];
+    [_upButton layoutImageTitleHorizontalOffSet:5];
+    [_downButton layoutImageTitleHorizontalOffSet:5];
+    [_transpondButton layoutImageTitleHorizontalOffSet:5];
+    [_commentButton layoutImageTitleHorizontalOffSet:5];
 }
 
 #pragma mark - Event Response

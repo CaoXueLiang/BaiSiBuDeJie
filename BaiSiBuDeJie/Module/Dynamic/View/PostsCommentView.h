@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 评论View
+ */
 @interface PostsCommentView : UIView
-
+@property (nonatomic,strong) NSArray *commentArray;
 @end

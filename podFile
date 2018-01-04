@@ -13,5 +13,7 @@ target 'BaiSiBuDeJie' do
   pod 'TYPagerController'
   pod 'MJRefresh'
   pod 'YYModel'
+  pod 'YYImage'
+  pod 'YYWebImage'
 end
 

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 个人信息View
+ */
+@class PostsModel;
 @interface PostsProfileView : UIView
-
+@property (nonatomic,strong) PostsModel *model;
 @end

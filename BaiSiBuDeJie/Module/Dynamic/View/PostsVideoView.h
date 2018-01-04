@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ 视频View
+ */
+@class PostsModel;
 @interface PostsVideoView : UIView
-
+@property (nonatomic,strong) PostsModel *model;
 @end

@@ -14,6 +14,10 @@
 		5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB9A1FF38EE800D457A9 /* CXLAttentionViewController.m */; };
 		5807BB9E1FF38EFB00D457A9 /* CXLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB9D1FF38EFB00D457A9 /* CXLMineViewController.m */; };
 		5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BBA01FF3902200D457A9 /* CXLBaseNavigationController.m */; };
+		5883B4C51FFC6E8700612B82 /* PostsCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4C41FFC6E8700612B82 /* PostsCommentCell.m */; };
+		5883B4C81FFC81E000612B82 /* PostsLayouts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4C71FFC81E000612B82 /* PostsLayouts.m */; };
+		5883B4CC1FFC873B00612B82 /* CXLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4CB1FFC873B00612B82 /* CXLConst.m */; };
+		5883B4D01FFCD6D600612B82 /* UIButton+Aliment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4CF1FFCD6A800612B82 /* UIButton+Aliment.m */; };
 		5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */; };
 		5893EB701FF3A42C00C59F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */; };
 		5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4E01FFB550E00AA3D4E /* PostsModel.m */; };
@@ -49,6 +53,14 @@
 		5807BB9F1FF3902200D457A9 /* CXLBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLBaseNavigationController.h; sourceTree = "<group>"; };
 		5807BBA01FF3902200D457A9 /* CXLBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLBaseNavigationController.m; sourceTree = "<group>"; };
 		5807BBA21FF3949600D457A9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5883B4C31FFC6E8700612B82 /* PostsCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentCell.h; sourceTree = "<group>"; };
+		5883B4C41FFC6E8700612B82 /* PostsCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentCell.m; sourceTree = "<group>"; };
+		5883B4C61FFC81E000612B82 /* PostsLayouts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsLayouts.h; sourceTree = "<group>"; };
+		5883B4C71FFC81E000612B82 /* PostsLayouts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsLayouts.m; sourceTree = "<group>"; };
+		5883B4CA1FFC873B00612B82 /* CXLConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLConst.h; sourceTree = "<group>"; };
+		5883B4CB1FFC873B00612B82 /* CXLConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLConst.m; sourceTree = "<group>"; };
+		5883B4CE1FFCD6A800612B82 /* UIButton+Aliment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Aliment.h"; sourceTree = "<group>"; };
+		5883B4CF1FFCD6A800612B82 /* UIButton+Aliment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Aliment.m"; sourceTree = "<group>"; };
 		5893EB6C1FF39F1A00C59F40 /* CXLPlusButtonAddButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLPlusButtonAddButton.h; sourceTree = "<group>"; };
 		5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLPlusButtonAddButton.m; sourceTree = "<group>"; };
 		5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,11 +122,31 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5883B4C91FFC871100612B82 /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				5883B4CA1FFC873B00612B82 /* CXLConst.h */,
+				5883B4CB1FFC873B00612B82 /* CXLConst.m */,
+			);
+			path = Consts;
+			sourceTree = "<group>";
+		};
+		5883B4CD1FFCD69200612B82 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5883B4CE1FFCD6A800612B82 /* UIButton+Aliment.h */,
+				5883B4CF1FFCD6A800612B82 /* UIButton+Aliment.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		5899E4DE1FFB54F500AA3D4E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5899E4DF1FFB550E00AA3D4E /* PostsModel.h */,
 				5899E4E01FFB550E00AA3D4E /* PostsModel.m */,
+				5883B4C61FFC81E000612B82 /* PostsLayouts.h */,
+				5883B4C71FFC81E000612B82 /* PostsLayouts.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +191,7 @@
 		58A92F641FF349D600E5D60C /* BaiSiBuDeJie */ = {
 			isa = PBXGroup;
 			children = (
+				5883B4CD1FFCD69200612B82 /* Utility */,
 				5899E4E51FFB865A00AA3D4E /* Vendor */,
 				58E90C5F1FF6100C007E1ED5 /* Other */,
 				58DDD6DF1FF4E9D200652015 /* Module */,
@@ -235,6 +268,8 @@
 				5899E4F71FFB8E5000AA3D4E /* PostsToolBarView.m */,
 				5899E4F91FFB985900AA3D4E /* PostsCommentView.h */,
 				5899E4FA1FFB985900AA3D4E /* PostsCommentView.m */,
+				5883B4C31FFC6E8700612B82 /* PostsCommentCell.h */,
+				5883B4C41FFC6E8700612B82 /* PostsCommentCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +286,7 @@
 		58E90C5F1FF6100C007E1ED5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				5883B4C91FFC871100612B82 /* Consts */,
 				58E90C6A1FF6378A007E1ED5 /* NetHelper */,
 				58E90C601FF6101D007E1ED5 /* DIYRefresh */,
 			);
@@ -407,15 +443,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5883B4D01FFCD6D600612B82 /* UIButton+Aliment.m in Sources */,
 				5899E4EC1FFB885F00AA3D4E /* DACircularProgressView.m in Sources */,
 				5899E4EB1FFB885B00AA3D4E /* DALabeledCircularProgressView.m in Sources */,
 				58E90C701FF6426D007E1ED5 /* MLNetWorkCache.m in Sources */,
 				5899E4F51FFB896400AA3D4E /* PostsImageView.m in Sources */,
 				58E90C6F1FF6425B007E1ED5 /* MLNetWorkHelper.m in Sources */,
+				5883B4CC1FFC873B00612B82 /* CXLConst.m in Sources */,
 				58E90C631FF610C7007E1ED5 /* CXLCustomHeader.m in Sources */,
 				5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */,
 				5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */,
 				58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */,
+				5883B4C51FFC6E8700612B82 /* PostsCommentCell.m in Sources */,
 				5899E4EF1FFB892700AA3D4E /* PostsProfileView.m in Sources */,
 				5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */,
 				5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */,
@@ -425,6 +464,7 @@
 				5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */,
 				5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */,
 				58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */,
+				5883B4C81FFC81E000612B82 /* PostsLayouts.m in Sources */,
 				5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */,
 				58E90C691FF624E9007E1ED5 /* CXLCustomFooter.m in Sources */,
 				5807BB9E1FF38EFB00D457A9 /* CXLMineViewController.m in Sources */,

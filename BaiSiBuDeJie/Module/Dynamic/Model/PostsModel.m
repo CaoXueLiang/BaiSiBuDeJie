@@ -53,7 +53,15 @@
 
 
 @implementation PostsUserModel
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"headerArray" : @"header",
+             };
+}
 
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"headerArray" : [NSString class],
+             };
+}
 @end
 
 
@@ -76,5 +84,18 @@
              @"top_comments" : [PostsCommentModel class],
              };
 }
+
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+    NSString *type = dic[@"type"];
+    if ([type isEqualToString:@"text"]) {
+        _contentType = postsContentTypeText;
+    }else if ([type isEqualToString:@"image"]){
+        _contentType = postsContentTypeImage;
+    }else if ([type isEqualToString:@"video"]){
+        _contentType = postsContentTypeVideo;
+    }
+    return YES;
+}
+
 @end
 

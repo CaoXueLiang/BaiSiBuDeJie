@@ -8,13 +8,25 @@
 
 #import "CXLTweetListViewController.h"
 #import "PostsModel.h"
-@interface CXLTweetListViewController ()<UITableViewDelegate,UITableViewDataSource>
+#import "PostsLayouts.h"
+#import "PostsCell.h"
+
+@interface CXLTweetListViewController()
+<UITableViewDelegate,UITableViewDataSource,PostsCellDelegate>
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @property (nonatomic,strong) UITableView *myTable;
-@property (nonatomic,assign) NSInteger currentPage;
+@property (nonatomic,assign) int currentPage; //当前页数
+@property (nonatomic,assign) PostsType type;  //帖子类型
 @end
 
 @implementation CXLTweetListViewController
+#pragma mark - Init Menthod
++ (instancetype)initWithType:(PostsType)type{
+    CXLTweetListViewController *controller = [[CXLTweetListViewController alloc]init];
+    controller.type = type;
+    return controller;
+}
+
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -37,21 +49,43 @@
 
 #pragma mark - UITableView M
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellId"];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+    PostsLayouts *layout = self.dataArray[indexPath.row];
+    PostsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostsCell" forIndexPath:indexPath];
+    cell.selectIndex = indexPath.row;
+    cell.layout = layout;
+    cell.delegate = self;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50.0f;
+    PostsLayouts *layout = self.dataArray[indexPath.row];
+    return layout.totalHeight;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
+#pragma mark - PostsCellDelegate
+- (void)didClickedExpendButton:(NSInteger)index{
+    PostsLayouts *layout = self.dataArray[index];
+    layout.isExpend = !layout.isExpend;
+    [layout layout];
+    [self.myTable reloadData];
 }
 
 #pragma mark - NetRequest
 - (void)freshData{
+    self.dataArray = nil;
     self.currentPage = 0;
     [self sendRequest];
 }
@@ -62,23 +96,61 @@
 }
 
 - (void)sendRequest{
-    NSString *URLString = @"http://s.budejie.com/topic/list/jingxuan/1/bs0315-iphone-4.5.7/0-20.json";
-    [MLNetWorkHelper GET:URLString parameters:@{} responseCache:^(id responseCache) {
+    [MLNetWorkHelper GET:[self urlString] parameters:@{} responseCache:^(id responseCache) {
         
     } success:^(id responseObject) {
         
         [self.myTable.mj_header endRefreshing];
+        [self.myTable.mj_footer endRefreshing];
         SLog(@"%@",[responseObject yy_modelToJSONString]);
         NSArray *array = responseObject[@"list"];
         [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             PostsModel *model = [PostsModel yy_modelWithJSON:obj];
-            [self.dataArray addObject:model];
+            PostsLayouts *layout = [[PostsLayouts alloc]initWithModel:model];
+            [self.dataArray addObject:layout];
         }];
-        
+        [self.myTable reloadData];
         
     } failure:^(NSError *error) {
-        
+        [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
     }];
+}
+
+- (NSString *)urlString{
+    NSString *urlString = @"";
+    switch (self.type) {
+        case PostsTypeEssence:
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/list/jingxuan/1/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            break;
+        case PostsTypeVideo:
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            break;
+        case PostsTypeImage:
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/list/jingxuan/10/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            break;
+        case PostsTypeJoke:
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/tag-topic/64/hot/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            break;
+        case PostsTypeRank:
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/list/remen/1/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            break;
+        case PostsTypeSocial:
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/tag-topic/473/hot/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            break;
+        case PostsTypeMovieShare:
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/tag-topic/407/hot/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            break;
+        case PostsTypeGame:
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/tag-topic/164/hot/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            break;
+        case PostsType8090:
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/tag-topic/5170/hot/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            break;
+        case PostsTypeInteractive:
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/tag-topic/44289/hot/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            break;
+    }
+    return urlString;
 }
 
 #pragma mark - Setter && Getter
@@ -87,6 +159,8 @@
         _myTable = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _myTable.backgroundColor = [UIColor clearColor];
         _myTable.tableFooterView = [UIView new];
+        _myTable.separatorColor = RGBLINE;
+        [_myTable registerClass:[PostsCell class] forCellReuseIdentifier:@"PostsCell"];
         _myTable.delegate = self;
         _myTable.dataSource = self;
     }

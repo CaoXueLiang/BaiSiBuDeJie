@@ -105,7 +105,7 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
 }
 
 - (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index prefetching:(BOOL)prefetching {
-    CXLTweetListViewController *controller = [[CXLTweetListViewController alloc]init];
+    CXLTweetListViewController *controller = [CXLTweetListViewController initWithType:index];
     return controller;
 }
 
