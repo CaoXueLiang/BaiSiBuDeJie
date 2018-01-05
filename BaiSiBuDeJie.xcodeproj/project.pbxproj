@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2DD7E84E401D2B7E2127C017 /* libPods-BaiSiBuDeJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 078690BBEAB22059E7C18C16 /* libPods-BaiSiBuDeJie.a */; };
+		580391F31FFE0EBD0076C82A /* PostsVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 580391F21FFE0EBD0076C82A /* PostsVideoCollectionViewCell.m */; };
+		580391F61FFE12CB0076C82A /* CXLTweetListVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580391F51FFE12CB0076C82A /* CXLTweetListVideoController.m */; };
+		580391FB1FFE27FD0076C82A /* PostsPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580391FA1FFE27FD0076C82A /* PostsPublishView.m */; };
 		5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB8E1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m */; };
 		5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB941FF38DE500D457A9 /* CXLEssenceViewController.m */; };
 		5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB971FF38ED500D457A9 /* CXLNewestViewController.m */; };
@@ -40,6 +43,12 @@
 
 /* Begin PBXFileReference section */
 		078690BBEAB22059E7C18C16 /* libPods-BaiSiBuDeJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BaiSiBuDeJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		580391F11FFE0EBD0076C82A /* PostsVideoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsVideoCollectionViewCell.h; sourceTree = "<group>"; };
+		580391F21FFE0EBD0076C82A /* PostsVideoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsVideoCollectionViewCell.m; sourceTree = "<group>"; };
+		580391F41FFE12CB0076C82A /* CXLTweetListVideoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLTweetListVideoController.h; sourceTree = "<group>"; };
+		580391F51FFE12CB0076C82A /* CXLTweetListVideoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLTweetListVideoController.m; sourceTree = "<group>"; };
+		580391F91FFE27FD0076C82A /* PostsPublishView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsPublishView.h; sourceTree = "<group>"; };
+		580391FA1FFE27FD0076C82A /* PostsPublishView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsPublishView.m; sourceTree = "<group>"; };
 		5807BB8D1FF38C5C00D457A9 /* CXLTabBarControllerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLTabBarControllerConfig.h; sourceTree = "<group>"; };
 		5807BB8E1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLTabBarControllerConfig.m; sourceTree = "<group>"; };
 		5807BB931FF38DE500D457A9 /* CXLEssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLEssenceViewController.h; sourceTree = "<group>"; };
@@ -120,6 +129,23 @@
 				8D65824FBAA1EE02F1635486 /* Pods-BaiSiBuDeJie.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		580391F71FFE27C90076C82A /* Publish */ = {
+			isa = PBXGroup;
+			children = (
+				580391F81FFE27D60076C82A /* View */,
+			);
+			path = Publish;
+			sourceTree = "<group>";
+		};
+		580391F81FFE27D60076C82A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				580391F91FFE27FD0076C82A /* PostsPublishView.h */,
+				580391FA1FFE27FD0076C82A /* PostsPublishView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5883B4C91FFC871100612B82 /* Consts */ = {
@@ -238,6 +264,7 @@
 		58DDD6DF1FF4E9D200652015 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				580391F71FFE27C90076C82A /* Publish */,
 				58DDD6E01FF4EA1000652015 /* Dynamic */,
 			);
 			path = Module;
@@ -270,6 +297,8 @@
 				5899E4FA1FFB985900AA3D4E /* PostsCommentView.m */,
 				5883B4C31FFC6E8700612B82 /* PostsCommentCell.h */,
 				5883B4C41FFC6E8700612B82 /* PostsCommentCell.m */,
+				580391F11FFE0EBD0076C82A /* PostsVideoCollectionViewCell.h */,
+				580391F21FFE0EBD0076C82A /* PostsVideoCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -279,6 +308,8 @@
 			children = (
 				58DDD6E31FF4EE2A00652015 /* CXLTweetListViewController.h */,
 				58DDD6E41FF4EE2A00652015 /* CXLTweetListViewController.m */,
+				580391F41FFE12CB0076C82A /* CXLTweetListVideoController.h */,
+				580391F51FFE12CB0076C82A /* CXLTweetListVideoController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -451,6 +482,7 @@
 				58E90C6F1FF6425B007E1ED5 /* MLNetWorkHelper.m in Sources */,
 				5883B4CC1FFC873B00612B82 /* CXLConst.m in Sources */,
 				58E90C631FF610C7007E1ED5 /* CXLCustomHeader.m in Sources */,
+				580391F31FFE0EBD0076C82A /* PostsVideoCollectionViewCell.m in Sources */,
 				5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */,
 				5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */,
 				58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */,
@@ -463,10 +495,12 @@
 				5899E4F81FFB8E5000AA3D4E /* PostsToolBarView.m in Sources */,
 				5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */,
 				5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */,
+				580391F61FFE12CB0076C82A /* CXLTweetListVideoController.m in Sources */,
 				58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */,
 				5883B4C81FFC81E000612B82 /* PostsLayouts.m in Sources */,
 				5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */,
 				58E90C691FF624E9007E1ED5 /* CXLCustomFooter.m in Sources */,
+				580391FB1FFE27FD0076C82A /* PostsPublishView.m in Sources */,
 				5807BB9E1FF38EFB00D457A9 /* CXLMineViewController.m in Sources */,
 				5899E4F21FFB893A00AA3D4E /* PostsVideoView.m in Sources */,
 				5899E4E41FFB6AED00AA3D4E /* PostsCell.m in Sources */,

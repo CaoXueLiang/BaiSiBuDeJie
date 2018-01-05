@@ -20,7 +20,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _commentLabel = [YYLabel new];
-        _commentLabel.origin = CGPointMake(kWBCellPaddingText, 4);
+        _commentLabel.origin = CGPointMake(kWBCellPaddingText, 5);
         _commentLabel.width = kScreenWidth - 2*kWBCellPadding - 2*kWBCellPaddingText;
         [self.contentView addSubview:_commentLabel];
         self.contentView.backgroundColor = kWBCellHighlightColor;
@@ -45,7 +45,7 @@
     }
     CGSize size = CGSizeMake(kScreenWidth - 2*kWBCellPadding - 2*kWBCellPaddingText, CGFLOAT_MAX);
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:size text:[[PostsCommentCell new] stringWithModel:model]];
-    return layout.textBoundingSize.height + 8;
+    return layout.textBoundingSize.height + 10;
 }
 
 - (NSMutableAttributedString *)stringWithModel:(PostsCommentModel *)model{

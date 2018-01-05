@@ -15,5 +15,6 @@ target 'BaiSiBuDeJie' do
   pod 'YYModel'
   pod 'YYImage'
   pod 'YYWebImage'
+  pod 'CHTCollectionViewWaterfallLayout'
 end
 

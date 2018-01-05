@@ -7,9 +7,12 @@
 //
 
 #import "CXLPlusButtonAddButton.h"
+#import "PostsPublishView.h"
+
 @interface CXLPlusButtonAddButton ()<UIActionSheetDelegate> {
     CGFloat _buttonImageHeight;
 }
+@property (nonatomic,strong) PostsPublishView *publishView;
 @end
 
 @implementation CXLPlusButtonAddButton
@@ -46,9 +49,10 @@
 
 #pragma mark - Event Response
 - (void)clickPublish {
-    CYLTabBarController *tabBarController = [self cyl_tabBarController];
-    UIViewController *viewController = tabBarController.selectedViewController;
-    NSLog(@"点击了中间的按钮");
+    _publishView = [[PostsPublishView alloc]initWithDoneBlock:^(NSString *itermString) {
+        NSLog(@"%@",itermString);
+    }];
+    [_publishView showPickerView];
 }
 
 + (CGFloat)multiplierOfTabBarHeight:(CGFloat)tabBarHeight{

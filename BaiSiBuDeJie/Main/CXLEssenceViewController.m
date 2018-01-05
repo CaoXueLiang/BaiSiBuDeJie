@@ -10,6 +10,7 @@
 #import "TYTabPagerBar.h"
 #import "TYPagerController.h"
 #import "CXLTweetListViewController.h"
+#import "CXLTweetListVideoController.h"
 
 /*TarBar高度*/
 static const CGFloat KTarBarHeight = 50;
@@ -34,6 +35,24 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
 
 - (void)setNavigaton{
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle_107x19_"]];
+    
+    UIImage *normalImage = [UIImage imageNamed:@"nav_item_game_icon_20x20_"];
+    UIImage *hightImage = [UIImage imageNamed:@"nav_item_game_click_icon_20x20_"];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setImage:normalImage forState:UIControlStateNormal];
+    [btn setImage:hightImage forState:UIControlStateHighlighted];
+    [btn sizeToFit];
+    UIBarButtonItem *iterm = [[UIBarButtonItem alloc]initWithCustomView:btn];
+    self.navigationItem.leftBarButtonItem = iterm;
+    
+    UIImage *normalImage1 = [UIImage imageNamed:@"RandomAcross_18x14_"];
+    UIImage *hightImage1 = [UIImage imageNamed:@"RandomAcrossClick_18x14_"];
+    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn1 setImage:normalImage1 forState:UIControlStateNormal];
+    [btn1 setImage:hightImage1 forState:UIControlStateHighlighted];
+    [btn1 sizeToFit];
+    UIBarButtonItem *iterm1 = [[UIBarButtonItem alloc]initWithCustomView:btn1];
+    self.navigationItem.rightBarButtonItem = iterm1;
 }
 
 - (void)addTabPageBar {
@@ -105,8 +124,13 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
 }
 
 - (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index prefetching:(BOOL)prefetching {
-    CXLTweetListViewController *controller = [CXLTweetListViewController initWithType:index];
-    return controller;
+    if (index == 1) {
+        CXLTweetListVideoController *controller = [[CXLTweetListVideoController alloc]init];
+        return controller;
+    }else{
+        CXLTweetListViewController *controller = [CXLTweetListViewController initWithType:index];
+        return controller;
+    }
 }
 
 #pragma mark - TYPagerControllerDelegate
