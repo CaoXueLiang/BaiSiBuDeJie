@@ -55,6 +55,14 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    PostsVideoCollectionViewCell *cell = (PostsVideoCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    PostsModel *model = self.dataArray[indexPath.item];
+    if ([self.delegate respondsToSelector:@selector(didClickedVideoCell: postsModel:)]) {
+        [self.delegate didClickedVideoCell:cell postsModel:model];
+    }
+}
+
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     PostsModel *model = self.dataArray[indexPath.item];

@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class PostsModel,PostsVideoCollectionViewCell;
+@protocol CXLTweetListVideoControllerDelegate <NSObject>
+- (void)didClickedVideoCell:(PostsVideoCollectionViewCell *)cell postsModel:(PostsModel *)model;
+@end
+
 /**
  单个帖子视频View
  */
 @interface CXLTweetListVideoController : UIViewController
-
+@property (nonatomic,weak) id<CXLTweetListVideoControllerDelegate> delegate;
 @end

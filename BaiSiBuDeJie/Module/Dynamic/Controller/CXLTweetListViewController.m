@@ -66,6 +66,14 @@
     return layout.totalHeight;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    PostsLayouts *layout = self.dataArray[indexPath.row];
+    PostsCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([self.delegate respondsToSelector:@selector(didClickedCell: postsModel:)]) {
+        [self.delegate didClickedCell:cell postsModel:layout.postsModel];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
         [cell setSeparatorInset:UIEdgeInsetsZero];

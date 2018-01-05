@@ -22,10 +22,16 @@ typedef NS_ENUM(NSUInteger,PostsType) {
     PostsTypeInteractive,
 };
 
+@class PostsModel,PostsCell;
+@protocol CXLTweetListViewControllerDelegate <NSObject>
+- (void)didClickedCell:(PostsCell *)cell postsModel:(PostsModel *)model;
+@end
+
 /**
  单个帖子ListView
  */
 @interface CXLTweetListViewController : UIViewController
+@property (nonatomic,weak) id<CXLTweetListViewControllerDelegate> delegate;
 + (instancetype)initWithType:(PostsType)type;
 @end
 

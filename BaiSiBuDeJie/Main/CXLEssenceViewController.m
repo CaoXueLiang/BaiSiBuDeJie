@@ -11,12 +11,15 @@
 #import "TYPagerController.h"
 #import "CXLTweetListViewController.h"
 #import "CXLTweetListVideoController.h"
+#import "PostsDetailController.h"
 
 /*TarBar高度*/
 static const CGFloat KTarBarHeight = 50;
 @interface CXLEssenceViewController()
 <TYTabPagerBarDataSource,TYTabPagerBarDelegate,
-TYPagerControllerDataSource,TYPagerControllerDelegate>
+TYPagerControllerDataSource,TYPagerControllerDelegate,
+CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
+
 @property (nonatomic,weak) TYTabPagerBar *tabBar;
 @property (nonatomic,weak) TYPagerController *pagerController;
 @property (nonatomic,strong) NSArray *itermArray;
@@ -97,6 +100,17 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
     return _itermArray;
 }
 
+#pragma mark - ListDelegate
+- (void)didClickedCell:(PostsCell *)cell postsModel:(PostsModel *)model{
+    PostsDetailController *controller = [PostsDetailController initWithPostsModel:model];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)didClickedVideoCell:(PostsVideoCollectionViewCell *)cell postsModel:(PostsModel *)model{
+    PostsDetailController *controller = [PostsDetailController initWithPostsModel:model];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 #pragma mark - TYTabPagerBarDataSource
 - (NSInteger)numberOfItemsInPagerTabBar {
     return self.itermArray.count;
@@ -126,9 +140,11 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
 - (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index prefetching:(BOOL)prefetching {
     if (index == 1) {
         CXLTweetListVideoController *controller = [[CXLTweetListVideoController alloc]init];
+        controller.delegate = self;
         return controller;
     }else{
-        CXLTweetListViewController *controller = [CXLTweetListViewController initWithType:index];
+        CXLTweetListViewController *controller = [CXLTweetListViewController initWithType:index];\
+        controller.delegate = self;
         return controller;
     }
 }
