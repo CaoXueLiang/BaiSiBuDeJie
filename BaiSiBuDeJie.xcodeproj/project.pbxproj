@@ -19,6 +19,7 @@
 		5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BBA01FF3902200D457A9 /* CXLBaseNavigationController.m */; };
 		586CC7401FFF22FC00613B07 /* PostsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586CC73F1FFF22FC00613B07 /* PostsDetailController.m */; };
 		586CC7441FFF669700613B07 /* PostsDetailNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 586CC7431FFF669700613B07 /* PostsDetailNavigation.m */; };
+		586DB93720075FC800BE789D /* PostsDetailCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 586DB93620075FC800BE789D /* PostsDetailCommentModel.m */; };
 		5883B4C51FFC6E8700612B82 /* PostsCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4C41FFC6E8700612B82 /* PostsCommentCell.m */; };
 		5883B4C81FFC81E000612B82 /* PostsLayouts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4C71FFC81E000612B82 /* PostsLayouts.m */; };
 		5883B4CC1FFC873B00612B82 /* CXLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4CB1FFC873B00612B82 /* CXLConst.m */; };
@@ -68,6 +69,8 @@
 		586CC73F1FFF22FC00613B07 /* PostsDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailController.m; sourceTree = "<group>"; };
 		586CC7421FFF669700613B07 /* PostsDetailNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsDetailNavigation.h; sourceTree = "<group>"; };
 		586CC7431FFF669700613B07 /* PostsDetailNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailNavigation.m; sourceTree = "<group>"; };
+		586DB93520075FC800BE789D /* PostsDetailCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsDetailCommentModel.h; sourceTree = "<group>"; };
+		586DB93620075FC800BE789D /* PostsDetailCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailCommentModel.m; sourceTree = "<group>"; };
 		5883B4C31FFC6E8700612B82 /* PostsCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentCell.h; sourceTree = "<group>"; };
 		5883B4C41FFC6E8700612B82 /* PostsCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentCell.m; sourceTree = "<group>"; };
 		5883B4C61FFC81E000612B82 /* PostsLayouts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsLayouts.h; sourceTree = "<group>"; };
@@ -157,25 +160,10 @@
 		586CC73A1FFF21B800613B07 /* PostsDetail */ = {
 			isa = PBXGroup;
 			children = (
+				586DB93420075F9300BE789D /* Model */,
 				586CC73D1FFF21D400613B07 /* Controller */,
-				586CC73C1FFF21CE00613B07 /* View */,
-				586CC73B1FFF21C800613B07 /* Model */,
 			);
 			path = PostsDetail;
-			sourceTree = "<group>";
-		};
-		586CC73B1FFF21C800613B07 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		586CC73C1FFF21CE00613B07 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		586CC73D1FFF21D400613B07 /* Controller */ = {
@@ -194,6 +182,15 @@
 				586CC7431FFF669700613B07 /* PostsDetailNavigation.m */,
 			);
 			path = CustomNavigation;
+			sourceTree = "<group>";
+		};
+		586DB93420075F9300BE789D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				586DB93520075FC800BE789D /* PostsDetailCommentModel.h */,
+				586DB93620075FC800BE789D /* PostsDetailCommentModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		5883B4C91FFC871100612B82 /* Consts */ = {
@@ -554,6 +551,7 @@
 				58E90C691FF624E9007E1ED5 /* CXLCustomFooter.m in Sources */,
 				580391FB1FFE27FD0076C82A /* PostsPublishView.m in Sources */,
 				5807BB9E1FF38EFB00D457A9 /* CXLMineViewController.m in Sources */,
+				586DB93720075FC800BE789D /* PostsDetailCommentModel.m in Sources */,
 				5899E4F21FFB893A00AA3D4E /* PostsVideoView.m in Sources */,
 				5899E4E41FFB6AED00AA3D4E /* PostsCell.m in Sources */,
 			);

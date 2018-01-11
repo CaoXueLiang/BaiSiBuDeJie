@@ -27,15 +27,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    [self.view addSubview:self.myTable];
     self.currentPage = 0;
     [self setRefresh];
-    [self.view addSubview:self.myTable];
+    [self freshData];
 }
 
 - (void)setRefresh{
     self.myTable.mj_header = [CXLCustomHeader headerWithRefreshingTarget:self refreshingAction:@selector(freshData)];
     self.myTable.mj_footer = [CXLCustomFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-    [self.myTable.mj_header beginRefreshing];
 }
 
 #pragma mark - NetRequest
@@ -54,6 +54,7 @@
     NSString *URLString = [NSString stringWithFormat:@"http://c.api.budejie.com/topic/comment_list/%@/0/bs0315-iphone-4.5.7/%d-20.json",_postsModel.postsId,_currentPage];
     [MLNetWorkHelper GET:URLString parameters:@{} responseCache:^(id responseCache) {
         
+        
     } success:^(id responseObject) {
         
         [self.myTable.mj_header endRefreshing];
@@ -66,5 +67,22 @@
     }];
 }
 
+#pragma mark - Setter && Getter
+- (UITableView *)myTable{
+    if (!_myTable) {
+        _myTable = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _myTable.backgroundColor = [UIColor clearColor];
+        _myTable.tableFooterView = [UIView new];
+        _myTable.separatorColor = RGBLINE;
+    }
+    return _myTable;
+}
+
+- (NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [[NSMutableArray alloc]init];
+    }
+    return _dataArray;
+}
 
 @end
