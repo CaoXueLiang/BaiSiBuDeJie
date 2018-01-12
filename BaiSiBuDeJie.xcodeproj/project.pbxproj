@@ -160,6 +160,7 @@
 		586CC73A1FFF21B800613B07 /* PostsDetail */ = {
 			isa = PBXGroup;
 			children = (
+				C3DFDF36200918AD00086D24 /* View */,
 				586DB93420075F9300BE789D /* Model */,
 				586CC73D1FFF21D400613B07 /* Controller */,
 			);
@@ -399,6 +400,13 @@
 				078690BBEAB22059E7C18C16 /* libPods-BaiSiBuDeJie.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3DFDF36200918AD00086D24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

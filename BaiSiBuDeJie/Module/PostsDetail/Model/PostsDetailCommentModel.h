@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger,postsCommentType) {
     postsCommentTypeText,
     postsCommentTypeImage,
     postsCommentTypeVideo,
+    postsCommentTypeAudio,
 };
 
 
@@ -37,6 +38,25 @@ typedef NS_ENUM(NSInteger,postsCommentType) {
 @end
 
 /**
+ 图片评论Model
+ */
+@interface PostsImageCommentModel : NSObject
+@property (nonatomic,assign) CGFloat height;
+@property (nonatomic,assign) CGFloat width;
+@property (nonatomic,strong) NSArray *downloadArray;
+@property (nonatomic,strong) NSArray *thumbnailArray;
+@property (nonatomic,strong) NSArray *imagesArray;
+@end
+
+/**
+ 语音评论Model
+ */
+@interface PostsAudioCommentModel : NSObject
+@property (nonatomic,copy) NSString *duration;
+@property (nonatomic,strong) NSArray *audioArray;
+@end
+
+/**
  帖子详情评论
  */
 @class PostsVideoModel;
@@ -51,7 +71,9 @@ typedef NS_ENUM(NSInteger,postsCommentType) {
 @property (nonatomic,copy) NSString *data_id;
 @property (nonatomic,assign) postsCommentType commentType;
 @property (nonatomic,strong) PostsDetailUserModel *user;
+@property (nonatomic,strong) PostsImageCommentModel *image;
 @property (nonatomic,strong) PostsVideoModel *video;
+@property (nonatomic,strong) PostsAudioCommentModel *audio;
 @property (nonatomic,strong) NSArray<PostsDetailCommentModel *> *precmtsArray;
 
 @end
