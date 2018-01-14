@@ -42,6 +42,10 @@
 		58E90C691FF624E9007E1ED5 /* CXLCustomFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E90C681FF624E9007E1ED5 /* CXLCustomFooter.m */; };
 		58E90C6F1FF6425B007E1ED5 /* MLNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E90C6E1FF637B0007E1ED5 /* MLNetWorkHelper.m */; };
 		58E90C701FF6426D007E1ED5 /* MLNetWorkCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E90C6D1FF637B0007E1ED5 /* MLNetWorkCache.m */; };
+		C300DA01200A585700FA1936 /* PostsDetailHeaderLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA00200A585700FA1936 /* PostsDetailHeaderLayout.m */; };
+		C300DA0D200B10A200FA1936 /* PostsDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA0C200B10A200FA1936 /* PostsDetailHeaderView.m */; };
+		C300DA10200B148F00FA1936 /* PostsDetailImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA0F200B148F00FA1936 /* PostsDetailImageView.m */; };
+		C300DA13200B14A200FA1936 /* PostsDetailVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +120,14 @@
 		58E90C6D1FF637B0007E1ED5 /* MLNetWorkCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLNetWorkCache.m; sourceTree = "<group>"; };
 		58E90C6E1FF637B0007E1ED5 /* MLNetWorkHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLNetWorkHelper.m; sourceTree = "<group>"; };
 		8D65824FBAA1EE02F1635486 /* Pods-BaiSiBuDeJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.release.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.release.xcconfig"; sourceTree = "<group>"; };
+		C300D9FF200A585700FA1936 /* PostsDetailHeaderLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsDetailHeaderLayout.h; sourceTree = "<group>"; };
+		C300DA00200A585700FA1936 /* PostsDetailHeaderLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailHeaderLayout.m; sourceTree = "<group>"; };
+		C300DA0B200B10A200FA1936 /* PostsDetailHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsDetailHeaderView.h; sourceTree = "<group>"; };
+		C300DA0C200B10A200FA1936 /* PostsDetailHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailHeaderView.m; sourceTree = "<group>"; };
+		C300DA0E200B148F00FA1936 /* PostsDetailImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsDetailImageView.h; sourceTree = "<group>"; };
+		C300DA0F200B148F00FA1936 /* PostsDetailImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailImageView.m; sourceTree = "<group>"; };
+		C300DA11200B14A200FA1936 /* PostsDetailVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsDetailVideoView.h; sourceTree = "<group>"; };
+		C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailVideoView.m; sourceTree = "<group>"; };
 		E4BE72135AF97B716991F3DA /* Pods-BaiSiBuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,6 +202,8 @@
 			children = (
 				586DB93520075FC800BE789D /* PostsDetailCommentModel.h */,
 				586DB93620075FC800BE789D /* PostsDetailCommentModel.m */,
+				C300D9FF200A585700FA1936 /* PostsDetailHeaderLayout.h */,
+				C300DA00200A585700FA1936 /* PostsDetailHeaderLayout.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -405,6 +419,12 @@
 		C3DFDF36200918AD00086D24 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C300DA0B200B10A200FA1936 /* PostsDetailHeaderView.h */,
+				C300DA0C200B10A200FA1936 /* PostsDetailHeaderView.m */,
+				C300DA0E200B148F00FA1936 /* PostsDetailImageView.h */,
+				C300DA0F200B148F00FA1936 /* PostsDetailImageView.m */,
+				C300DA11200B14A200FA1936 /* PostsDetailVideoView.h */,
+				C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -529,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C300DA13200B14A200FA1936 /* PostsDetailVideoView.m in Sources */,
 				5883B4D01FFCD6D600612B82 /* UIButton+Aliment.m in Sources */,
 				5899E4EC1FFB885F00AA3D4E /* DACircularProgressView.m in Sources */,
 				5899E4EB1FFB885B00AA3D4E /* DALabeledCircularProgressView.m in Sources */,
@@ -540,15 +561,18 @@
 				580391F31FFE0EBD0076C82A /* PostsVideoCollectionViewCell.m in Sources */,
 				5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */,
 				5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */,
+				C300DA0D200B10A200FA1936 /* PostsDetailHeaderView.m in Sources */,
 				58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */,
 				5883B4C51FFC6E8700612B82 /* PostsCommentCell.m in Sources */,
 				5899E4EF1FFB892700AA3D4E /* PostsProfileView.m in Sources */,
+				C300DA10200B148F00FA1936 /* PostsDetailImageView.m in Sources */,
 				586CC7441FFF669700613B07 /* PostsDetailNavigation.m in Sources */,
 				5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */,
 				5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */,
 				5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */,
 				58A92F751FF349D600E5D60C /* main.m in Sources */,
 				5899E4F81FFB8E5000AA3D4E /* PostsToolBarView.m in Sources */,
+				C300DA01200A585700FA1936 /* PostsDetailHeaderLayout.m in Sources */,
 				586CC7401FFF22FC00613B07 /* PostsDetailController.m in Sources */,
 				5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */,
 				5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */,
