@@ -25,6 +25,7 @@
         frame.size.height = KWBCellToobarHeight;
     }
     self = [super initWithFrame:frame];
+    self.backgroundColor = [UIColor whiteColor];
     if (self) {
         [self addSubviews];
     }

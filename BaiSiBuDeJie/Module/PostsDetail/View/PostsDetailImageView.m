@@ -17,6 +17,9 @@
 @implementation PostsDetailImageView
 #pragma mark - Init Menthod
 - (instancetype)initWithFrame:(CGRect)frame{
+    if (frame.size.width == 0 && frame.size.height == 0) {
+        frame.size.width = kScreenWidth;
+    }
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubViews];

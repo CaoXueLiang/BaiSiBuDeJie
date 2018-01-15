@@ -11,6 +11,7 @@
 /**
  帖子详情视频View
  */
+@class PostsModel;
 @interface PostsDetailVideoView : UIView
-
+@property (nonatomic,strong) PostsModel *postsModel;
 @end

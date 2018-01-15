@@ -8,12 +8,17 @@
 
 #import "PostsDetailController.h"
 #import "PostsModel.h"
+#import "PostsDetailHeaderView.h"
+#import "PostsDetailHeaderLayout.h"
+#import "PostsDetailNavigation.h"
 
-@interface PostsDetailController ()
+@interface PostsDetailController ()<PostsDetailNavigationDelegate>
 @property (nonatomic,strong) UITableView *myTable;
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @property (nonatomic,assign) int currentPage;
 @property (nonatomic,strong) PostsModel *postsModel;
+@property (nonatomic,strong) PostsDetailHeaderView *headerView;
+@property (nonatomic,strong) PostsDetailNavigation *customNavigation;
 @end
 
 @implementation PostsDetailController
@@ -28,6 +33,23 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
     [self.view addSubview:self.myTable];
+    
+    _headerView = [PostsDetailHeaderView new];
+    PostsDetailHeaderLayout *layout = [[PostsDetailHeaderLayout alloc]initWithModel:_postsModel];
+    _headerView.height = layout.totalHeight;
+    [_headerView setLayout:layout];
+    self.myTable.tableHeaderView = _headerView;
+    
+    self.customNavigation.model = _postsModel;
+    self.customNavigation.delegate = self;
+    [self.view addSubview:self.customNavigation];
+    
+    if (@available(iOS 11.0, *)){
+        self.myTable.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }else{
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
     self.currentPage = 0;
     [self setRefresh];
     [self freshData];
@@ -36,6 +58,29 @@
 - (void)setRefresh{
     self.myTable.mj_header = [CXLCustomHeader headerWithRefreshingTarget:self refreshingAction:@selector(freshData)];
     self.myTable.mj_footer = [CXLCustomFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+}
+
+-(BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
+#pragma mark - PostsDetailNavigationDelegate
+- (void)didClickedButton:(NSInteger)index{
+    switch (index) {
+        case 1:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
+    }
 }
 
 #pragma mark - NetRequest
@@ -70,12 +115,19 @@
 #pragma mark - Setter && Getter
 - (UITableView *)myTable{
     if (!_myTable) {
-        _myTable = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0,kNavBarHeight, kScreenWidth, kScreenHeight - kNavBarHeight) style:UITableViewStylePlain];
         _myTable.backgroundColor = [UIColor clearColor];
         _myTable.tableFooterView = [UIView new];
         _myTable.separatorColor = RGBLINE;
     }
     return _myTable;
+}
+
+- (PostsDetailNavigation *)customNavigation{
+    if (!_customNavigation) {
+        _customNavigation = [PostsDetailNavigation new];
+    }
+    return _customNavigation;
 }
 
 - (NSMutableArray *)dataArray{

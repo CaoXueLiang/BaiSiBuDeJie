@@ -14,3 +14,8 @@ const CGFloat kWBCellPadding = 12;
 const CGFloat kWBCellPaddingText = 10;
 const CGFloat kWBCellProfileHeight = 56;
 const CGFloat KWBCellToobarHeight = 40;
+const CGFloat KWBDetailCommentImageHeight = 100;
+const CGFloat KWBDetailCommentVideoHeight = 100;
+const CGFloat KWBDetailCommentAudioHeight = 40;
+
+

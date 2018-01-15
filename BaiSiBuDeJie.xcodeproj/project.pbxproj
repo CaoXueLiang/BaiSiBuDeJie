@@ -26,6 +26,9 @@
 		5883B4D01FFCD6D600612B82 /* UIButton+Aliment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4CF1FFCD6A800612B82 /* UIButton+Aliment.m */; };
 		5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */; };
 		5893EB701FF3A42C00C59F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */; };
+		58945BBD200CA0C300AE1AA5 /* PostsCommentComplexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58945BBC200CA0C300AE1AA5 /* PostsCommentComplexCell.m */; };
+		58945BC0200CA10900AE1AA5 /* PostsCommentNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58945BBF200CA10900AE1AA5 /* PostsCommentNormalCell.m */; };
+		58945BC3200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 58945BC2200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.m */; };
 		5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4E01FFB550E00AA3D4E /* PostsModel.m */; };
 		5899E4E41FFB6AED00AA3D4E /* PostsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4E31FFB6AED00AA3D4E /* PostsCell.m */; };
 		5899E4EB1FFB885B00AA3D4E /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5899E4EA1FFB866900AA3D4E /* DALabeledCircularProgressView.m */; };
@@ -86,6 +89,12 @@
 		5893EB6C1FF39F1A00C59F40 /* CXLPlusButtonAddButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLPlusButtonAddButton.h; sourceTree = "<group>"; };
 		5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLPlusButtonAddButton.m; sourceTree = "<group>"; };
 		5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		58945BBB200CA0C300AE1AA5 /* PostsCommentComplexCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentComplexCell.h; sourceTree = "<group>"; };
+		58945BBC200CA0C300AE1AA5 /* PostsCommentComplexCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentComplexCell.m; sourceTree = "<group>"; };
+		58945BBE200CA10900AE1AA5 /* PostsCommentNormalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentNormalCell.h; sourceTree = "<group>"; };
+		58945BBF200CA10900AE1AA5 /* PostsCommentNormalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentNormalCell.m; sourceTree = "<group>"; };
+		58945BC1200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentDetailNormalLayout.h; sourceTree = "<group>"; };
+		58945BC2200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentDetailNormalLayout.m; sourceTree = "<group>"; };
 		5899E4DF1FFB550E00AA3D4E /* PostsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsModel.h; sourceTree = "<group>"; };
 		5899E4E01FFB550E00AA3D4E /* PostsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsModel.m; sourceTree = "<group>"; };
 		5899E4E21FFB6AED00AA3D4E /* PostsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCell.h; sourceTree = "<group>"; };
@@ -204,6 +213,8 @@
 				586DB93620075FC800BE789D /* PostsDetailCommentModel.m */,
 				C300D9FF200A585700FA1936 /* PostsDetailHeaderLayout.h */,
 				C300DA00200A585700FA1936 /* PostsDetailHeaderLayout.m */,
+				58945BC1200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.h */,
+				58945BC2200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -425,6 +436,10 @@
 				C300DA0F200B148F00FA1936 /* PostsDetailImageView.m */,
 				C300DA11200B14A200FA1936 /* PostsDetailVideoView.h */,
 				C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */,
+				58945BBB200CA0C300AE1AA5 /* PostsCommentComplexCell.h */,
+				58945BBC200CA0C300AE1AA5 /* PostsCommentComplexCell.m */,
+				58945BBE200CA10900AE1AA5 /* PostsCommentNormalCell.h */,
+				58945BBF200CA10900AE1AA5 /* PostsCommentNormalCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -549,7 +564,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58945BBD200CA0C300AE1AA5 /* PostsCommentComplexCell.m in Sources */,
 				C300DA13200B14A200FA1936 /* PostsDetailVideoView.m in Sources */,
+				58945BC3200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.m in Sources */,
 				5883B4D01FFCD6D600612B82 /* UIButton+Aliment.m in Sources */,
 				5899E4EC1FFB885F00AA3D4E /* DACircularProgressView.m in Sources */,
 				5899E4EB1FFB885B00AA3D4E /* DALabeledCircularProgressView.m in Sources */,
@@ -570,6 +587,7 @@
 				5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */,
 				5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */,
 				5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */,
+				58945BC0200CA10900AE1AA5 /* PostsCommentNormalCell.m in Sources */,
 				58A92F751FF349D600E5D60C /* main.m in Sources */,
 				5899E4F81FFB8E5000AA3D4E /* PostsToolBarView.m in Sources */,
 				C300DA01200A585700FA1936 /* PostsDetailHeaderLayout.m in Sources */,

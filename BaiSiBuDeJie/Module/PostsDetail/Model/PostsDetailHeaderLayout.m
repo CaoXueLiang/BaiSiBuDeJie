@@ -51,7 +51,7 @@
     }
     
     //布局工具条
-    _toolbarHeight = _postsModel.contentType == postsContentTypeText ? _postsModel.contentType : 0;
+    _toolbarHeight = _postsModel.contentType == postsContentTypeText ? KWBCellToobarHeight : 0;
 
     //计算单个cell的总高度
     _totalHeight = 0;
@@ -81,4 +81,5 @@
     if (!_textLayout) return;
     _textHeight = _textLayout.textBoundingSize.height;
 }
+
 @end

@@ -17,5 +17,6 @@ UIKIT_EXTERN const CGFloat kWBCellPadding;
 UIKIT_EXTERN const CGFloat kWBCellPaddingText;
 UIKIT_EXTERN const CGFloat kWBCellProfileHeight;
 UIKIT_EXTERN const CGFloat KWBCellToobarHeight;
-
-
+UIKIT_EXTERN const CGFloat KWBDetailCommentImageHeight;
+UIKIT_EXTERN const CGFloat KWBDetailCommentVideoHeight;
+UIKIT_EXTERN const CGFloat KWBDetailCommentAudioHeight;
