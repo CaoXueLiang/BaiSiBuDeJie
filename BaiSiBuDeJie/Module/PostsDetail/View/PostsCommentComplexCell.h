@@ -11,6 +11,7 @@
 /**
  帖子评论详情complexCell
  */
+@class PostsCommentDetailComplexLayout;
 @interface PostsCommentComplexCell : UITableViewCell
-
+- (void)setComplexLayout:(PostsCommentDetailComplexLayout *)layout;
 @end

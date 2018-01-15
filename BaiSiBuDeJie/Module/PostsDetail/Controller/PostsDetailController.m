@@ -11,8 +11,12 @@
 #import "PostsDetailHeaderView.h"
 #import "PostsDetailHeaderLayout.h"
 #import "PostsDetailNavigation.h"
+#import "PostsCommentComplexCell.h"
+#import "PostsCommentDetailComplexLayout.h"
+#import "PostsDetailCommentModel.h"
 
-@interface PostsDetailController ()<PostsDetailNavigationDelegate>
+@interface PostsDetailController ()
+<PostsDetailNavigationDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *myTable;
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @property (nonatomic,assign) int currentPage;
@@ -74,6 +78,27 @@
     return YES;
 }
 
+#pragma mark - UITableView M
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    PostsCommentDetailComplexLayout *layout = self.dataArray[indexPath.row];
+    PostsCommentComplexCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostsCommentComplexCell" forIndexPath:indexPath];
+    [cell setComplexLayout:layout];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    PostsCommentDetailComplexLayout *layout = self.dataArray[indexPath.row];
+    return layout.totalHeight;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self.myTable deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 #pragma mark - PostsDetailNavigationDelegate
 - (void)didClickedButton:(NSInteger)index{
     switch (index) {
@@ -105,7 +130,15 @@
         [self.myTable.mj_header endRefreshing];
         [self.myTable.mj_footer endRefreshing];
         SLog(@"%@",[responseObject yy_modelToJSONString]);
-
+        NSArray *normalArray = [responseObject[@"normal"] valueForKey:@"list"];
+        @weakify(self);
+        [normalArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSDictionary *tmpDic = obj;
+            PostsDetailCommentModel *model = [PostsDetailCommentModel yy_modelWithJSON:tmpDic];
+            PostsCommentDetailComplexLayout *layout = [[PostsCommentDetailComplexLayout alloc]initWithModel:model];
+            [weak_self.dataArray addObject:layout];
+        }];
+        [self.myTable reloadData];
         
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
@@ -119,6 +152,9 @@
         _myTable.backgroundColor = [UIColor clearColor];
         _myTable.tableFooterView = [UIView new];
         _myTable.separatorColor = RGBLINE;
+        [_myTable registerClass:[PostsCommentComplexCell class] forCellReuseIdentifier:@"PostsCommentComplexCell"];
+        _myTable.delegate = self;
+        _myTable.dataSource = self;
     }
     return _myTable;
 }

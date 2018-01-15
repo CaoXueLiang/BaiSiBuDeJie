@@ -1,16 +1,17 @@
 //
-//  PostsCommentDetailNormalLayout.m
+//  PostsCommentDetailComplexLayout.m
 //  BaiSiBuDeJie
 //
-//  Created by bjovov on 2018/1/15.
+//  Created by 曹学亮 on 2018/1/15.
 //  Copyright © 2018年 caoxueliang.cn. All rights reserved.
 //
 
-#import "PostsCommentDetailNormalLayout.h"
+#import "PostsCommentDetailComplexLayout.h"
 #import "PostsDetailCommentModel.h"
 #import <YYText/YYText.h>
+#import "PostsCommentDetailNormalLayout.h"
 
-@implementation PostsCommentDetailNormalLayout
+@implementation PostsCommentDetailComplexLayout
 #pragma mark - Init Menthod
 - (instancetype)initWithModel:(PostsDetailCommentModel *)commentModel{
     if (!commentModel) return nil;
@@ -24,8 +25,9 @@
 
 - (void)layout{
     _topMargin = 8;
-    _nickNameHeight = 30;
+    _nickNameHeight = 35;
     [self p_layoutText];
+    [self p_layoutNextComment];
     _textTopMargin = _textHeight > 0 ? 8 : 0;
     
     switch (_commentModel.commentType) {
@@ -67,6 +69,8 @@
     _totalHeight += _audioTopMargin;
     _totalHeight += _audioHeight;
     _totalHeight += _bottomMargin;
+    _totalHeight += _nextCommentTopMargin;
+    _totalHeight += _allNextCommentHeight;
 }
 
 - (void)p_layoutText{
@@ -76,6 +80,15 @@
     commentString.yy_font = [UIFont systemFontOfSize:15];
     _textLayout = [YYTextLayout layoutWithContainerSize:CGSizeMake(KWBCommentNormalWidth - 30 - 2*kWBCellPaddingText, HUGE) text:commentString];
     _textHeight = _textLayout.textBoundingSize.height;
+}
+
+- (void)p_layoutNextComment{
+    _allNextCommentHeight = 0;
+    for (PostsDetailCommentModel *model in _commentModel.precmtsArray) {
+        PostsCommentDetailNormalLayout *layout = [[PostsCommentDetailNormalLayout alloc]initWithModel:model];
+        _allNextCommentHeight += layout.totalHeight;
+    }
+    _nextCommentTopMargin = _allNextCommentHeight > 0 ? 8 : 0;
 }
 
 @end

@@ -58,7 +58,7 @@
 - (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
     NSString *type = dic[@"type"];
     if ([type isEqualToString:@"text"]) {
-        _commentType = postsCommentTypeImage;
+        _commentType = postsCommentTypeText;
     }else if ([type isEqualToString:@"image"]){
         _commentType = postsCommentTypeImage;
     }else if ([type isEqualToString:@"video"]){

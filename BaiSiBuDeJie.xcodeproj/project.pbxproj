@@ -49,6 +49,7 @@
 		C300DA0D200B10A200FA1936 /* PostsDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA0C200B10A200FA1936 /* PostsDetailHeaderView.m */; };
 		C300DA10200B148F00FA1936 /* PostsDetailImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA0F200B148F00FA1936 /* PostsDetailImageView.m */; };
 		C300DA13200B14A200FA1936 /* PostsDetailVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */; };
+		C300DA16200CF19800FA1936 /* PostsCommentDetailComplexLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA15200CF19800FA1936 /* PostsCommentDetailComplexLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +138,8 @@
 		C300DA0F200B148F00FA1936 /* PostsDetailImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailImageView.m; sourceTree = "<group>"; };
 		C300DA11200B14A200FA1936 /* PostsDetailVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsDetailVideoView.h; sourceTree = "<group>"; };
 		C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailVideoView.m; sourceTree = "<group>"; };
+		C300DA14200CF19800FA1936 /* PostsCommentDetailComplexLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentDetailComplexLayout.h; sourceTree = "<group>"; };
+		C300DA15200CF19800FA1936 /* PostsCommentDetailComplexLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentDetailComplexLayout.m; sourceTree = "<group>"; };
 		E4BE72135AF97B716991F3DA /* Pods-BaiSiBuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,6 +218,8 @@
 				C300DA00200A585700FA1936 /* PostsDetailHeaderLayout.m */,
 				58945BC1200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.h */,
 				58945BC2200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.m */,
+				C300DA14200CF19800FA1936 /* PostsCommentDetailComplexLayout.h */,
+				C300DA15200CF19800FA1936 /* PostsCommentDetailComplexLayout.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -595,6 +600,7 @@
 				5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */,
 				5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */,
 				580391F61FFE12CB0076C82A /* CXLTweetListVideoController.m in Sources */,
+				C300DA16200CF19800FA1936 /* PostsCommentDetailComplexLayout.m in Sources */,
 				58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */,
 				5883B4C81FFC81E000612B82 /* PostsLayouts.m in Sources */,
 				5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */,

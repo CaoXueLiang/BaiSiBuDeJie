@@ -1,18 +1,18 @@
 //
-//  PostsCommentDetailNormalLayout.h
+//  PostsCommentDetailComplexLayout.h
 //  BaiSiBuDeJie
 //
-//  Created by bjovov on 2018/1/15.
+//  Created by 曹学亮 on 2018/1/15.
 //  Copyright © 2018年 caoxueliang.cn. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 /**
- 评论NormalCell布局
+ 评论ComplexCell布局
  */
 @class PostsDetailCommentModel,YYTextLayout;
-@interface PostsCommentDetailNormalLayout : NSObject
+@interface PostsCommentDetailComplexLayout : NSObject
 - (instancetype)initWithModel:(PostsDetailCommentModel *)commentModel;
 - (void)layout;
 
@@ -27,6 +27,10 @@
 @property (nonatomic,assign) CGFloat topMargin;
 //昵称高度
 @property (nonatomic,assign) CGFloat nickNameHeight;
+//嵌套评论上方留白
+@property (nonatomic,assign) CGFloat nextCommentTopMargin;
+//所有嵌套评论的高度
+@property (nonatomic,assign) CGFloat allNextCommentHeight;
 //文本上方留白
 @property (nonatomic,assign) CGFloat textTopMargin;
 //文本高度
@@ -51,4 +55,3 @@
 @property (nonatomic,assign) CGFloat totalHeight;
 
 @end
-

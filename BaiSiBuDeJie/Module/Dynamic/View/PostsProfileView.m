@@ -33,10 +33,10 @@
     _avatar.clipsToBounds = YES;
     [self addSubview:_avatar];
     _avatar.layer.borderColor = [UIColor colorWithWhite:0.000 alpha:0.090].CGColor;
-    _avatar.layer.cornerRadius = 35.0 / 2;
+    _avatar.layer.cornerRadius = 30.0 / 2;
     _avatar.layer.borderWidth = CGFloatFromPixel(1);
     [_avatar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(35, 35));
+        make.size.mas_equalTo(CGSizeMake(30, 30));
         make.left.equalTo(self).offset(kWBCellPadding);
         make.top.equalTo(self).offset(kWBCellPadding);
     }];
