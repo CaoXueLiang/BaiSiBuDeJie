@@ -54,7 +54,7 @@
     PostsImageModel *imageModel = postsModel.image;
     
     /*加载图片*/
-    [_thumbnailView sd_setImageWithURL:imageModel.bigArray[0]];
+    [_thumbnailView yy_setImageWithURL:[NSURL URLWithString:imageModel.bigArray[0]] placeholder:nil];
     
     /*判断是否是Gif图片*/
     NSString *imageURL = imageModel.bigArray[0];

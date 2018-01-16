@@ -36,12 +36,14 @@
 @property (nonatomic,assign) CGFloat textTopMargin;
 //文本高度
 @property (nonatomic,assign) CGFloat textHeight;
-//文本下方留白
-@property (nonatomic,assign) CGFloat textBottomMargin;
 //文本布局
 @property (nonatomic,strong) YYTextLayout *textLayout;
+//图片上方留白
+@property (nonatomic,assign) CGFloat picTopMargin;
 //图片高度
 @property (nonatomic,assign) CGFloat picHeight;
+//视频上方留白
+@property (nonatomic,assign) CGFloat videoTopMargin;
 //视频高度
 @property (nonatomic,assign) CGFloat videoHeight;
 //工具条高度

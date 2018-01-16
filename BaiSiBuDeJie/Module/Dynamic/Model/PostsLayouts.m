@@ -29,8 +29,6 @@
     
     //布局文本信息
     [self _layoutText];
-    _textTopMargin = _textHeight == 0 ? 0 : 5;
-    _textBottomMargin = _textHeight == 0 ? 0 : 5;
     
     //布局图片和视频
     switch (_postsModel.contentType) {
@@ -58,6 +56,11 @@
          }break;
     }
     
+    
+    _textTopMargin = _textHeight == 0 ? 0 : 4;
+    _picTopMargin = _picHeight >0 ? 8 : 0;
+    _videoTopMargin = _videoHeight > 0 ? 8 : 0;
+    
     //布局工具条
     _toolbarHeight = KWBCellToobarHeight;
     
@@ -74,7 +77,8 @@
     _totalHeight += _profileHeight;
     _totalHeight += _textHeight;
     _totalHeight += _textTopMargin;
-    _totalHeight += _textBottomMargin;
+    _totalHeight += _picTopMargin;
+    _totalHeight += _videoTopMargin;
     _totalHeight += _isShowExpendButton ? KWBExpendButtonHeight : 0;
     _totalHeight += _picHeight;
     _totalHeight += _videoHeight;

@@ -11,16 +11,18 @@
 #import "PostsDetailCommentModel.h"
 #import "PostsModel.h"
 #import "PostsCommentDetailNormalLayout.h"
+#import "UIButton+Aliment.h"
 
 @interface PostsCommentNormalCell()
 @property (nonatomic,strong) UILabel *rankLabel;
-@property (nonatomic,strong) UILabel *nickName;
+@property (nonatomic,strong) YYLabel *nickName;
 @property (nonatomic,strong) UIButton *upButton;
 @property (nonatomic,strong) UIButton *downButton;
 @property (nonatomic,strong) YYLabel *commentLabel;
 @property (nonatomic,strong) UIImageView *commentImageView;
 @property (nonatomic,strong) UIImageView *videoImageView;
 @property (nonatomic,strong) UIImageView *startImageView;
+@property (nonatomic,strong) PostsDetailCommentModel *commentModel;
 @end
 
 @implementation PostsCommentNormalCell
@@ -31,6 +33,7 @@
         [self addSubViews];
         self.contentView.backgroundColor = [UIColor clearColor];
         self.backgroundColor = [UIColor clearColor];
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     return self;
 }
@@ -38,35 +41,47 @@
 - (void)addSubViews{
     _rankLabel = [UILabel new];
     _rankLabel.textColor = [UIColor lightGrayColor];
-    _rankLabel.font = [UIFont systemFontOfSize:12];
+    _rankLabel.font = [UIFont systemFontOfSize:11];
     _rankLabel.textAlignment = NSTextAlignmentCenter;
-    _rankLabel.size = CGSizeMake(30, 30);
+    _rankLabel.size = CGSizeMake(20, 15);
     _rankLabel.left = 0;
+    _rankLabel.top = 10;
     _rankLabel.backgroundColor = RGBColor(242, 213, 220, 1);
     [self.contentView addSubview:_rankLabel];
     
     _downButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_downButton setImage:[UIImage imageNamed:@"mainCellCai_17x17_"] forState:UIControlStateNormal];
     [_downButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    _downButton.titleLabel.font = [UIFont systemFontOfSize:13];
     [_downButton addTarget:self action:@selector(downButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    _downButton.size = CGSizeMake(60, 30);
-    _downButton.left = KWBCommentNormalWidth - 60;
     [self.contentView addSubview:_downButton];
+    [_downButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.contentView).offset(-kWBCellPaddingText);
+        make.centerY.equalTo(_rankLabel.mas_centerY);
+    }];
     
     _upButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [_upButton setImage:[UIImage imageNamed:@"mainCellDing_17x17_"] forState:UIControlStateNormal];
     [_upButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
-    [_upButton addTarget:self action:@selector(downButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    _upButton.size = CGSizeMake(60, 30);
-    _upButton.left = KWBCommentNormalWidth - 120;
+    _upButton.titleLabel.font = [UIFont systemFontOfSize:13];
+    [_upButton addTarget:self action:@selector(upButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:_upButton];
+    [_upButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(_downButton.mas_left).offset(-2.5*kWBCellPaddingText);
+        make.centerY.equalTo(_rankLabel.mas_centerY);
+    }];
     
-    _nickName = [UILabel new];
-    _nickName.textColor = RGBColor(0, 59, 138, 1);
-    _nickName.font = [UIFont systemFontOfSize:14];
+    _nickName = [YYLabel new];
     _nickName.left = _rankLabel.right + 8;
-    _nickName.size = CGSizeMake(KWBCommentNormalWidth - 30 - 8 - 120, 30);
+    _nickName.size = CGSizeMake(KWBCommentNormalWidth - 30 - 8 - 100, 30);
+    _nickName.centerY = _rankLabel.centerY;
     [self.contentView addSubview:_nickName];
+    @weakify(self);
+    [_nickName setHighlightTapAction:^(UIView * _Nonnull containerView, NSAttributedString * _Nonnull text, NSRange range, CGRect rect) {
+        if ([weak_self.delegate respondsToSelector:@selector(didClickedNickName:)]) {
+            [weak_self.delegate didClickedNickName:weak_self.commentModel];
+        }
+    }];
     
     _commentLabel = [YYLabel new];
     _commentLabel.userInteractionEnabled = NO;
@@ -89,18 +104,24 @@
     [self.contentView addSubview:_videoImageView];
     
     _startImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"capture_pre_play_normal_90x90_"]];
-    _startImageView.size = CGSizeMake(40, 40);
-    _startImageView.center = _videoImageView.center;
     [_videoImageView addSubview:_startImageView];
+    [_startImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.size.mas_equalTo(CGSizeMake(40, 40));
+        make.center.equalTo(_videoImageView);
+    }];
 }
 
 #pragma mark - Event Response
 - (void)downButtonClicked{
-    
+    if ([self.delegate respondsToSelector:@selector(didClickedDownButton:)]) {
+        [self.delegate didClickedDownButton:_commentModel];
+    }
 }
 
 - (void)upButtonClicked{
-    
+    if ([self.delegate respondsToSelector:@selector(didClickedUpButton:)]) {
+        [self.delegate didClickedUpButton:_commentModel];
+    }
 }
 
 #pragma mark - Setter && Getter
@@ -109,13 +130,10 @@
         return;
     }
     PostsDetailCommentModel *commentModel = layout.commentModel;
+    _commentModel = commentModel;
+    
     /*进行布局*/
     CGFloat top = 0;
-    _rankLabel.top = layout.topMargin;
-    _nickName.top = layout.topMargin;
-    _upButton.top = layout.topMargin;
-    _downButton.top = layout.topMargin;
-    
     top += layout.topMargin + layout.nickNameHeight;
     top += layout.textTopMargin;
     _commentLabel.top = top;
@@ -135,15 +153,17 @@
     
     /*进行赋值*/
     _rankLabel.text = [NSString stringWithFormat:@"%ld",index];
-    _nickName.text = commentModel.user.username;
+    _nickName.textLayout = layout.nickNameTextLayout;
     _commentLabel.textLayout = layout.textLayout;
     [_commentImageView sd_setImageWithURL:[NSURL URLWithString:commentModel.image.thumbnailArray[0]]];
     [_videoImageView sd_setImageWithURL:[NSURL URLWithString:commentModel.video.thumbnailArray[0]]];
     if (commentModel.like_count.integerValue > 0) {
         [_upButton setTitle:commentModel.like_count forState:UIControlStateNormal];
+        [_upButton layoutImageTitleHorizontalOffSet:4];
     }
     if (commentModel.hate_count.integerValue > 0) {
         [_downButton setTitle:commentModel.hate_count forState:UIControlStateNormal];
+        [_downButton layoutImageTitleHorizontalOffSet:4];
     }
 }
 

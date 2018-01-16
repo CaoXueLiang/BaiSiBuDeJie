@@ -43,26 +43,31 @@
     CGFloat buttonWidth = kScreenWidth / 6.0;
     _backButton = [self createButtonWithImage:@"detail_back_icon_20x20_" hightImage:@"detail_back_icon_click_20x20_"];
     _backButton.size = CGSizeMake(buttonWidth, kNavBarHeight);
+    _backButton.tag = 1;
     [self addSubview:_backButton];
     
     _upButton = [self createButtonWithImage:@"detail_ding_icon_24x24_" hightImage:@"detail_ding_icon_click_24x24_"];
     _upButton.size = CGSizeMake(buttonWidth, kNavBarHeight);
     _upButton.left = buttonWidth;
+    _upButton.tag = 2;
     [self addSubview:_upButton];
     
     _downButton = [self createButtonWithImage:@"detail_cai_icon_24x24_" hightImage:@"detail_cai_icon_click_24x24_"];
     _downButton.size = CGSizeMake(buttonWidth, kNavBarHeight);
     _downButton.left = buttonWidth * 2;
+    _downButton.tag = 3;
     [self addSubview:_downButton];
     
     _shareButton = [self createButtonWithImage:@"detail_share_icon_24x24_" hightImage:@"detail_share_icon_click_24x24_"];
     _shareButton.size = CGSizeMake(buttonWidth, kNavBarHeight);
     _shareButton.left = buttonWidth * 3;
+    _shareButton.tag = 4;
     [self addSubview:_shareButton];
     
     _barrageButton = [self createButtonWithImage:@"detail_barrage_open_all_24x24_" hightImage:@"detail_barrage_open_all_click_24x24_"];
     _barrageButton.size = CGSizeMake(buttonWidth, kNavBarHeight);
     _barrageButton.left = buttonWidth * 4;
+    _barrageButton.tag = 5;
     [self addSubview:_barrageButton];
     
     _avatarButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -71,6 +76,7 @@
     _avatarButton.size = CGSizeMake(30, 30);
     _avatarButton.left = buttonWidth * 5 + 10;
     _avatarButton.centerY = self.centerY;
+    _avatarButton.tag = 6;
     [_avatarButton addTarget:self action:@selector(avatarClicked) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_avatarButton];
     
@@ -84,7 +90,6 @@
     [button setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:hightImage] forState:UIControlStateHighlighted];
     [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    button.tag += 1;
     return button;
 }
 

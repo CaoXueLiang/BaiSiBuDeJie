@@ -27,6 +27,8 @@
 @property (nonatomic,assign) CGFloat topMargin;
 //昵称高度
 @property (nonatomic,assign) CGFloat nickNameHeight;
+//昵称布局
+@property (nonatomic,strong) YYTextLayout *nickTextLayout;
 //嵌套评论上方留白
 @property (nonatomic,assign) CGFloat nextCommentTopMargin;
 //所有嵌套评论的高度

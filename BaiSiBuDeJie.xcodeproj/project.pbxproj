@@ -17,6 +17,19 @@
 		5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB9A1FF38EE800D457A9 /* CXLAttentionViewController.m */; };
 		5807BB9E1FF38EFB00D457A9 /* CXLMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB9D1FF38EFB00D457A9 /* CXLMineViewController.m */; };
 		5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BBA01FF3902200D457A9 /* CXLBaseNavigationController.m */; };
+		581BDF53200DEA8C008A342B /* PostsCommentSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF52200DEA8C008A342B /* PostsCommentSectionHeaderView.m */; };
+		581BDF60200E0019008A342B /* UIViewController+ZFPlayerRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF5A200E0018008A342B /* UIViewController+ZFPlayerRotation.m */; };
+		581BDF61200E0019008A342B /* UIImageView+ZFCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF5D200E0019008A342B /* UIImageView+ZFCache.m */; };
+		581BDF62200E0019008A342B /* UIWindow+CurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF5E200E0019008A342B /* UIWindow+CurrentViewController.m */; };
+		581BDF63200E0019008A342B /* UIView+CustomControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF5F200E0019008A342B /* UIView+CustomControlView.m */; };
+		581BDF74200E0033008A342B /* ASValuePopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF64200E0031008A342B /* ASValuePopUpView.m */; };
+		581BDF75200E0033008A342B /* ZFPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF69200E0031008A342B /* ZFPlayerModel.m */; };
+		581BDF76200E0033008A342B /* MMMaterialDesignSpinner.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF6A200E0031008A342B /* MMMaterialDesignSpinner.m */; };
+		581BDF77200E0033008A342B /* ASValueTrackingSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF6C200E0032008A342B /* ASValueTrackingSlider.m */; };
+		581BDF78200E0033008A342B /* ZFBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF6E200E0032008A342B /* ZFBrightnessView.m */; };
+		581BDF79200E0033008A342B /* ZFPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF71200E0033008A342B /* ZFPlayerControlView.m */; };
+		581BDF7A200E0033008A342B /* ZFPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BDF73200E0033008A342B /* ZFPlayerView.m */; };
+		581BDF7C200E0051008A342B /* ZFPlayer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 581BDF7B200E0051008A342B /* ZFPlayer.bundle */; };
 		586CC7401FFF22FC00613B07 /* PostsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 586CC73F1FFF22FC00613B07 /* PostsDetailController.m */; };
 		586CC7441FFF669700613B07 /* PostsDetailNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 586CC7431FFF669700613B07 /* PostsDetailNavigation.m */; };
 		586DB93720075FC800BE789D /* PostsDetailCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 586DB93620075FC800BE789D /* PostsDetailCommentModel.m */; };
@@ -73,6 +86,33 @@
 		5807BB9F1FF3902200D457A9 /* CXLBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLBaseNavigationController.h; sourceTree = "<group>"; };
 		5807BBA01FF3902200D457A9 /* CXLBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLBaseNavigationController.m; sourceTree = "<group>"; };
 		5807BBA21FF3949600D457A9 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		581BDF51200DEA8C008A342B /* PostsCommentSectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentSectionHeaderView.h; sourceTree = "<group>"; };
+		581BDF52200DEA8C008A342B /* PostsCommentSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentSectionHeaderView.m; sourceTree = "<group>"; };
+		581BDF58200E0018008A342B /* UIView+CustomControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CustomControlView.h"; sourceTree = "<group>"; };
+		581BDF59200E0018008A342B /* UIImageView+ZFCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ZFCache.h"; sourceTree = "<group>"; };
+		581BDF5A200E0018008A342B /* UIViewController+ZFPlayerRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZFPlayerRotation.m"; sourceTree = "<group>"; };
+		581BDF5B200E0019008A342B /* UIWindow+CurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+CurrentViewController.h"; sourceTree = "<group>"; };
+		581BDF5C200E0019008A342B /* UIViewController+ZFPlayerRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZFPlayerRotation.h"; sourceTree = "<group>"; };
+		581BDF5D200E0019008A342B /* UIImageView+ZFCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ZFCache.m"; sourceTree = "<group>"; };
+		581BDF5E200E0019008A342B /* UIWindow+CurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+CurrentViewController.m"; sourceTree = "<group>"; };
+		581BDF5F200E0019008A342B /* UIView+CustomControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CustomControlView.m"; sourceTree = "<group>"; };
+		581BDF64200E0031008A342B /* ASValuePopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValuePopUpView.m; sourceTree = "<group>"; };
+		581BDF65200E0031008A342B /* ZFPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerControlView.h; sourceTree = "<group>"; };
+		581BDF66200E0031008A342B /* ASValueTrackingSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValueTrackingSlider.h; sourceTree = "<group>"; };
+		581BDF67200E0031008A342B /* MMMaterialDesignSpinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMaterialDesignSpinner.h; sourceTree = "<group>"; };
+		581BDF68200E0031008A342B /* ZFPlayerControlViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerControlViewDelegate.h; sourceTree = "<group>"; };
+		581BDF69200E0031008A342B /* ZFPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerModel.m; sourceTree = "<group>"; };
+		581BDF6A200E0031008A342B /* MMMaterialDesignSpinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMaterialDesignSpinner.m; sourceTree = "<group>"; };
+		581BDF6B200E0032008A342B /* ASValuePopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASValuePopUpView.h; sourceTree = "<group>"; };
+		581BDF6C200E0032008A342B /* ASValueTrackingSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASValueTrackingSlider.m; sourceTree = "<group>"; };
+		581BDF6D200E0032008A342B /* ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayer.h; sourceTree = "<group>"; };
+		581BDF6E200E0032008A342B /* ZFBrightnessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFBrightnessView.m; sourceTree = "<group>"; };
+		581BDF6F200E0032008A342B /* ZFPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerView.h; sourceTree = "<group>"; };
+		581BDF70200E0032008A342B /* ZFPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerModel.h; sourceTree = "<group>"; };
+		581BDF71200E0033008A342B /* ZFPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerControlView.m; sourceTree = "<group>"; };
+		581BDF72200E0033008A342B /* ZFBrightnessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFBrightnessView.h; sourceTree = "<group>"; };
+		581BDF73200E0033008A342B /* ZFPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerView.m; sourceTree = "<group>"; };
+		581BDF7B200E0051008A342B /* ZFPlayer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZFPlayer.bundle; sourceTree = "<group>"; };
 		586CC73E1FFF22FC00613B07 /* PostsDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsDetailController.h; sourceTree = "<group>"; };
 		586CC73F1FFF22FC00613B07 /* PostsDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailController.m; sourceTree = "<group>"; };
 		586CC7421FFF669700613B07 /* PostsDetailNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsDetailNavigation.h; sourceTree = "<group>"; };
@@ -181,6 +221,46 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		581BDF56200DFFCD008A342B /* ZFPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				581BDF7B200E0051008A342B /* ZFPlayer.bundle */,
+				581BDF57200E0005008A342B /* Category */,
+				581BDF6B200E0032008A342B /* ASValuePopUpView.h */,
+				581BDF64200E0031008A342B /* ASValuePopUpView.m */,
+				581BDF66200E0031008A342B /* ASValueTrackingSlider.h */,
+				581BDF6C200E0032008A342B /* ASValueTrackingSlider.m */,
+				581BDF67200E0031008A342B /* MMMaterialDesignSpinner.h */,
+				581BDF6A200E0031008A342B /* MMMaterialDesignSpinner.m */,
+				581BDF72200E0033008A342B /* ZFBrightnessView.h */,
+				581BDF6E200E0032008A342B /* ZFBrightnessView.m */,
+				581BDF6D200E0032008A342B /* ZFPlayer.h */,
+				581BDF65200E0031008A342B /* ZFPlayerControlView.h */,
+				581BDF71200E0033008A342B /* ZFPlayerControlView.m */,
+				581BDF68200E0031008A342B /* ZFPlayerControlViewDelegate.h */,
+				581BDF70200E0032008A342B /* ZFPlayerModel.h */,
+				581BDF69200E0031008A342B /* ZFPlayerModel.m */,
+				581BDF6F200E0032008A342B /* ZFPlayerView.h */,
+				581BDF73200E0033008A342B /* ZFPlayerView.m */,
+			);
+			path = ZFPlayer;
+			sourceTree = "<group>";
+		};
+		581BDF57200E0005008A342B /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				581BDF59200E0018008A342B /* UIImageView+ZFCache.h */,
+				581BDF5D200E0019008A342B /* UIImageView+ZFCache.m */,
+				581BDF58200E0018008A342B /* UIView+CustomControlView.h */,
+				581BDF5F200E0019008A342B /* UIView+CustomControlView.m */,
+				581BDF5C200E0019008A342B /* UIViewController+ZFPlayerRotation.h */,
+				581BDF5A200E0018008A342B /* UIViewController+ZFPlayerRotation.m */,
+				581BDF5B200E0019008A342B /* UIWindow+CurrentViewController.h */,
+				581BDF5E200E0019008A342B /* UIWindow+CurrentViewController.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		586CC73A1FFF21B800613B07 /* PostsDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +336,7 @@
 		5899E4E51FFB865A00AA3D4E /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				581BDF56200DFFCD008A342B /* ZFPlayer */,
 				5899E4E61FFB866900AA3D4E /* DACircularProgress */,
 			);
 			path = Vendor;
@@ -435,6 +516,8 @@
 		C3DFDF36200918AD00086D24 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				581BDF51200DEA8C008A342B /* PostsCommentSectionHeaderView.h */,
+				581BDF52200DEA8C008A342B /* PostsCommentSectionHeaderView.m */,
 				C300DA0B200B10A200FA1936 /* PostsDetailHeaderView.h */,
 				C300DA0C200B10A200FA1936 /* PostsDetailHeaderView.m */,
 				C300DA0E200B148F00FA1936 /* PostsDetailImageView.h */,
@@ -510,6 +593,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581BDF7C200E0051008A342B /* ZFPlayer.bundle in Resources */,
 				5893EB701FF3A42C00C59F40 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,13 +658,17 @@
 				58945BC3200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.m in Sources */,
 				5883B4D01FFCD6D600612B82 /* UIButton+Aliment.m in Sources */,
 				5899E4EC1FFB885F00AA3D4E /* DACircularProgressView.m in Sources */,
+				581BDF79200E0033008A342B /* ZFPlayerControlView.m in Sources */,
 				5899E4EB1FFB885B00AA3D4E /* DALabeledCircularProgressView.m in Sources */,
 				58E90C701FF6426D007E1ED5 /* MLNetWorkCache.m in Sources */,
+				581BDF60200E0019008A342B /* UIViewController+ZFPlayerRotation.m in Sources */,
+				581BDF74200E0033008A342B /* ASValuePopUpView.m in Sources */,
 				5899E4F51FFB896400AA3D4E /* PostsImageView.m in Sources */,
 				58E90C6F1FF6425B007E1ED5 /* MLNetWorkHelper.m in Sources */,
 				5883B4CC1FFC873B00612B82 /* CXLConst.m in Sources */,
 				58E90C631FF610C7007E1ED5 /* CXLCustomHeader.m in Sources */,
 				580391F31FFE0EBD0076C82A /* PostsVideoCollectionViewCell.m in Sources */,
+				581BDF62200E0019008A342B /* UIWindow+CurrentViewController.m in Sources */,
 				5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */,
 				5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */,
 				C300DA0D200B10A200FA1936 /* PostsDetailHeaderView.m in Sources */,
@@ -589,24 +677,32 @@
 				5899E4EF1FFB892700AA3D4E /* PostsProfileView.m in Sources */,
 				C300DA10200B148F00FA1936 /* PostsDetailImageView.m in Sources */,
 				586CC7441FFF669700613B07 /* PostsDetailNavigation.m in Sources */,
+				581BDF63200E0019008A342B /* UIView+CustomControlView.m in Sources */,
 				5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */,
 				5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */,
 				5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */,
+				581BDF77200E0033008A342B /* ASValueTrackingSlider.m in Sources */,
 				58945BC0200CA10900AE1AA5 /* PostsCommentNormalCell.m in Sources */,
 				58A92F751FF349D600E5D60C /* main.m in Sources */,
 				5899E4F81FFB8E5000AA3D4E /* PostsToolBarView.m in Sources */,
+				581BDF61200E0019008A342B /* UIImageView+ZFCache.m in Sources */,
 				C300DA01200A585700FA1936 /* PostsDetailHeaderLayout.m in Sources */,
 				586CC7401FFF22FC00613B07 /* PostsDetailController.m in Sources */,
 				5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */,
 				5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */,
+				581BDF7A200E0033008A342B /* ZFPlayerView.m in Sources */,
 				580391F61FFE12CB0076C82A /* CXLTweetListVideoController.m in Sources */,
 				C300DA16200CF19800FA1936 /* PostsCommentDetailComplexLayout.m in Sources */,
 				58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */,
 				5883B4C81FFC81E000612B82 /* PostsLayouts.m in Sources */,
 				5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */,
+				581BDF75200E0033008A342B /* ZFPlayerModel.m in Sources */,
+				581BDF78200E0033008A342B /* ZFBrightnessView.m in Sources */,
 				58E90C691FF624E9007E1ED5 /* CXLCustomFooter.m in Sources */,
 				580391FB1FFE27FD0076C82A /* PostsPublishView.m in Sources */,
+				581BDF53200DEA8C008A342B /* PostsCommentSectionHeaderView.m in Sources */,
 				5807BB9E1FF38EFB00D457A9 /* CXLMineViewController.m in Sources */,
+				581BDF76200E0033008A342B /* MMMaterialDesignSpinner.m in Sources */,
 				586DB93720075FC800BE789D /* PostsDetailCommentModel.m in Sources */,
 				5899E4F21FFB893A00AA3D4E /* PostsVideoView.m in Sources */,
 				5899E4E41FFB6AED00AA3D4E /* PostsCell.m in Sources */,

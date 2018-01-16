@@ -23,10 +23,11 @@
 }
 
 - (void)layout{
-    _topMargin = 8;
-    _nickNameHeight = 30;
+    _topMargin = 10;
+    _nickNameHeight = 25;
+    [self p_layoutNickName];
     [self p_layoutText];
-    _textTopMargin = _textHeight > 0 ? 8 : 0;
+    _textTopMargin = _textHeight > 0 ? 5 : 0;
     
     switch (_commentModel.commentType) {
         case postsCommentTypeText:{
@@ -69,10 +70,22 @@
     _totalHeight += _bottomMargin;
 }
 
+- (void)p_layoutNickName{
+    //去掉昵称的空格
+    NSString *nick = _commentModel.user.username;
+    NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    nick = [nick stringByTrimmingCharactersInSet:set];
+    NSMutableAttributedString *userString = [[NSMutableAttributedString alloc]initWithString:nick];
+    userString.yy_color = RGBColor(0, 59, 138, 1);
+    userString.yy_font = [UIFont systemFontOfSize:14];
+    [userString yy_setTextHighlightRange:userString.yy_rangeOfAll color:RGBColor(0, 59, 138, 1) backgroundColor:[UIColor lightGrayColor] userInfo:nil];
+    _nickNameTextLayout = [YYTextLayout layoutWithContainerSize:CGSizeMake(KWBCommentNormalWidth - 30 - 8 - 100, 30) text:userString];
+}
+
 - (void)p_layoutText{
     NSMutableAttributedString *commentString = [[NSMutableAttributedString alloc]initWithString:_commentModel.content];
     commentString.yy_lineSpacing = 6;
-    commentString.yy_color = [UIColor blackColor];
+    commentString.yy_color = RGBColor(60, 60, 60, 1);
     commentString.yy_font = [UIFont systemFontOfSize:15];
     _textLayout = [YYTextLayout layoutWithContainerSize:CGSizeMake(KWBCommentNormalWidth - 30 - 2*kWBCellPaddingText, HUGE) text:commentString];
     _textHeight = _textLayout.textBoundingSize.height;

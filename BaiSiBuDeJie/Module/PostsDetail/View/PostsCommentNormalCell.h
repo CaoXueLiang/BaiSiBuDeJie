@@ -8,10 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class PostsCommentDetailNormalLayout,PostsDetailCommentModel;
+@protocol PostsCommentNormalCellDelegate <NSObject>
+- (void)didClickedUpButton:(PostsDetailCommentModel *)model;
+- (void)didClickedDownButton:(PostsDetailCommentModel *)model;
+- (void)didClickedNickName:(PostsDetailCommentModel *)model;
+@end
+
+
 /**
  帖子评论详情NormalCell
  */
-@class PostsCommentDetailNormalLayout;
 @interface PostsCommentNormalCell : UITableViewCell
+@property (nonatomic,weak) id<PostsCommentNormalCellDelegate> delegate;
 - (void)setLayout:(PostsCommentDetailNormalLayout *)layout index:(NSInteger)index;
 @end
+

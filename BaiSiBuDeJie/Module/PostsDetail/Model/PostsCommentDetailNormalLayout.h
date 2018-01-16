@@ -27,6 +27,8 @@
 @property (nonatomic,assign) CGFloat topMargin;
 //昵称高度
 @property (nonatomic,assign) CGFloat nickNameHeight;
+//昵称布局
+@property (nonatomic,strong) YYTextLayout *nickNameTextLayout;
 //文本上方留白
 @property (nonatomic,assign) CGFloat textTopMargin;
 //文本高度

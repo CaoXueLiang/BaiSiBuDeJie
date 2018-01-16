@@ -22,6 +22,7 @@
 @property (nonatomic,strong) PostsDetailImageView *detailImageView;
 @property (nonatomic,strong) PostsDetailVideoView *videoView;
 @property (nonatomic,strong) UILabel *publishLabel;
+@property (nonatomic,strong) UIView *bottomLayer;
 @end
 
 @implementation PostsDetailHeaderView
@@ -68,6 +69,12 @@
     _contentLabel.fadeOnAsynchronouslyDisplay = NO;
     _contentLabel.fadeOnHighlight = NO;
     [self addSubview:_contentLabel];
+    
+    _bottomLayer = [UIView new];
+    _bottomLayer.backgroundColor = RGBLINE;
+    _bottomLayer.left = 0;
+    _bottomLayer.size = CGSizeMake(kScreenWidth, 0.5);
+    [self addSubview:_bottomLayer];
 }
 
 #pragma mark - Public Menthod
@@ -86,7 +93,6 @@
     _videoView.height = layout.videoHeight;
     _videoView.hidden = !layout.videoHeight;
     
-    
     top += layout.videoHeight;
     top += layout.textTopMargin;
     _contentLabel.top = top;
@@ -101,6 +107,7 @@
     _publishLabel.top = top;
     _publishLabel.height = layout.praiseAndPublicHeight;
     _publishLabel.hidden = !layout.praiseAndPublicHeight;
+    _bottomLayer.top = layout.totalHeight - 0.5;
     
     /*下面是赋值*/
     _profileView.model = postModel;

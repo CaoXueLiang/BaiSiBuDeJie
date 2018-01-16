@@ -88,7 +88,7 @@
     }
     _layout = layout;
     
-    //进行高度赋值
+    /*进行布局*/
     CGFloat top = 0;
     top += kWBCellProfileHeight;
     top += layout.textTopMargin;
@@ -96,18 +96,19 @@
     _contentLabel.textLayout = layout.textLayout;
     _contentLabel.top = top;
     top += layout.textHeight;
-    top += layout.textBottomMargin;
     
     if (layout.isShowExpendButton) {
         _expendButton.top = top;
         top += KWBExpendButtonHeight;
     }
     
+    top += layout.videoTopMargin;
     _videoView.height = layout.videoHeight;
     _videoView.top = top;
     _videoView.hidden = layout.videoHeight == 0 ? YES : NO;
     top += layout.videoHeight;
     
+    top += layout.picTopMargin;
     _postsImageView.height = layout.picHeight;
     _postsImageView.top = top;
     _postsImageView.hidden = layout.picHeight == 0 ? YES : NO;
@@ -120,7 +121,7 @@
     _commentView.top = top;
     _commentView.hidden = layout.commentHeight == 0 ? YES :NO;
     
-    //进行赋值
+    /*进行赋值*/
     PostsModel *postsModel = layout.postsModel;
     _profileView.model = postsModel;
     _videoView.model = postsModel;
