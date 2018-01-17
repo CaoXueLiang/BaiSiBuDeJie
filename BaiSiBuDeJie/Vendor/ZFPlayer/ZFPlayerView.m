@@ -533,13 +533,13 @@ typedef NS_ENUM(NSInteger, PanDirection){
                 // 加载完成后，再添加平移手势
                 if (!self.disablePanGesture) {
                     // 添加平移手势，用来控制音量、亮度、快进快退
-                    UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panDirection:)];
+                 /*   UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panDirection:)];
                     panRecognizer.delegate = self;
                     [panRecognizer setMaximumNumberOfTouches:1];
                     [panRecognizer setDelaysTouchesBegan:YES];
                     [panRecognizer setDelaysTouchesEnded:YES];
                     [panRecognizer setCancelsTouchesInView:YES];
-                    [self addGestureRecognizer:panRecognizer];
+                    [self addGestureRecognizer:panRecognizer]; */
                 }
                 
                 // 跳到xx秒播放视频

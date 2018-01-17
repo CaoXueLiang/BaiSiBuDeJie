@@ -26,6 +26,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "UIView+CustomControlView.h"
 #import "MMMaterialDesignSpinner.h"
+#import "UIButton+Aliment.h"
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored"-Wdeprecated-declarations"
@@ -57,8 +58,16 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 @property (nonatomic, strong) UIButton                *backBtn;
 /** 关闭按钮*/
 @property (nonatomic, strong) UIButton                *closeBtn;
+/*视屏播放完时的灰色视图*/
+@property (nonatomic,strong) UIView *endPlayerView;
+/*视频播放完时的提示*/
+@property (nonatomic,strong) UILabel *endPalyLabel;
 /** 重播按钮 */
-@property (nonatomic, strong) UIButton                *repeatBtn;
+@property (nonatomic, strong) UIButton *repeatBtn;
+/*微信分享*/
+@property (nonatomic,strong) UIButton *weChatButton;
+/*朋友圈分享*/
+@property (nonatomic,strong) UIButton *friendCircleButton;
 /** bottomView*/
 @property (nonatomic, strong) UIImageView             *bottomImageView;
 /** topView */
@@ -125,7 +134,11 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         [self addSubview:self.lockBtn];
         [self.topImageView addSubview:self.backBtn];
         [self addSubview:self.activity];
-        [self addSubview:self.repeatBtn];
+        [self addSubview:self.endPlayerView];
+        [self.endPlayerView addSubview:self.endPalyLabel];
+        [self.endPlayerView addSubview:self.repeatBtn];
+        [self.endPlayerView addSubview:self.weChatButton];
+        [self.endPlayerView addSubview:self.friendCircleButton];
         [self addSubview:self.playeBtn];
         [self addSubview:self.failBtn];
         
@@ -252,8 +265,27 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         make.width.height.mas_equalTo(32);
     }];
     
+    [self.endPlayerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self);
+    }];
+
+    [self.friendCircleButton mas_makeConstraints:^(MASConstraintMaker *make){
+         make.center.equalTo(self.endPlayerView);
+    }];
+    
+    [self.weChatButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.endPlayerView);
+        make.centerX.equalTo(self.endPlayerView.mas_centerX).offset(-kScreenWidth/4.0);
+    }];
+    
     [self.repeatBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-         make.center.equalTo(self);
+        make.centerY.equalTo(self.endPlayerView);
+    make.centerX.equalTo(self.endPlayerView.mas_centerX).offset(kScreenWidth/4.0);
+    }];
+    
+    [self.endPalyLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.endPlayerView);
+        make.centerY.equalTo(self.endPlayerView.mas_centerY).offset(-70);
     }];
     
     [self.playeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -300,6 +332,10 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
         make.leading.trailing.mas_offset(0);
         make.bottom.mas_offset(0);
     }];
+    
+    [self.weChatButton layoutImageTitleVerticalOffSet:8];
+    [self.friendCircleButton layoutImageTitleVerticalOffSet:8];
+    [self.repeatBtn layoutImageTitleVerticalOffSet:8];
 }
 
 - (void)layoutSubviews {
@@ -410,6 +446,14 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     }
 }
 
+- (void)friendCircleButtonClicked{
+    
+}
+
+- (void)weChatButtonClicked{
+    
+}
+
 - (void)downloadBtnClick:(UIButton *)sender {
     if ([self.delegate respondsToSelector:@selector(zf_controlView:downloadVideoAction:)]) {
         [self.delegate zf_controlView:self downloadVideoAction:sender];
@@ -472,7 +516,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 - (void)playerPlayDidEnd {
     self.backgroundColor  = RGBA(0, 0, 0, .6);
-    self.repeatBtn.hidden = NO;
+    self.endPlayerView.hidden = NO;
     // 初始化显示controlView为YES
     self.showing = NO;
     // 延迟隐藏controlView
@@ -755,13 +799,59 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     return _activity;
 }
 
+- (UIView *)endPlayerView{
+    if (!_endPlayerView) {
+        _endPlayerView = [UIView new];
+        _endPlayerView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+    }
+    return _endPlayerView;
+}
+
+- (UILabel *)endPalyLabel{
+    if (!_endPalyLabel) {
+        _endPalyLabel = [UILabel new];
+        _endPalyLabel.textColor = [UIColor whiteColor];
+        _endPalyLabel.font = [UIFont boldSystemFontOfSize:16];
+        _endPalyLabel.textAlignment = NSTextAlignmentCenter;
+        _endPalyLabel.text = @"分享视频至";
+    }
+    return _endPalyLabel;
+}
+
 - (UIButton *)repeatBtn {
     if (!_repeatBtn) {
         _repeatBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_repeatBtn setImage:ZFPlayerImage(@"ZFPlayer_repeat_video") forState:UIControlStateNormal];
+        [_repeatBtn setImage:[UIImage imageNamed:@"end_down_replay_44x44_"] forState:UIControlStateNormal];
+        [_repeatBtn setTitle:@"重播" forState:UIControlStateNormal];
+        [_repeatBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _repeatBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         [_repeatBtn addTarget:self action:@selector(repeatBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _repeatBtn;
+}
+
+- (UIButton *)weChatButton{
+    if (!_weChatButton) {
+        _weChatButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_weChatButton setImage:[UIImage imageNamed:@"end_share_weixin_friends_44x44_"] forState:UIControlStateNormal];
+        [_weChatButton setTitle:@"微信好友" forState:UIControlStateNormal];
+        [_weChatButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _weChatButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_weChatButton addTarget:self action:@selector(weChatButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _weChatButton;
+}
+
+- (UIButton *)friendCircleButton{
+    if (!_friendCircleButton) {
+        _friendCircleButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_friendCircleButton setImage:[UIImage imageNamed:@"end_share_weixin_timeline_44x44_"] forState:UIControlStateNormal];
+        [_friendCircleButton setTitle:@"朋友圈" forState:UIControlStateNormal];
+        [_friendCircleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _friendCircleButton.titleLabel.font = [UIFont systemFontOfSize:14];
+        [_friendCircleButton addTarget:self action:@selector(friendCircleButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _friendCircleButton;
 }
 
 - (UIButton *)downLoadBtn {
@@ -880,7 +970,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
     self.currentTimeLabel.text       = @"00:00";
     self.totalTimeLabel.text         = @"00:00";
     self.fastView.hidden             = YES;
-    self.repeatBtn.hidden            = YES;
+    self.endPlayerView.hidden        = YES;
     self.playeBtn.hidden             = YES;
     self.resolutionView.hidden       = YES;
     self.failBtn.hidden              = YES;
@@ -897,7 +987,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 - (void)zf_playerResetControlViewForResolution {
     self.fastView.hidden        = YES;
-    self.repeatBtn.hidden       = YES;
+    self.endPlayerView.hidden   = YES;
     self.resolutionView.hidden  = YES;
     self.playeBtn.hidden        = YES;
     self.downLoadBtn.enabled    = YES;
@@ -1087,7 +1177,7 @@ static const CGFloat ZFPlayerControlBarAutoFadeOutTimeInterval = 0.35f;
 
 /** 播放完了 */
 - (void)zf_playerPlayEnd {
-    self.repeatBtn.hidden = NO;
+    self.endPlayerView.hidden = NO;
     self.playeEnd         = YES;
     self.showing          = NO;
     // 隐藏controlView
