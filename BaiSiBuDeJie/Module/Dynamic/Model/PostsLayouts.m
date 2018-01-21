@@ -39,10 +39,11 @@
         case postsContentTypeImage:{
             _videoHeight = 0;
             /*判断是长图片还是正常图片*/
-            if (_postsModel.image.height >= kScreenHeight) {
+            CGFloat scaleHeight = _postsModel.image.height * (kScreenWidth - 2.0*kWBCellPadding) / _postsModel.image.width;
+            if (scaleHeight >= kScreenHeight) {
               _picHeight = 300;
             }else{
-              _picHeight = _postsModel.image.height * (kScreenWidth - 2*kWBCellPadding) / _postsModel.image.width;
+              _picHeight = scaleHeight;
             }
          }break;
         case postsContentTypeVideo:{

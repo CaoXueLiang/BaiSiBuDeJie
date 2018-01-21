@@ -36,6 +36,10 @@ CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
     [self reloadData];
 }
 
+-(BOOL)prefersStatusBarHidden{
+    return NO;
+}
+
 - (void)setNavigaton{
     self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle_107x19_"]];
     

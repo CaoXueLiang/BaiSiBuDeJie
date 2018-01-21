@@ -68,7 +68,7 @@
                                                   CYLTabBarItemSelectedImage : @"tabBar_new_click_icon_27x27_",
                                                   };
     NSDictionary *thirdTabBarItemsAttributes = @{
-                                                 CYLTabBarItemTitle : @"关注",
+                                                 CYLTabBarItemTitle : @"社区",
                                                  CYLTabBarItemImage : @"tabBar_friendTrends_iconN_27x27_",
                                                  CYLTabBarItemSelectedImage : @"tabBar_friendTrends_click_icon_27x27_",
                                                  };

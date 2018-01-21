@@ -60,21 +60,12 @@ UITableViewDataSource,PostsCommentComplexCellDelegate>
     self.currentPage = 0;
     [self setRefresh];
     [self freshData];
+    self.fd_prefersNavigationBarHidden = YES;
 }
 
 - (void)setRefresh{
     self.myTable.mj_header = [CXLCustomHeader headerWithRefreshingTarget:self refreshingAction:@selector(freshData)];
     self.myTable.mj_footer = [CXLCustomFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 -(BOOL)prefersStatusBarHidden{

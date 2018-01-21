@@ -63,6 +63,12 @@
 		C300DA10200B148F00FA1936 /* PostsDetailImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA0F200B148F00FA1936 /* PostsDetailImageView.m */; };
 		C300DA13200B14A200FA1936 /* PostsDetailVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */; };
 		C300DA16200CF19800FA1936 /* PostsCommentDetailComplexLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA15200CF19800FA1936 /* PostsCommentDetailComplexLayout.m */; };
+		C3766FE1201488F40028ACF6 /* CXLMineLoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FE0201488F40028ACF6 /* CXLMineLoginCell.m */; };
+		C3766FE42014896A0028ACF6 /* CXLMineItermCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FE32014896A0028ACF6 /* CXLMineItermCell.m */; };
+		C3766FE72014898E0028ACF6 /* CXLMineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FE62014898E0028ACF6 /* CXLMineCollectionViewCell.m */; };
+		C3766FEB20148F250028ACF6 /* CXLMineItermModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FEA20148F250028ACF6 /* CXLMineItermModel.m */; };
+		C3766FF12014C1DB0028ACF6 /* PostsCommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FF02014C1DB0028ACF6 /* PostsCommunityModel.m */; };
+		C3766FF42014C2CE0028ACF6 /* PostsThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FF32014C2CE0028ACF6 /* PostsThemeCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -180,6 +186,18 @@
 		C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailVideoView.m; sourceTree = "<group>"; };
 		C300DA14200CF19800FA1936 /* PostsCommentDetailComplexLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentDetailComplexLayout.h; sourceTree = "<group>"; };
 		C300DA15200CF19800FA1936 /* PostsCommentDetailComplexLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentDetailComplexLayout.m; sourceTree = "<group>"; };
+		C3766FDF201488F40028ACF6 /* CXLMineLoginCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineLoginCell.h; sourceTree = "<group>"; };
+		C3766FE0201488F40028ACF6 /* CXLMineLoginCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMineLoginCell.m; sourceTree = "<group>"; };
+		C3766FE22014896A0028ACF6 /* CXLMineItermCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineItermCell.h; sourceTree = "<group>"; };
+		C3766FE32014896A0028ACF6 /* CXLMineItermCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMineItermCell.m; sourceTree = "<group>"; };
+		C3766FE52014898E0028ACF6 /* CXLMineCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineCollectionViewCell.h; sourceTree = "<group>"; };
+		C3766FE62014898E0028ACF6 /* CXLMineCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMineCollectionViewCell.m; sourceTree = "<group>"; };
+		C3766FE920148F250028ACF6 /* CXLMineItermModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineItermModel.h; sourceTree = "<group>"; };
+		C3766FEA20148F250028ACF6 /* CXLMineItermModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMineItermModel.m; sourceTree = "<group>"; };
+		C3766FEF2014C1DB0028ACF6 /* PostsCommunityModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommunityModel.h; sourceTree = "<group>"; };
+		C3766FF02014C1DB0028ACF6 /* PostsCommunityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommunityModel.m; sourceTree = "<group>"; };
+		C3766FF22014C2CE0028ACF6 /* PostsThemeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsThemeCell.h; sourceTree = "<group>"; };
+		C3766FF32014C2CE0028ACF6 /* PostsThemeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsThemeCell.m; sourceTree = "<group>"; };
 		E4BE72135AF97B716991F3DA /* Pods-BaiSiBuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -421,6 +439,8 @@
 		58DDD6DF1FF4E9D200652015 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C3766FEC2014C1AA0028ACF6 /* Community */,
+				C3766FDD2014889D0028ACF6 /* Mine */,
 				586CC73A1FFF21B800613B07 /* PostsDetail */,
 				580391F71FFE27C90076C82A /* Publish */,
 				58DDD6E01FF4EA1000652015 /* Dynamic */,
@@ -511,6 +531,64 @@
 				078690BBEAB22059E7C18C16 /* libPods-BaiSiBuDeJie.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C3766FDD2014889D0028ACF6 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				C3766FE820148F0A0028ACF6 /* Model */,
+				C3766FDE201488A90028ACF6 /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		C3766FDE201488A90028ACF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3766FDF201488F40028ACF6 /* CXLMineLoginCell.h */,
+				C3766FE0201488F40028ACF6 /* CXLMineLoginCell.m */,
+				C3766FE22014896A0028ACF6 /* CXLMineItermCell.h */,
+				C3766FE32014896A0028ACF6 /* CXLMineItermCell.m */,
+				C3766FE52014898E0028ACF6 /* CXLMineCollectionViewCell.h */,
+				C3766FE62014898E0028ACF6 /* CXLMineCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C3766FE820148F0A0028ACF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C3766FE920148F250028ACF6 /* CXLMineItermModel.h */,
+				C3766FEA20148F250028ACF6 /* CXLMineItermModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C3766FEC2014C1AA0028ACF6 /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				C3766FEE2014C1C00028ACF6 /* View */,
+				C3766FED2014C1BA0028ACF6 /* Model */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		C3766FED2014C1BA0028ACF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C3766FEF2014C1DB0028ACF6 /* PostsCommunityModel.h */,
+				C3766FF02014C1DB0028ACF6 /* PostsCommunityModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C3766FEE2014C1C00028ACF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C3766FF22014C2CE0028ACF6 /* PostsThemeCell.h */,
+				C3766FF32014C2CE0028ACF6 /* PostsThemeCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C3DFDF36200918AD00086D24 /* View */ = {
@@ -607,13 +685,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BaiSiBuDeJie-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8BDEC439264099D7907E8912 /* [CP] Copy Pods Resources */ = {
@@ -622,9 +703,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -676,6 +762,7 @@
 				5883B4C51FFC6E8700612B82 /* PostsCommentCell.m in Sources */,
 				5899E4EF1FFB892700AA3D4E /* PostsProfileView.m in Sources */,
 				C300DA10200B148F00FA1936 /* PostsDetailImageView.m in Sources */,
+				C3766FE42014896A0028ACF6 /* CXLMineItermCell.m in Sources */,
 				586CC7441FFF669700613B07 /* PostsDetailNavigation.m in Sources */,
 				581BDF63200E0019008A342B /* UIView+CustomControlView.m in Sources */,
 				5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */,
@@ -685,9 +772,13 @@
 				58945BC0200CA10900AE1AA5 /* PostsCommentNormalCell.m in Sources */,
 				58A92F751FF349D600E5D60C /* main.m in Sources */,
 				5899E4F81FFB8E5000AA3D4E /* PostsToolBarView.m in Sources */,
+				C3766FE1201488F40028ACF6 /* CXLMineLoginCell.m in Sources */,
 				581BDF61200E0019008A342B /* UIImageView+ZFCache.m in Sources */,
+				C3766FF42014C2CE0028ACF6 /* PostsThemeCell.m in Sources */,
 				C300DA01200A585700FA1936 /* PostsDetailHeaderLayout.m in Sources */,
 				586CC7401FFF22FC00613B07 /* PostsDetailController.m in Sources */,
+				C3766FF12014C1DB0028ACF6 /* PostsCommunityModel.m in Sources */,
+				C3766FE72014898E0028ACF6 /* CXLMineCollectionViewCell.m in Sources */,
 				5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */,
 				5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */,
 				581BDF7A200E0033008A342B /* ZFPlayerView.m in Sources */,
@@ -706,6 +797,7 @@
 				586DB93720075FC800BE789D /* PostsDetailCommentModel.m in Sources */,
 				5899E4F21FFB893A00AA3D4E /* PostsVideoView.m in Sources */,
 				5899E4E41FFB6AED00AA3D4E /* PostsCell.m in Sources */,
+				C3766FEB20148F250028ACF6 /* CXLMineItermModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

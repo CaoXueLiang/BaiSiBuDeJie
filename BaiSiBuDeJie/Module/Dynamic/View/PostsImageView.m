@@ -114,7 +114,8 @@
     }];
     
     /*判断是大图还是小图，当高度超过屏幕高度时，就认为是大图*/
-    if (imageModel.height >= kScreenWidth) {
+    CGFloat scaleHeight = imageModel.height * (kScreenWidth - 2.0*kWBCellPadding) / imageModel.width;
+    if (scaleHeight >= kScreenHeight) {
         _thumbnailView.contentMode = UIViewContentModeTop;
         _checkBigButton.hidden = NO;
     }else{

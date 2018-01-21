@@ -125,7 +125,7 @@
 
 - (void)childViewController:(UIViewController *)childViewController BeginAppearanceTransition:(BOOL)isAppearing animated:(BOOL)animated {
     if (!_automaticallySystemManagerViewAppearanceMethods) {
-        [childViewController beginAppearanceTransition:isAppearing animated:YES];
+        [childViewController beginAppearanceTransition:isAppearing animated:animated];
     }
 }
 
@@ -186,9 +186,13 @@
 - (id)pagerViewLayout:(TYPagerViewLayout *)pagerViewLayout itemForIndex:(NSInteger)index prefetching:(BOOL)prefetching {
     return [_dataSource pagerController:self controllerForIndex:index prefetching:prefetching];
 }
-- (id)pagerViewLayout:(TYPagerViewLayout *)pagerViewLayout viewForItem:(id)item atIndex:(NSInteger)index {
+- (UIView *)pagerViewLayout:(TYPagerViewLayout *)pagerViewLayout viewForItem:(id)item atIndex:(NSInteger)index {
     UIViewController *viewController = item;
     return viewController.view;
+}
+
+- (UIViewController *)pagerViewLayout:(TYPagerViewLayout *)pagerViewLayout viewControllerForItem:(id)item atIndex:(NSInteger)index {
+    return item;
 }
 
 - (void)pagerViewLayout:(TYPagerViewLayout *)pagerViewLayout addVisibleItem:(id)item atIndex:(NSInteger)index {

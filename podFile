@@ -16,5 +16,6 @@ target 'BaiSiBuDeJie' do
   pod 'YYImage'
   pod 'YYWebImage'
   pod 'CHTCollectionViewWaterfallLayout'
+  pod 'FDFullscreenPopGesture'
 end
 
