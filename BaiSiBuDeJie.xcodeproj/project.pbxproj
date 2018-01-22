@@ -63,6 +63,7 @@
 		C300DA10200B148F00FA1936 /* PostsDetailImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA0F200B148F00FA1936 /* PostsDetailImageView.m */; };
 		C300DA13200B14A200FA1936 /* PostsDetailVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */; };
 		C300DA16200CF19800FA1936 /* PostsCommentDetailComplexLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA15200CF19800FA1936 /* PostsCommentDetailComplexLayout.m */; };
+		C305D8CF2016209A00BC0215 /* PostsHomeNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = C305D8CE2016209A00BC0215 /* PostsHomeNavigation.m */; };
 		C3766FE1201488F40028ACF6 /* CXLMineLoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FE0201488F40028ACF6 /* CXLMineLoginCell.m */; };
 		C3766FE42014896A0028ACF6 /* CXLMineItermCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FE32014896A0028ACF6 /* CXLMineItermCell.m */; };
 		C3766FE72014898E0028ACF6 /* CXLMineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FE62014898E0028ACF6 /* CXLMineCollectionViewCell.m */; };
@@ -186,6 +187,8 @@
 		C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsDetailVideoView.m; sourceTree = "<group>"; };
 		C300DA14200CF19800FA1936 /* PostsCommentDetailComplexLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentDetailComplexLayout.h; sourceTree = "<group>"; };
 		C300DA15200CF19800FA1936 /* PostsCommentDetailComplexLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentDetailComplexLayout.m; sourceTree = "<group>"; };
+		C305D8CD2016209A00BC0215 /* PostsHomeNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsHomeNavigation.h; sourceTree = "<group>"; };
+		C305D8CE2016209A00BC0215 /* PostsHomeNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsHomeNavigation.m; sourceTree = "<group>"; };
 		C3766FDF201488F40028ACF6 /* CXLMineLoginCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineLoginCell.h; sourceTree = "<group>"; };
 		C3766FE0201488F40028ACF6 /* CXLMineLoginCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMineLoginCell.m; sourceTree = "<group>"; };
 		C3766FE22014896A0028ACF6 /* CXLMineItermCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineItermCell.h; sourceTree = "<group>"; };
@@ -301,6 +304,8 @@
 		586CC7411FFF664B00613B07 /* CustomNavigation */ = {
 			isa = PBXGroup;
 			children = (
+				C305D8CD2016209A00BC0215 /* PostsHomeNavigation.h */,
+				C305D8CE2016209A00BC0215 /* PostsHomeNavigation.m */,
 				586CC7421FFF669700613B07 /* PostsDetailNavigation.h */,
 				586CC7431FFF669700613B07 /* PostsDetailNavigation.m */,
 			);
@@ -777,6 +782,7 @@
 				C3766FF42014C2CE0028ACF6 /* PostsThemeCell.m in Sources */,
 				C300DA01200A585700FA1936 /* PostsDetailHeaderLayout.m in Sources */,
 				586CC7401FFF22FC00613B07 /* PostsDetailController.m in Sources */,
+				C305D8CF2016209A00BC0215 /* PostsHomeNavigation.m in Sources */,
 				C3766FF12014C1DB0028ACF6 /* PostsCommunityModel.m in Sources */,
 				C3766FE72014898E0028ACF6 /* CXLMineCollectionViewCell.m in Sources */,
 				5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */,

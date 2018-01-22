@@ -83,6 +83,27 @@
     }
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    SLog(@"开始拖拽");
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    SLog(@"开始减速--%@",NSStringFromCGPoint(velocity));
+    /*隐藏导航栏*/
+    if (velocity.y > 1.0) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:CXLHideNavigationNotification object:nil];
+    }
+    
+    /*显示导航栏*/
+    if (velocity.y < -1.0) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:CXLShowNavigationNotification object:nil];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    SLog(@"停止");
+}
+
 #pragma mark - PostsCellDelegate
 - (void)didClickedExpendButton:(NSInteger)index{
     PostsLayouts *layout = self.dataArray[index];

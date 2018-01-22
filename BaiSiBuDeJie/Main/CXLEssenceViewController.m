@@ -12,6 +12,7 @@
 #import "CXLTweetListViewController.h"
 #import "CXLTweetListVideoController.h"
 #import "PostsDetailController.h"
+#import "PostsHomeNavigation.h"
 
 /*TarBar高度*/
 static const CGFloat KTarBarHeight = 50;
@@ -23,6 +24,7 @@ CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
 @property (nonatomic,weak) TYTabPagerBar *tabBar;
 @property (nonatomic,weak) TYPagerController *pagerController;
 @property (nonatomic,strong) NSArray *itermArray;
+@property (nonatomic,strong) PostsHomeNavigation *homeNavigation;
 @end
 
 @implementation CXLEssenceViewController
@@ -30,36 +32,15 @@ CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    [self setNavigaton];
+    [self.view addSubview:self.homeNavigation];
     [self addTabPageBar];
     [self addPagerController];
     [self reloadData];
+    self.fd_prefersNavigationBarHidden = YES;
 }
 
 -(BOOL)prefersStatusBarHidden{
     return NO;
-}
-
-- (void)setNavigaton{
-    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle_107x19_"]];
-    
-    UIImage *normalImage = [UIImage imageNamed:@"nav_item_game_icon_20x20_"];
-    UIImage *hightImage = [UIImage imageNamed:@"nav_item_game_click_icon_20x20_"];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setImage:normalImage forState:UIControlStateNormal];
-    [btn setImage:hightImage forState:UIControlStateHighlighted];
-    [btn sizeToFit];
-    UIBarButtonItem *iterm = [[UIBarButtonItem alloc]initWithCustomView:btn];
-    self.navigationItem.leftBarButtonItem = iterm;
-    
-    UIImage *normalImage1 = [UIImage imageNamed:@"RandomAcross_18x14_"];
-    UIImage *hightImage1 = [UIImage imageNamed:@"RandomAcrossClick_18x14_"];
-    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn1 setImage:normalImage1 forState:UIControlStateNormal];
-    [btn1 setImage:hightImage1 forState:UIControlStateHighlighted];
-    [btn1 sizeToFit];
-    UIBarButtonItem *iterm1 = [[UIBarButtonItem alloc]initWithCustomView:btn1];
-    self.navigationItem.rightBarButtonItem = iterm1;
 }
 
 - (void)addTabPageBar {
@@ -93,8 +74,8 @@ CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    _tabBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), KTarBarHeight);
-    _pagerController.view.frame = CGRectMake(0, KTarBarHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight);
+    _tabBar.frame = CGRectMake(0, KTopHeight, CGRectGetWidth(self.view.frame), KTarBarHeight);
+    _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight);
 }
 
 - (NSArray *)itermArray{
@@ -165,6 +146,14 @@ CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
 - (void)reloadData {
     [_tabBar reloadData];
     [_pagerController reloadData];
+}
+
+#pragma mark - Setter && Getter
+- (PostsHomeNavigation *)homeNavigation{
+    if (!_homeNavigation) {
+        _homeNavigation = [PostsHomeNavigation new];
+    }
+    return _homeNavigation;
 }
 
 @end
