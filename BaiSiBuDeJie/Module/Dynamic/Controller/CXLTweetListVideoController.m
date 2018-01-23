@@ -63,6 +63,21 @@
     }
 }
 
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    //SLog(@"开始拖拽");
+}
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
+    //SLog(@"开始减速--%@",NSStringFromCGPoint(velocity));
+    if ([self.delegate respondsToSelector:@selector(collectionViewWillEndDraggingWithVelocity:)]) {
+        [self.delegate collectionViewWillEndDraggingWithVelocity:velocity];
+    }
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    //SLog(@"停止");
+}
+
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     PostsModel *model = self.dataArray[indexPath.item];

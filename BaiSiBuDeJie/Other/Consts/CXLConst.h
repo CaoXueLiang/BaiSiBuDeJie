@@ -21,6 +21,3 @@ UIKIT_EXTERN const CGFloat KWBDetailCommentImageHeight;
 UIKIT_EXTERN const CGFloat KWBDetailCommentVideoHeight;
 UIKIT_EXTERN const CGFloat KWBDetailCommentAudioHeight;
 
-
-UIKIT_EXTERN  NSString * const CXLHideNavigationNotification;
-UIKIT_EXTERN  NSString * const CXLShowNavigationNotification;

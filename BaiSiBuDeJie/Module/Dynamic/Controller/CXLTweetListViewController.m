@@ -84,24 +84,18 @@
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    SLog(@"开始拖拽");
+    //SLog(@"开始拖拽");
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset{
-    SLog(@"开始减速--%@",NSStringFromCGPoint(velocity));
-    /*隐藏导航栏*/
-    if (velocity.y > 1.0) {
-        [[NSNotificationCenter defaultCenter]postNotificationName:CXLHideNavigationNotification object:nil];
-    }
-    
-    /*显示导航栏*/
-    if (velocity.y < -1.0) {
-        [[NSNotificationCenter defaultCenter]postNotificationName:CXLShowNavigationNotification object:nil];
+    //SLog(@"开始减速--%@",NSStringFromCGPoint(velocity));
+    if ([self.delegate respondsToSelector:@selector(scrollViewWillEndDraggingWithVelocity:)]) {
+        [self.delegate scrollViewWillEndDraggingWithVelocity:velocity];
     }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    SLog(@"停止");
+    //SLog(@"停止");
 }
 
 #pragma mark - PostsCellDelegate

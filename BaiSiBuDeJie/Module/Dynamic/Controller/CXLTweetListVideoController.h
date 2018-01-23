@@ -11,6 +11,7 @@
 @class PostsModel,PostsVideoCollectionViewCell;
 @protocol CXLTweetListVideoControllerDelegate <NSObject>
 - (void)didClickedVideoCell:(PostsVideoCollectionViewCell *)cell postsModel:(PostsModel *)model;
+- (void)collectionViewWillEndDraggingWithVelocity:(CGPoint)velocity;
 @end
 
 /**

@@ -11,15 +11,19 @@
 #import "TYPagerController.h"
 #import "CXLTweetListViewController.h"
 #import "CXLTweetListVideoController.h"
+#import "PostsHomeNavigation.h"
+#import "PostsDetailController.h"
 
 /*TarBar高度*/
 static const CGFloat KTarBarHeight = 50;
 @interface CXLNewestViewController()
 <TYTabPagerBarDataSource,TYTabPagerBarDelegate,
-TYPagerControllerDataSource,TYPagerControllerDelegate>
+TYPagerControllerDataSource,TYPagerControllerDelegate,
+CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
 @property (nonatomic,weak) TYTabPagerBar *tabBar;
 @property (nonatomic,weak) TYPagerController *pagerController;
 @property (nonatomic,strong) NSArray *itermArray;
+@property (nonatomic,strong) PostsHomeNavigation *homeNavigation;
 @end
 
 @implementation CXLNewestViewController
@@ -27,31 +31,11 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-    [self setNavigaton];
+    [self.view addSubview:self.homeNavigation];
     [self addTabPageBar];
     [self addPagerController];
     [self reloadData];
-}
-
-- (void)setNavigaton{
-    self.navigationItem.titleView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainTitle_107x19_"]];
-    UIImage *normalImage = [UIImage imageNamed:@"nav_search_icon_18x18_"];
-    UIImage *hightImage = [UIImage imageNamed:@"nav_search_icon_click_18x18_"];
-    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setImage:normalImage forState:UIControlStateNormal];
-    [btn setImage:hightImage forState:UIControlStateHighlighted];
-    [btn sizeToFit];
-    UIBarButtonItem *iterm = [[UIBarButtonItem alloc]initWithCustomView:btn];
-    self.navigationItem.rightBarButtonItem = iterm;
-    
-    UIImage *normalImage1 = [UIImage imageNamed:@"nav_coin_icon_19x19_"];
-    UIImage *hightImage1 = [UIImage imageNamed:@"nav_coin_icon_click_19x19_"];
-    UIButton *btn1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn1 setImage:normalImage1 forState:UIControlStateNormal];
-    [btn1 setImage:hightImage1 forState:UIControlStateHighlighted];
-    [btn1 sizeToFit];
-    UIBarButtonItem *iterm1 = [[UIBarButtonItem alloc]initWithCustomView:btn1];
-    self.navigationItem.leftBarButtonItem = iterm1;
+    self.fd_prefersNavigationBarHidden = YES;
 }
 
 - (void)addTabPageBar {
@@ -85,8 +69,8 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    _tabBar.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), KTarBarHeight);
-    _pagerController.view.frame = CGRectMake(0, KTarBarHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight);
+    _tabBar.frame = CGRectMake(0, KTopHeight, CGRectGetWidth(self.view.frame), KTarBarHeight);
+    _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight);
 }
 
 - (NSArray *)itermArray{
@@ -94,6 +78,57 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
         _itermArray = @[@"全部",@"视频",@"图片",@"段子",@"互动区",@"社会",@"影视分享",@"游戏",];
     }
     return _itermArray;
+}
+
+#pragma mark - ListDelegate
+- (void)didClickedCell:(PostsCell *)cell postsModel:(PostsModel *)model{
+    PostsDetailController *controller = [PostsDetailController initWithPostsModel:model];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)scrollViewWillEndDraggingWithVelocity:(CGPoint)velocity{
+    [self.homeNavigation scrollAnimationWithVelocity:velocity];
+    
+    /*隐藏导航栏*/
+    if (velocity.y > 1.0) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            _tabBar.top = KTopHeight - kNavBarHeight;
+            _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight - kNavBarHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight + kNavBarHeight);
+        } completion:nil];
+    }
+    
+    /*显示导航栏*/
+    if (velocity.y < -1.0) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            _tabBar.top = KTopHeight;
+            _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight);
+        } completion:nil];
+    }
+}
+
+- (void)didClickedVideoCell:(PostsVideoCollectionViewCell *)cell postsModel:(PostsModel *)model{
+    PostsDetailController *controller = [PostsDetailController initWithPostsModel:model];
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)collectionViewWillEndDraggingWithVelocity:(CGPoint)velocity{
+    [self.homeNavigation scrollAnimationWithVelocity:velocity];
+    
+    /*隐藏导航栏*/
+    if (velocity.y > 1.0) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            _tabBar.top = KTopHeight - kNavBarHeight;
+            _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight - kNavBarHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight + kNavBarHeight);
+        } completion:nil];
+    }
+    
+    /*显示导航栏*/
+    if (velocity.y < -1.0) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            _tabBar.top = KTopHeight;
+            _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight);
+        } completion:nil];
+    }
 }
 
 #pragma mark - TYTabPagerBarDataSource
@@ -125,9 +160,11 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
 - (UIViewController *)pagerController:(TYPagerController *)pagerController controllerForIndex:(NSInteger)index prefetching:(BOOL)prefetching {
     if (index == 1) {
         CXLTweetListVideoController *controller = [[CXLTweetListVideoController alloc]init];
+        controller.delegate = self;
         return controller;
     }else{
         CXLTweetListViewController *controller = [CXLTweetListViewController initWithType:index];
+        controller.delegate = self;
         return controller;
     }
 }
@@ -144,6 +181,14 @@ TYPagerControllerDataSource,TYPagerControllerDelegate>
 - (void)reloadData {
     [_tabBar reloadData];
     [_pagerController reloadData];
+}
+
+#pragma mark - Setter && Getter
+- (PostsHomeNavigation *)homeNavigation{
+    if (!_homeNavigation) {
+        _homeNavigation = [PostsHomeNavigation new];
+    }
+    return _homeNavigation;
 }
 
 @end

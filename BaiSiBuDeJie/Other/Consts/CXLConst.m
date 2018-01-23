@@ -18,6 +18,4 @@ const CGFloat KWBDetailCommentImageHeight = 100;
 const CGFloat KWBDetailCommentVideoHeight = 100;
 const CGFloat KWBDetailCommentAudioHeight = 40;
 
-NSString * const CXLHideNavigationNotification = @"CXLHideNavigationNotification";
-NSString * const CXLShowNavigationNotification = @"CXLShowNavigationNotification";
 

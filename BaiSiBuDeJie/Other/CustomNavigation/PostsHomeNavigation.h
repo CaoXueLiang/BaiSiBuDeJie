@@ -13,4 +13,9 @@
  */
 @interface PostsHomeNavigation : UIView
 
+/**
+ 隐藏/显示导航栏
+ @param velocity ScrollView拖拽速度
+ */
+- (void)scrollAnimationWithVelocity:(CGPoint)velocity;
 @end

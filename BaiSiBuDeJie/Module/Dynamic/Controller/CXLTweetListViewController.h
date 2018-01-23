@@ -25,6 +25,7 @@ typedef NS_ENUM(NSUInteger,PostsType) {
 @class PostsModel,PostsCell;
 @protocol CXLTweetListViewControllerDelegate <NSObject>
 - (void)didClickedCell:(PostsCell *)cell postsModel:(PostsModel *)model;
+- (void)scrollViewWillEndDraggingWithVelocity:(CGPoint)velocity;
 @end
 
 /**

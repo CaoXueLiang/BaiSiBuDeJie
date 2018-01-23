@@ -91,9 +91,49 @@ CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
     [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)scrollViewWillEndDraggingWithVelocity:(CGPoint)velocity{
+    [self.homeNavigation scrollAnimationWithVelocity:velocity];
+    
+    /*隐藏导航栏*/
+    if (velocity.y > 1.0) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            _tabBar.top = KTopHeight - kNavBarHeight;
+            _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight - kNavBarHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight + kNavBarHeight);
+        } completion:nil];
+    }
+    
+    /*显示导航栏*/
+    if (velocity.y < -1.0) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            _tabBar.top = KTopHeight;
+            _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight);
+        } completion:nil];
+    }
+}
+
 - (void)didClickedVideoCell:(PostsVideoCollectionViewCell *)cell postsModel:(PostsModel *)model{
     PostsDetailController *controller = [PostsDetailController initWithPostsModel:model];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)collectionViewWillEndDraggingWithVelocity:(CGPoint)velocity{
+    [self.homeNavigation scrollAnimationWithVelocity:velocity];
+    
+    /*隐藏导航栏*/
+    if (velocity.y > 1.0) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            _tabBar.top = KTopHeight - kNavBarHeight;
+            _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight - kNavBarHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight + kNavBarHeight);
+        } completion:nil];
+    }
+    
+    /*显示导航栏*/
+    if (velocity.y < -1.0) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            _tabBar.top = KTopHeight;
+            _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight);
+        } completion:nil];
+    }
 }
 
 #pragma mark - TYTabPagerBarDataSource

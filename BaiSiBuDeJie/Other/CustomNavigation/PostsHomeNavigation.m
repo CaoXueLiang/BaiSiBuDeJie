@@ -31,8 +31,8 @@
 }
 
 - (void)addSubViews{
-    [self addSubview:self.statusView];
     [self addSubview:self.navigationBarView];
+    [self addSubview:self.statusView];
     [self.navigationBarView addSubview:self.leftButton];
     [self.leftButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(kNavBarHeight, kNavBarHeight));
@@ -51,6 +51,23 @@
     [self.titleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.navigationBarView);
     }];
+}
+
+#pragma mark - Public Menthod
+- (void)scrollAnimationWithVelocity:(CGPoint)velocity{
+    /*隐藏导航栏*/
+    if (velocity.y > 1.0) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            self.navigationBarView.top = kStatusBarHeight - kNavBarHeight;
+        } completion:nil];
+    }
+    
+    /*显示导航栏*/
+    if (velocity.y < -1.0) {
+        [UIView animateWithDuration:0.4 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            self.navigationBarView.top = kStatusBarHeight;
+        } completion:nil];
+    }
 }
 
 #pragma mark - Setter && Getter
