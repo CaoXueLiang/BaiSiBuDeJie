@@ -16,7 +16,7 @@
 #import "PostsLayouts.h"
 #import "PostsModel.h"
 
-@interface PostsCell()
+@interface PostsCell()<PostsToolBarViewDelegate>
 @property (nonatomic,strong) PostsProfileView *profileView;
 @property (nonatomic,strong) PostsVideoView *videoView;
 @property (nonatomic,strong) PostsImageView *postsImageView;
@@ -24,6 +24,7 @@
 @property (nonatomic,strong) PostsCommentView *commentView;
 @property (nonatomic,strong) YYLabel *contentLabel;  //帖子内容
 @property (nonatomic,strong) UIButton *expendButton; //展开按钮
+@property (nonatomic,strong) UILabel *animationLabel;//+1Label
 @end
 
 @implementation PostsCell
@@ -48,6 +49,7 @@
     [self.contentView addSubview:_postsImageView];
     
     _toolbarView = [PostsToolBarView new];
+    _toolbarView.delegate = self;
     [self.contentView addSubview:_toolbarView];
     
     _commentView = [PostsCommentView new];
@@ -72,6 +74,31 @@
     [_expendButton addTarget:self action:@selector(expendButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:_expendButton];
     
+    _animationLabel = [UILabel new];
+    _animationLabel.text = @"+ 1";
+    _animationLabel.font = [UIFont systemFontOfSize:17];
+    _animationLabel.textColor = MainColor;
+    _animationLabel.hidden = YES;
+    _animationLabel.left = kScreenWidth/4.0 - 40;
+    _animationLabel.size = CGSizeMake(70, 30);
+    [self.contentView addSubview:_animationLabel];
+}
+
+#pragma mark - PostsToolBarViewDelegate
+- (void)didClickedUpButton{
+    
+}
+
+- (void)didClickedDownButton{
+    
+}
+
+- (void)didClickedShareButton{
+    
+}
+
+- (void)didClickedCommentButton{
+    
 }
 
 #pragma mark - Event Response
@@ -79,6 +106,14 @@
     if ([self.delegate respondsToSelector:@selector(didClickedExpendButton:)]) {
         [self.delegate didClickedExpendButton:_selectIndex];
     }
+}
+
+- (void)upButtonAnimation{
+    
+}
+
+- (void)downButtonAnimation{
+    
 }
 
 #pragma mark - Public Menthod
@@ -115,6 +150,7 @@
     top += layout.picHeight;
     
     _toolbarView.top = top;
+    _animationLabel.top = top - _animationLabel.height;
     top += KWBCellToobarHeight;
     
     _commentView.height = layout.commentHeight;

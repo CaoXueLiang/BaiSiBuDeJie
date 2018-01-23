@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class PostsModel;
+@protocol PostsToolBarViewDelegate <NSObject>
+- (void)didClickedUpButton;
+- (void)didClickedDownButton;
+- (void)didClickedShareButton;
+- (void)didClickedCommentButton;
+@end
+
 /**
  工具条View
  */
-@class PostsModel;
 @interface PostsToolBarView : UIView
+@property (nonatomic,weak) id<PostsToolBarViewDelegate> delegate;
 @property (nonatomic,strong) PostsModel *model;
 @end

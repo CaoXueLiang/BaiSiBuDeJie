@@ -88,19 +88,27 @@
 
 #pragma mark - Event Response
 - (void)upButtonClicked{
-    
+    if ([self.delegate respondsToSelector:@selector(didClickedUpButton)]) {
+        [self.delegate didClickedUpButton];
+    }
 }
 
 - (void)downButtonClicked{
-    
+    if ([self.delegate respondsToSelector:@selector(didClickedDownButton)]) {
+        [self.delegate didClickedDownButton];
+    }
 }
 
 - (void)transpondButtonClicked{
-    
+    if ([self.delegate respondsToSelector:@selector(didClickedShareButton)]) {
+        [self.delegate didClickedShareButton];
+    }
 }
 
 - (void)commentButtonClicked{
-    
+    if ([self.delegate respondsToSelector:@selector(didClickedCommentButton)]) {
+        [self.delegate didClickedCommentButton];
+    }
 }
 
 #pragma mark - Public Menthod
