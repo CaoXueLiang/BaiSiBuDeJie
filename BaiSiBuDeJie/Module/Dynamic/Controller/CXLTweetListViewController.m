@@ -103,7 +103,19 @@
     PostsLayouts *layout = self.dataArray[index];
     layout.isExpend = !layout.isExpend;
     [layout layout];
-    [self.myTable reloadData];
+    [self.myTable reloadRow:index inSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)didClickedUpButon:(NSInteger)index{
+    SLog(@"---%d---",index);
+    PostsCell *cell = [self.myTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    [cell upButtonAnimation];
+}
+
+- (void)didClickedDownButton:(NSInteger)index{
+    SLog(@"---%d---",index);
+    PostsCell *cell = [self.myTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    [cell downButtonAnimation];
 }
 
 #pragma mark - NetRequest

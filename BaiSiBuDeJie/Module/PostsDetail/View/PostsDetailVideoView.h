@@ -15,3 +15,5 @@
 @interface PostsDetailVideoView : UIView
 @property (nonatomic,strong) PostsModel *postsModel;
 @end
+
+

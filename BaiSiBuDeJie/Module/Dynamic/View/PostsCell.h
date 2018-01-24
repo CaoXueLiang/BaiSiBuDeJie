@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@class PostsLayouts;
+@class PostsLayouts,PostsCell;
 @protocol PostsCellDelegate <NSObject>
 - (void)didClickedExpendButton:(NSInteger)index;
+- (void)didClickedUpButon:(NSInteger)index;
+- (void)didClickedDownButton:(NSInteger)index;
 @end
 
 /**
@@ -20,4 +22,10 @@
 @property (nonatomic,weak) id<PostsCellDelegate> delegate;
 @property (nonatomic,strong) PostsLayouts *layout;
 @property (nonatomic,assign) NSInteger selectIndex;
+
+/*点赞动画*/
+- (void)upButtonAnimation;
+/*踩动画*/
+- (void)downButtonAnimation;
+
 @end

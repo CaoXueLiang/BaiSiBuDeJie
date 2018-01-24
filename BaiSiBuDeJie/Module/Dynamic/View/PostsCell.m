@@ -25,6 +25,7 @@
 @property (nonatomic,strong) YYLabel *contentLabel;  //帖子内容
 @property (nonatomic,strong) UIButton *expendButton; //展开按钮
 @property (nonatomic,strong) UILabel *animationLabel;//+1Label
+@property (nonatomic,assign) BOOL labelIsAnimation;
 @end
 
 @implementation PostsCell
@@ -76,21 +77,24 @@
     
     _animationLabel = [UILabel new];
     _animationLabel.text = @"+ 1";
-    _animationLabel.font = [UIFont systemFontOfSize:17];
+    _animationLabel.font = [UIFont boldSystemFontOfSize:30];
     _animationLabel.textColor = MainColor;
     _animationLabel.hidden = YES;
-    _animationLabel.left = kScreenWidth/4.0 - 40;
-    _animationLabel.size = CGSizeMake(70, 30);
+    [_animationLabel sizeToFit];
     [self.contentView addSubview:_animationLabel];
 }
 
 #pragma mark - PostsToolBarViewDelegate
 - (void)didClickedUpButton{
-    
+    if ([self.delegate respondsToSelector:@selector(didClickedUpButon:)]) {
+        [self.delegate didClickedUpButon:_selectIndex];
+    }
 }
 
 - (void)didClickedDownButton{
-    
+    if ([self.delegate respondsToSelector:@selector(didClickedDownButton:)]) {
+        [self.delegate didClickedDownButton:_selectIndex];
+    }
 }
 
 - (void)didClickedShareButton{
@@ -108,12 +112,46 @@
     }
 }
 
+- (void)startAnimationLabelIsUp:(BOOL)isUp{
+    _animationLabel.left = isUp ? kScreenWidth/8.0 : kScreenWidth/8.0 *3.0;
+    _animationLabel.top = _toolbarView.top - _animationLabel.height + 10;
+    _animationLabel.transform = CGAffineTransformIdentity;
+    _animationLabel.hidden = NO;
+    _animationLabel.alpha = 1;
+}
+
+- (void)endAnimationLabelIsUp:(BOOL)isUp{
+    _animationLabel.left = isUp ? kScreenWidth/8.0 + 10 : kScreenWidth/8.0 *3.0 + 10;
+    _animationLabel.top = _toolbarView.top - _animationLabel.height - 10;
+    _animationLabel.alpha = 0;
+    _animationLabel.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.6, 0.6);
+    _labelIsAnimation = YES;
+}
+
 - (void)upButtonAnimation{
-    
+    if (_labelIsAnimation) {
+        return;
+    }
+    [self startAnimationLabelIsUp:YES];
+    [UIView animateWithDuration:0.8 animations:^{
+        [self endAnimationLabelIsUp:YES];
+    } completion:^(BOOL finished) {
+        _animationLabel.hidden = YES;
+        _labelIsAnimation = NO;
+    }];
 }
 
 - (void)downButtonAnimation{
-    
+    if (_labelIsAnimation) {
+        return;
+    }
+    [self startAnimationLabelIsUp:NO];
+    [UIView animateWithDuration:0.8 animations:^{
+        [self endAnimationLabelIsUp:NO];
+    } completion:^(BOOL finished) {
+        _animationLabel.hidden = YES;
+        _labelIsAnimation = NO;
+    }];
 }
 
 #pragma mark - Public Menthod
