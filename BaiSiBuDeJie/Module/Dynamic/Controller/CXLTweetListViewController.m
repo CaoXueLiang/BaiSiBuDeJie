@@ -10,6 +10,8 @@
 #import "PostsModel.h"
 #import "PostsLayouts.h"
 #import "PostsCell.h"
+#import "PostsToolBarView.h"
+#import "PostsProfileView.h"
 
 @interface CXLTweetListViewController()
 <UITableViewDelegate,UITableViewDataSource,PostsCellDelegate>
@@ -99,23 +101,35 @@
 }
 
 #pragma mark - PostsCellDelegate
+/**点击展开，收起按钮*/
 - (void)didClickedExpendButton:(NSInteger)index{
     PostsLayouts *layout = self.dataArray[index];
     layout.isExpend = !layout.isExpend;
     [layout layout];
-    [self.myTable reloadRow:index inSection:0 withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.myTable reloadRow:index inSection:0 withRowAnimation:UITableViewRowAnimationNone];
 }
 
+/**点击了赞*/
 - (void)didClickedUpButon:(NSInteger)index{
-    SLog(@"---%d---",index);
     PostsCell *cell = [self.myTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    PostsLayouts *layout = self.dataArray[index];
+    NSInteger upNum = [layout.postsModel.up integerValue];
+    layout.postsModel.up = [NSString stringWithFormat:@"%ld",upNum + 1];
+    layout.postsModel.isUp = YES;
     [cell upButtonAnimation];
+    [cell.profileView thanksAnimation];
+    cell.toolbarView.model = layout.postsModel;
 }
 
+/**点击了踩*/
 - (void)didClickedDownButton:(NSInteger)index{
-    SLog(@"---%d---",index);
     PostsCell *cell = [self.myTable cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    PostsLayouts *layout = self.dataArray[index];
+    NSInteger downNum = [layout.postsModel.down integerValue];
+    layout.postsModel.down = [NSString stringWithFormat:@"%ld",downNum + 1];
+    layout.postsModel.isDown = YES;
     [cell downButtonAnimation];
+    cell.toolbarView.model = layout.postsModel;
 }
 
 #pragma mark - NetRequest

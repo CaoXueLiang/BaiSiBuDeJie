@@ -96,6 +96,8 @@ typedef NS_ENUM(NSInteger,postsContentType) {
  单个帖子数据
  */
 @interface PostsModel : NSObject
+@property (nonatomic,assign) BOOL isUp;
+@property (nonatomic,assign) BOOL isDown;
 @property (nonatomic,copy) NSString *up;
 @property (nonatomic,copy) NSString *down;
 @property (nonatomic,copy) NSString *forward;

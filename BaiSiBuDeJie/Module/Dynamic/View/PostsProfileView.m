@@ -14,6 +14,7 @@
 @property (nonatomic,strong) UIImageView *vipImageView;  //vip图标
 @property (nonatomic,strong) UILabel *nameLabel;         //昵称
 @property (nonatomic,strong) UILabel *dateLabel;         //发布日期
+@property (nonatomic,strong) UIImageView *thanksView;    //感谢视图
 @end
 
 @implementation PostsProfileView
@@ -40,6 +41,22 @@
         make.left.equalTo(self).offset(kWBCellPadding);
         make.top.equalTo(self).offset(kWBCellPadding);
     }];
+    
+    _thanksView = [[UIImageView alloc]init];
+    _thanksView.frame = CGRectMake(kWBCellPadding,kWBCellPadding,30, 30);
+    _thanksView.layer.cornerRadius = 30.0 / 2;
+    _thanksView.layer.borderWidth = CGFloatFromPixel(0.5);
+    _thanksView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    _thanksView.clipsToBounds = YES;
+    NSArray *imageArray = @[
+        [UIImage imageNamed:@"comment_thanks_1"],
+        [UIImage imageNamed:@"comment_thanks_2"],
+        [UIImage imageNamed:@"comment_thanks_3"],
+        [UIImage imageNamed:@"comment_thanks_4"]];
+    _thanksView.image = imageArray[0];
+    _thanksView.animationImages = imageArray;
+    _thanksView.hidden = YES;
+    [self addSubview:_thanksView];
     
     _vipImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"Profile_AddV_authen_14x14_"]];
     _vipImageView.hidden = YES;
@@ -74,6 +91,15 @@
 }
 
 #pragma mark - Public Menthod
+- (void)thanksAnimation{
+    _thanksView.hidden = NO;
+    [_thanksView startAnimating];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [_thanksView stopAnimating];
+        _thanksView.hidden = YES;
+    });
+}
+
 - (void)setModel:(PostsModel *)model{
     if (!model) {
         return;

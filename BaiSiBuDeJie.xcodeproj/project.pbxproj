@@ -64,6 +64,7 @@
 		C300DA13200B14A200FA1936 /* PostsDetailVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA12200B14A200FA1936 /* PostsDetailVideoView.m */; };
 		C300DA16200CF19800FA1936 /* PostsCommentDetailComplexLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C300DA15200CF19800FA1936 /* PostsCommentDetailComplexLayout.m */; };
 		C305D8CF2016209A00BC0215 /* PostsHomeNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = C305D8CE2016209A00BC0215 /* PostsHomeNavigation.m */; };
+		C305D8D32018D42400BC0215 /* CXLPersonalCenterController.m in Sources */ = {isa = PBXBuildFile; fileRef = C305D8D22018D42400BC0215 /* CXLPersonalCenterController.m */; };
 		C3766FE1201488F40028ACF6 /* CXLMineLoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FE0201488F40028ACF6 /* CXLMineLoginCell.m */; };
 		C3766FE42014896A0028ACF6 /* CXLMineItermCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FE32014896A0028ACF6 /* CXLMineItermCell.m */; };
 		C3766FE72014898E0028ACF6 /* CXLMineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FE62014898E0028ACF6 /* CXLMineCollectionViewCell.m */; };
@@ -189,6 +190,8 @@
 		C300DA15200CF19800FA1936 /* PostsCommentDetailComplexLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentDetailComplexLayout.m; sourceTree = "<group>"; };
 		C305D8CD2016209A00BC0215 /* PostsHomeNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsHomeNavigation.h; sourceTree = "<group>"; };
 		C305D8CE2016209A00BC0215 /* PostsHomeNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsHomeNavigation.m; sourceTree = "<group>"; };
+		C305D8D12018D42400BC0215 /* CXLPersonalCenterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLPersonalCenterController.h; sourceTree = "<group>"; };
+		C305D8D22018D42400BC0215 /* CXLPersonalCenterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLPersonalCenterController.m; sourceTree = "<group>"; };
 		C3766FDF201488F40028ACF6 /* CXLMineLoginCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineLoginCell.h; sourceTree = "<group>"; };
 		C3766FE0201488F40028ACF6 /* CXLMineLoginCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMineLoginCell.m; sourceTree = "<group>"; };
 		C3766FE22014896A0028ACF6 /* CXLMineItermCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineItermCell.h; sourceTree = "<group>"; };
@@ -538,9 +541,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C305D8D02018D3DB00BC0215 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C305D8D12018D42400BC0215 /* CXLPersonalCenterController.h */,
+				C305D8D22018D42400BC0215 /* CXLPersonalCenterController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		C3766FDD2014889D0028ACF6 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				C305D8D02018D3DB00BC0215 /* Controller */,
 				C3766FE820148F0A0028ACF6 /* Model */,
 				C3766FDE201488A90028ACF6 /* View */,
 			);
@@ -792,6 +805,7 @@
 				C300DA16200CF19800FA1936 /* PostsCommentDetailComplexLayout.m in Sources */,
 				58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */,
 				5883B4C81FFC81E000612B82 /* PostsLayouts.m in Sources */,
+				C305D8D32018D42400BC0215 /* CXLPersonalCenterController.m in Sources */,
 				5807BBA11FF3902200D457A9 /* CXLBaseNavigationController.m in Sources */,
 				581BDF75200E0033008A342B /* ZFPlayerModel.m in Sources */,
 				581BDF78200E0033008A342B /* ZFBrightnessView.m in Sources */,

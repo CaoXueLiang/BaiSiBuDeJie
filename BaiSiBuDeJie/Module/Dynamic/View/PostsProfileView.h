@@ -14,4 +14,6 @@
 @class PostsModel;
 @interface PostsProfileView : UIView
 @property (nonatomic,strong) PostsModel *model;
+/**感谢点赞动画*/
+- (void)thanksAnimation;
 @end

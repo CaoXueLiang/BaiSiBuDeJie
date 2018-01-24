@@ -121,6 +121,15 @@
     [_downButton setTitle:down forState:UIControlStateNormal];
     [_transpondButton setTitle:share forState:UIControlStateNormal];
     [_commentButton setTitle:comment forState:UIControlStateNormal];
+    
+    UIImage *normalUpImage = model.isUp ? [UIImage imageNamed:@"mainCellDingClick_17x17_"] : [UIImage imageNamed:@"mainCellDing_17x17_"];
+    UIImage *normalDownImage = model.isDown ? [UIImage imageNamed:@"mainCellCaiClick_17x17_"] : [UIImage imageNamed:@"mainCellCai_17x17_"];
+    UIColor *normalUpColor = model.isUp ? MainColor : [UIColor lightGrayColor];
+    UIColor *normalDownColor = model.isDown ? MainColor : [UIColor lightGrayColor];
+    [_upButton setImage:normalUpImage forState:UIControlStateNormal];
+    [_upButton setTitleColor:normalUpColor forState:UIControlStateNormal];
+    [_downButton setImage:normalDownImage forState:UIControlStateNormal];
+    [_downButton setTitleColor:normalDownColor forState:UIControlStateNormal];
 }
 
 @end

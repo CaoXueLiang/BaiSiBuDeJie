@@ -17,10 +17,8 @@
 #import "PostsModel.h"
 
 @interface PostsCell()<PostsToolBarViewDelegate>
-@property (nonatomic,strong) PostsProfileView *profileView;
 @property (nonatomic,strong) PostsVideoView *videoView;
 @property (nonatomic,strong) PostsImageView *postsImageView;
-@property (nonatomic,strong) PostsToolBarView *toolbarView;
 @property (nonatomic,strong) PostsCommentView *commentView;
 @property (nonatomic,strong) YYLabel *contentLabel;  //帖子内容
 @property (nonatomic,strong) UIButton *expendButton; //展开按钮
@@ -77,8 +75,8 @@
     
     _animationLabel = [UILabel new];
     _animationLabel.text = @"+ 1";
-    _animationLabel.font = [UIFont boldSystemFontOfSize:30];
-    _animationLabel.textColor = MainColor;
+    _animationLabel.font = [UIFont systemFontOfSize:30];
+    _animationLabel.textColor = [UIColor orangeColor];
     _animationLabel.hidden = YES;
     [_animationLabel sizeToFit];
     [self.contentView addSubview:_animationLabel];

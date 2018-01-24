@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class PostsLayouts,PostsCell;
+@class PostsLayouts,PostsCell,PostsToolBarView,PostsProfileView;
 @protocol PostsCellDelegate <NSObject>
 - (void)didClickedExpendButton:(NSInteger)index;
 - (void)didClickedUpButon:(NSInteger)index;
@@ -22,6 +22,8 @@
 @property (nonatomic,weak) id<PostsCellDelegate> delegate;
 @property (nonatomic,strong) PostsLayouts *layout;
 @property (nonatomic,assign) NSInteger selectIndex;
+@property (nonatomic,strong) PostsProfileView *profileView;
+@property (nonatomic,strong) PostsToolBarView *toolbarView;
 
 /*点赞动画*/
 - (void)upButtonAnimation;
