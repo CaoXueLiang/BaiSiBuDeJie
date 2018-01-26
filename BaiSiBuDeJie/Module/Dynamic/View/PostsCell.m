@@ -16,7 +16,7 @@
 #import "PostsLayouts.h"
 #import "PostsModel.h"
 
-@interface PostsCell()<PostsToolBarViewDelegate>
+@interface PostsCell()<PostsToolBarViewDelegate,PostsProfileViewDelegate>
 @property (nonatomic,strong) PostsVideoView *videoView;
 @property (nonatomic,strong) PostsImageView *postsImageView;
 @property (nonatomic,strong) PostsCommentView *commentView;
@@ -39,6 +39,7 @@
 
 - (void)addSubViews{
     _profileView = [PostsProfileView new];
+    _profileView.delegate = self;
     [self.contentView addSubview:_profileView];
     
     _videoView = [PostsVideoView new];
@@ -80,6 +81,13 @@
     _animationLabel.hidden = YES;
     [_animationLabel sizeToFit];
     [self.contentView addSubview:_animationLabel];
+}
+
+#pragma mark - PostsProfileViewDelegate
+- (void)didClickUser{
+    if ([self.delegate respondsToSelector:@selector(didClickedUser:)]) {
+        [self.delegate didClickedUser:_selectIndex];
+    }
 }
 
 #pragma mark - PostsToolBarViewDelegate

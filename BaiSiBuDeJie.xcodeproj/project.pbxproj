@@ -54,6 +54,9 @@
 		58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A92F661FF349D600E5D60C /* AppDelegate.m */; };
 		58A92F751FF349D600E5D60C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A92F741FF349D600E5D60C /* main.m */; };
 		58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DDD6E41FF4EE2A00652015 /* CXLTweetListViewController.m */; };
+		58DF35DB201B18B000D28E39 /* PostsMemberCenterNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DF35DA201B18B000D28E39 /* PostsMemberCenterNavigation.m */; };
+		58DF35DE201B2C9000D28E39 /* CXLMemberCenterHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DF35DD201B2C9000D28E39 /* CXLMemberCenterHeaderView.m */; };
+		58DF35E1201B32B200D28E39 /* CXLMineInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DF35E0201B32B200D28E39 /* CXLMineInfoModel.m */; };
 		58E90C631FF610C7007E1ED5 /* CXLCustomHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E90C621FF610C7007E1ED5 /* CXLCustomHeader.m */; };
 		58E90C691FF624E9007E1ED5 /* CXLCustomFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E90C681FF624E9007E1ED5 /* CXLCustomFooter.m */; };
 		58E90C6F1FF6425B007E1ED5 /* MLNetWorkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E90C6E1FF637B0007E1ED5 /* MLNetWorkHelper.m */; };
@@ -71,8 +74,6 @@
 		C3766FEB20148F250028ACF6 /* CXLMineItermModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FEA20148F250028ACF6 /* CXLMineItermModel.m */; };
 		C3766FF12014C1DB0028ACF6 /* PostsCommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FF02014C1DB0028ACF6 /* PostsCommunityModel.m */; };
 		C3766FF42014C2CE0028ACF6 /* PostsThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FF32014C2CE0028ACF6 /* PostsThemeCell.m */; };
-		C3FE8F2D201A243700490AF6 /* XLPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FE8F2C201A243700490AF6 /* XLPageController.m */; };
-		C3FE8F35201A341000490AF6 /* XLTabBarProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FE8F34201A341000490AF6 /* XLTabBarProtocol.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,6 +172,12 @@
 		58A92F741FF349D600E5D60C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		58DDD6E31FF4EE2A00652015 /* CXLTweetListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLTweetListViewController.h; sourceTree = "<group>"; };
 		58DDD6E41FF4EE2A00652015 /* CXLTweetListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLTweetListViewController.m; sourceTree = "<group>"; };
+		58DF35D9201B18B000D28E39 /* PostsMemberCenterNavigation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsMemberCenterNavigation.h; sourceTree = "<group>"; };
+		58DF35DA201B18B000D28E39 /* PostsMemberCenterNavigation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsMemberCenterNavigation.m; sourceTree = "<group>"; };
+		58DF35DC201B2C9000D28E39 /* CXLMemberCenterHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMemberCenterHeaderView.h; sourceTree = "<group>"; };
+		58DF35DD201B2C9000D28E39 /* CXLMemberCenterHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMemberCenterHeaderView.m; sourceTree = "<group>"; };
+		58DF35DF201B32B200D28E39 /* CXLMineInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineInfoModel.h; sourceTree = "<group>"; };
+		58DF35E0201B32B200D28E39 /* CXLMineInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMineInfoModel.m; sourceTree = "<group>"; };
 		58E90C611FF610C7007E1ED5 /* CXLCustomHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLCustomHeader.h; sourceTree = "<group>"; };
 		58E90C621FF610C7007E1ED5 /* CXLCustomHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLCustomHeader.m; sourceTree = "<group>"; };
 		58E90C671FF624E9007E1ED5 /* CXLCustomFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLCustomFooter.h; sourceTree = "<group>"; };
@@ -206,11 +213,6 @@
 		C3766FF02014C1DB0028ACF6 /* PostsCommunityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommunityModel.m; sourceTree = "<group>"; };
 		C3766FF22014C2CE0028ACF6 /* PostsThemeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsThemeCell.h; sourceTree = "<group>"; };
 		C3766FF32014C2CE0028ACF6 /* PostsThemeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsThemeCell.m; sourceTree = "<group>"; };
-		C3FE8F2B201A243700490AF6 /* XLPageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLPageController.h; sourceTree = "<group>"; };
-		C3FE8F2C201A243700490AF6 /* XLPageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLPageController.m; sourceTree = "<group>"; };
-		C3FE8F2E201A247300490AF6 /* XLPageProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLPageProtocol.h; sourceTree = "<group>"; };
-		C3FE8F33201A341000490AF6 /* XLTabBarProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XLTabBarProtocol.h; sourceTree = "<group>"; };
-		C3FE8F34201A341000490AF6 /* XLTabBarProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XLTabBarProtocol.m; sourceTree = "<group>"; };
 		E4BE72135AF97B716991F3DA /* Pods-BaiSiBuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -318,6 +320,8 @@
 				C305D8CE2016209A00BC0215 /* PostsHomeNavigation.m */,
 				586CC7421FFF669700613B07 /* PostsDetailNavigation.h */,
 				586CC7431FFF669700613B07 /* PostsDetailNavigation.m */,
+				58DF35D9201B18B000D28E39 /* PostsMemberCenterNavigation.h */,
+				58DF35DA201B18B000D28E39 /* PostsMemberCenterNavigation.m */,
 			);
 			path = CustomNavigation;
 			sourceTree = "<group>";
@@ -510,7 +514,6 @@
 		58E90C5F1FF6100C007E1ED5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				C3FE8F27201A22F300490AF6 /* CustomPageControl */,
 				586CC7411FFF664B00613B07 /* CustomNavigation */,
 				5883B4C91FFC871100612B82 /* Consts */,
 				58E90C6A1FF6378A007E1ED5 /* NetHelper */,
@@ -577,6 +580,8 @@
 				C3766FE32014896A0028ACF6 /* CXLMineItermCell.m */,
 				C3766FE52014898E0028ACF6 /* CXLMineCollectionViewCell.h */,
 				C3766FE62014898E0028ACF6 /* CXLMineCollectionViewCell.m */,
+				58DF35DC201B2C9000D28E39 /* CXLMemberCenterHeaderView.h */,
+				58DF35DD201B2C9000D28E39 /* CXLMemberCenterHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -586,6 +591,8 @@
 			children = (
 				C3766FE920148F250028ACF6 /* CXLMineItermModel.h */,
 				C3766FEA20148F250028ACF6 /* CXLMineItermModel.m */,
+				58DF35DF201B32B200D28E39 /* CXLMineInfoModel.h */,
+				58DF35E0201B32B200D28E39 /* CXLMineInfoModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -634,42 +641,6 @@
 				58945BBF200CA10900AE1AA5 /* PostsCommentNormalCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C3FE8F27201A22F300490AF6 /* CustomPageControl */ = {
-			isa = PBXGroup;
-			children = (
-				C3FE8F2A201A234200490AF6 /* Protocol */,
-				C3FE8F29201A233C00490AF6 /* Controller */,
-				C3FE8F28201A233500490AF6 /* View */,
-			);
-			path = CustomPageControl;
-			sourceTree = "<group>";
-		};
-		C3FE8F28201A233500490AF6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C3FE8F29201A233C00490AF6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				C3FE8F2B201A243700490AF6 /* XLPageController.h */,
-				C3FE8F2C201A243700490AF6 /* XLPageController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		C3FE8F2A201A234200490AF6 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				C3FE8F2E201A247300490AF6 /* XLPageProtocol.h */,
-				C3FE8F33201A341000490AF6 /* XLTabBarProtocol.h */,
-				C3FE8F34201A341000490AF6 /* XLTabBarProtocol.m */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -821,11 +792,13 @@
 				5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */,
 				C300DA0D200B10A200FA1936 /* PostsDetailHeaderView.m in Sources */,
 				58DDD6E51FF4EE2A00652015 /* CXLTweetListViewController.m in Sources */,
+				58DF35DE201B2C9000D28E39 /* CXLMemberCenterHeaderView.m in Sources */,
 				5883B4C51FFC6E8700612B82 /* PostsCommentCell.m in Sources */,
 				5899E4EF1FFB892700AA3D4E /* PostsProfileView.m in Sources */,
 				C300DA10200B148F00FA1936 /* PostsDetailImageView.m in Sources */,
 				C3766FE42014896A0028ACF6 /* CXLMineItermCell.m in Sources */,
 				586CC7441FFF669700613B07 /* PostsDetailNavigation.m in Sources */,
+				58DF35E1201B32B200D28E39 /* CXLMineInfoModel.m in Sources */,
 				581BDF63200E0019008A342B /* UIView+CustomControlView.m in Sources */,
 				5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */,
 				5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */,
@@ -838,13 +811,12 @@
 				581BDF61200E0019008A342B /* UIImageView+ZFCache.m in Sources */,
 				C3766FF42014C2CE0028ACF6 /* PostsThemeCell.m in Sources */,
 				C300DA01200A585700FA1936 /* PostsDetailHeaderLayout.m in Sources */,
-				C3FE8F35201A341000490AF6 /* XLTabBarProtocol.m in Sources */,
 				586CC7401FFF22FC00613B07 /* PostsDetailController.m in Sources */,
+				58DF35DB201B18B000D28E39 /* PostsMemberCenterNavigation.m in Sources */,
 				C305D8CF2016209A00BC0215 /* PostsHomeNavigation.m in Sources */,
 				C3766FF12014C1DB0028ACF6 /* PostsCommunityModel.m in Sources */,
 				C3766FE72014898E0028ACF6 /* CXLMineCollectionViewCell.m in Sources */,
 				5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */,
-				C3FE8F2D201A243700490AF6 /* XLPageController.m in Sources */,
 				5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */,
 				581BDF7A200E0033008A342B /* ZFPlayerView.m in Sources */,
 				580391F61FFE12CB0076C82A /* CXLTweetListVideoController.m in Sources */,

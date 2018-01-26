@@ -106,7 +106,7 @@
     PostsLayouts *layout = self.dataArray[index];
     layout.isExpend = !layout.isExpend;
     [layout layout];
-    [self.myTable reloadRow:index inSection:0 withRowAnimation:UITableViewRowAnimationNone];
+    [self.myTable reloadRow:index inSection:0 withRowAnimation:UITableViewRowAnimationFade];
 }
 
 /**点击了赞*/
@@ -130,6 +130,13 @@
     layout.postsModel.isDown = YES;
     [cell downButtonAnimation];
     cell.toolbarView.model = layout.postsModel;
+}
+
+- (void)didClickedUser:(NSInteger)index{
+    PostsLayouts *layout = self.dataArray[index];
+    if ([self.delegate respondsToSelector:@selector(didClickedUserWithPostsModel:)]) {
+        [self.delegate didClickedUserWithPostsModel:layout.postsModel];
+    }
 }
 
 #pragma mark - NetRequest

@@ -90,6 +90,16 @@
     }];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    if ([self.delegate respondsToSelector:@selector(didClickUser)]) {
+        [self.delegate didClickUser];
+    }
+}
+
 #pragma mark - Public Menthod
 - (void)thanksAnimation{
     _thanksView.hidden = NO;

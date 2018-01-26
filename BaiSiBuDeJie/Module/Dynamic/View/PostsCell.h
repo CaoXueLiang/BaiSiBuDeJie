@@ -13,6 +13,7 @@
 - (void)didClickedExpendButton:(NSInteger)index;
 - (void)didClickedUpButon:(NSInteger)index;
 - (void)didClickedDownButton:(NSInteger)index;
+- (void)didClickedUser:(NSInteger)index;
 @end
 
 /**

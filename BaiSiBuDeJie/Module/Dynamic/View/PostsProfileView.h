@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PostsProfileViewDelegate <NSObject>
+- (void)didClickUser;
+@end
+
 /**
  个人信息View
  */
 @class PostsModel;
 @interface PostsProfileView : UIView
+@property (nonatomic,weak) id<PostsProfileViewDelegate> delegate;
 @property (nonatomic,strong) PostsModel *model;
 /**感谢点赞动画*/
 - (void)thanksAnimation;

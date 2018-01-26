@@ -13,6 +13,8 @@
 #import "CXLTweetListVideoController.h"
 #import "PostsDetailController.h"
 #import "PostsHomeNavigation.h"
+#import "CXLPersonalCenterController.h"
+#import "PostsModel.h"
 
 /*TarBar高度*/
 static const CGFloat KTarBarHeight = 50;
@@ -134,6 +136,11 @@ CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
             _pagerController.view.frame = CGRectMake(0, KTarBarHeight + KTopHeight, CGRectGetWidth(self.view.frame), kScreenHeight - KTopHeight - KTarBarHeight - KTarbarHeight);
         } completion:nil];
     }
+}
+
+- (void)didClickedUserWithPostsModel:(PostsModel *)model{
+    CXLPersonalCenterController *controller = [CXLPersonalCenterController initWithModel:model];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 #pragma mark - TYTabPagerBarDataSource
