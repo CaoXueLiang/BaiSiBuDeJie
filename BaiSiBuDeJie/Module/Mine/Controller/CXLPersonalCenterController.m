@@ -13,11 +13,13 @@
 #import "PostsToolBarView.h"
 #import "PostsProfileView.h"
 #import "PostsMemberCenterNavigation.h"
+#import "CXLMemberCenterHeaderView.h"
 
 @interface CXLPersonalCenterController ()
 <UITableViewDelegate,UITableViewDataSource,PostsCellDelegate>
 @property (nonatomic,strong) PostsModel *postModel;
 @property (nonatomic,strong) PostsMemberCenterNavigation *customNavigation;
+@property (nonatomic,strong) CXLMemberCenterHeaderView *headerView;
 @property (nonatomic,strong) UITableView *myTable;
 @property (nonatomic,assign) NSInteger currentPage;
 @property (nonatomic,copy)   NSString *URLString;
@@ -186,6 +188,13 @@
         _customNavigation = [PostsMemberCenterNavigation new];
     }
     return _customNavigation;
+}
+
+- (CXLMemberCenterHeaderView *)headerView{
+    if (!_headerView) {
+        _headerView = [[CXLMemberCenterHeaderView alloc]init];
+    }
+    return _headerView;
 }
 
 @end
