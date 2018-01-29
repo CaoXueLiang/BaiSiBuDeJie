@@ -14,7 +14,10 @@
 #import "PostsProfileView.h"
 #import "PostsMemberCenterNavigation.h"
 #import "CXLMemberCenterHeaderView.h"
+#import "CXLMineInfoModel.h"
 
+static CGFloat const KHeaderViewHeight = 300;
+static CGFloat const KMaxImageOffSet = 100;
 @interface CXLPersonalCenterController ()
 <UITableViewDelegate,UITableViewDataSource,PostsCellDelegate>
 @property (nonatomic,strong) PostsModel *postModel;
@@ -42,8 +45,10 @@
     [self setRefresh];
     [self getUserInfo];
     self.myTable.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight);
+    self.myTable.contentInset = UIEdgeInsetsMake(KHeaderViewHeight, 0, 0, 0);
     [self.view addSubview:self.myTable];
     [self.view addSubview:self.customNavigation];
+    [self.myTable addSubview:self.headerView];
 }
 
 - (void)setRefresh{
@@ -85,9 +90,23 @@
 //    }
 //}
 //
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-//    [self.]
-//}
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat offsetY = scrollView.contentOffset.y;
+    
+    //改变导航栏的透明度
+    [self.customNavigation setAttributesWithOffSet:offsetY + KHeaderViewHeight];
+    
+    //下拉时改变图片的高度和初始的Y值
+    if (offsetY < -KHeaderViewHeight) {
+        self.headerView.top = offsetY;
+        self.headerView.height = fabs(offsetY);
+    }
+    
+    //限制最大下拉高度
+    if (offsetY < -(KHeaderViewHeight + KMaxImageOffSet)) {
+        [self.myTable setContentOffset:CGPointMake(0, -(KHeaderViewHeight + KMaxImageOffSet))];
+    }
+}
 //
 //#pragma mark - PostsCellDelegate
 ///**点击展开，收起按钮*/
@@ -143,7 +162,6 @@
     [MLNetWorkHelper GET:self.URLString parameters:@{} responseCache:^(id responseCache) {
         
     } success:^(id responseObject) {
-        
         [self.myTable.mj_header endRefreshing];
         [self.myTable.mj_footer endRefreshing];
         SLog(@"%@",[responseObject yy_modelToJSONString]);
@@ -163,7 +181,10 @@
 - (void)getUserInfo{
     NSString *url = [NSString stringWithFormat:@"http://d.api.budejie.com/user/profile?appname=bs0315&asid=91344335-9305-4C86-881F-56E9C333D8BA&client=iphone&device=iPhone205S&from=ios&jbk=1&market=&openudid=26a043f8294d182c9ca9d4665eb74d69ca6b8ee3&sex=m&t=1516956353&udid=&uid=21665716&userid=%@&ver=4.5.7",_postModel.u.uid];
     [MLNetWorkHelper GET:url parameters:@{} success:^(id responseObject) {
-        SLog(@"%@",[responseObject yy_modelToJSONString]);
+        NSDictionary *dict = responseObject[@"data"];
+        CXLMineInfoModel *model = [CXLMineInfoModel yy_modelWithJSON:dict];
+        self.headerView.infoModel = model;
+       
     } failure:^(NSError *error) {
         [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
     }];
@@ -177,7 +198,7 @@
         _myTable.tableFooterView = [UIView new];
         _myTable.separatorColor = RGBLINE;
         [_myTable registerClass:[PostsCell class] forCellReuseIdentifier:@"PostsCell"];
-//        _myTable.delegate = self;
+        _myTable.delegate = self;
 //        _myTable.dataSource = self;
     }
     return _myTable;
@@ -192,7 +213,7 @@
 
 - (CXLMemberCenterHeaderView *)headerView{
     if (!_headerView) {
-        _headerView = [[CXLMemberCenterHeaderView alloc]init];
+        _headerView = [[CXLMemberCenterHeaderView alloc]initWithFrame:CGRectMake(0, -KHeaderViewHeight, kScreenWidth, KHeaderViewHeight)];
     }
     return _headerView;
 }

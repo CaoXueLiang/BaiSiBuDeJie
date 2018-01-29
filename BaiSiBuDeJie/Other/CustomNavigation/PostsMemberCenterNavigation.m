@@ -80,8 +80,9 @@
     _nameLabel.text = model.u.name;
 }
 
-- (void)scrollWithOffSetY:(CGFloat)offSetY{
-    SLog(@"---%f---",offSetY);
+- (void)setAttributesWithOffSet:(CGFloat)offset{
+    CGFloat ratio = MIN(MAX(0, offset / (300 - KTopHeight)), 1);
+    self.contentView.alpha = ratio;
 }
 
 #pragma mark - Event Response

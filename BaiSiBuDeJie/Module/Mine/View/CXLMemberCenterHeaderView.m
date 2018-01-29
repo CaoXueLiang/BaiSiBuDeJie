@@ -51,7 +51,7 @@ static CGFloat const KbottomViewHeight = 100;
     [self addSubview:self.bottomView];
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
-        make.bottom.equalTo(self.tabBar.mas_bottom);
+        make.bottom.equalTo(self.tabBar.mas_top);
         make.height.mas_equalTo(KbottomViewHeight);
     }];
     
@@ -59,9 +59,9 @@ static CGFloat const KbottomViewHeight = 100;
     [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(CGSizeMake(80, 80));
         make.left.equalTo(self.bottomView).offset(12);
-        make.top.equalTo(self.bottomView).offset(-30);
+        make.top.equalTo(self.bottomView).offset(-20);
     }];
-    
+
     [self.bottomView addSubview:self.detailView];
     [self.detailView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.avatarView.mas_right).offset(12);
@@ -69,53 +69,53 @@ static CGFloat const KbottomViewHeight = 100;
         make.right.equalTo(self.bottomView);
         make.bottom.equalTo(self.bottomView.mas_centerY);
     }];
-    
+
     [self.detailView addSubview:self.fansLabel];
     [self.fansLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.detailView);
         make.centerY.equalTo(self.detailView.mas_centerY);
     }];
-    
+
     [self.detailView addSubview:self.leftLine];
     [self.leftLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.levelLabel.mas_right).offset(10);
-        make.size.mas_equalTo(CGSizeMake(1, 30));
+        make.left.equalTo(self.fansLabel.mas_right).offset(10);
+        make.size.mas_equalTo(CGSizeMake(1, 15));
         make.centerY.equalTo(self.detailView.mas_centerY);
     }];
-    
+
     [self.detailView addSubview:self.attentionLabel];
     [self.attentionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.leftLine.mas_right).offset(10);
+        make.left.equalTo(self.fansLabel.mas_right).offset(20);
         make.centerY.equalTo(self.detailView.mas_centerY);
     }];
-    
+
     [self.detailView addSubview:self.rightLine];
     [self.rightLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.attentionLabel.mas_right).offset(10);
-        make.size.mas_equalTo(CGSizeMake(1, 30));
+        make.size.mas_equalTo(CGSizeMake(1, 15));
         make.centerY.equalTo(self.detailView.mas_centerY);
     }];
-    
+
     [self.detailView addSubview:self.levelLabel];
     [self.levelLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.rightLine.mas_right).offset(10);
+        make.left.equalTo(self.attentionLabel.mas_right).offset(20);
         make.centerY.equalTo(self.detailView.mas_centerY);
     }];
-    
+
     [self.bottomView addSubview:self.attentionButton];
     [self.attentionButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.detailView.mas_left);
         make.right.equalTo(self.bottomView).offset(-20);
-        make.height.mas_equalTo(35);
-        make.centerY.mas_equalTo(KbottomViewHeight/2.0 + KbottomViewHeight/4.0);
+        make.height.mas_equalTo(30);
+    make.centerY.mas_equalTo(self.bottomView.mas_centerY).offset(KbottomViewHeight/4.0);
     }];
-    
-    [self addSubview:self.backImageview];
+
+    [self insertSubview:self.backImageview belowSubview:self.bottomView];
     [self.backImageview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.equalTo(self);
         make.bottom.equalTo(self.bottomView.mas_top);
     }];
-    
+
     [self.backImageview addSubview:self.praisedButton];
     [self.praisedButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.backImageview).offset(-12);
@@ -123,6 +123,30 @@ static CGFloat const KbottomViewHeight = 100;
     }];
 }
 
+#pragma mark - Public Menthod
+- (void)setInfoModel:(CXLMineInfoModel *)infoModel{
+    _infoModel = infoModel;
+    [_backImageview sd_setImageWithURL:[NSURL URLWithString:infoModel.background_image]];
+    [_avatarView sd_setImageWithURL:[NSURL URLWithString:infoModel.profile_image]];
+    NSInteger fans = [infoModel.fans_count integerValue];
+    NSInteger attention = [infoModel.follow_count integerValue];
+    if (fans >= 1000) {
+        NSString *fansString = fans % 1000 == 0 ? [NSString stringWithFormat:@"%.0fk 粉丝",fans / 1000.0] : [NSString stringWithFormat:@"%.1fk 粉丝",fans / 1000.0];
+        _fansLabel.text = fansString;
+    }else{
+        _fansLabel.text = [NSString stringWithFormat:@"%ld 粉丝",fans];
+    }
+    
+    if (attention >= 1000) {
+        NSString *attentionString = fans % 1000 == 0 ? [NSString stringWithFormat:@"%.0fk 关注",fans / 1000.0] : [NSString stringWithFormat:@"%.1fk 关注",fans / 1000.0];
+        _attentionLabel.text = attentionString;
+    }else{
+        _attentionLabel.text = [NSString stringWithFormat:@"%ld 关注",attention];
+    }
+    _levelLabel.text = [NSString stringWithFormat:@"等级: LV%@",infoModel.level];
+    [_praisedButton setTitle:infoModel.total_cmt_like_count forState:UIControlStateNormal];
+    [_praisedButton layoutImageTitleHorizontalOffSet:5];
+}
 
 #pragma mark - TYTabPagerBarDataSource
 - (NSInteger)numberOfItemsInPagerTabBar {
@@ -169,9 +193,7 @@ static CGFloat const KbottomViewHeight = 100;
         [_praisedButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _praisedButton.titleLabel.font = [UIFont systemFontOfSize:14];
         _praisedButton.userInteractionEnabled = NO;
-        _praisedButton.layer.cornerRadius = 50/2.0;
-        _praisedButton.layer.borderColor = [UIColor whiteColor].CGColor;
-        _praisedButton.layer.borderWidth = 1.0f;
+        [_praisedButton setBackgroundImage:[UIImage imageNamed:@"buttonFrameClick_70x29_"] forState:UIControlStateNormal];
     }
     return _praisedButton;
 }
@@ -259,7 +281,7 @@ static CGFloat const KbottomViewHeight = 100;
         _leftLine = [UIView new];
         _leftLine.backgroundColor = [UIColor lightGrayColor];
     }
-    return _rightLine;
+    return _leftLine;
 }
 
 - (UIView *)rightLine{
@@ -279,14 +301,12 @@ static CGFloat const KbottomViewHeight = 100;
         _tabBar.backgroundColor = [UIColor whiteColor];
         _tabBar.layout.normalTextColor = [UIColor grayColor];
         _tabBar.layout.selectedTextColor = MainColor;
-        _tabBar.layout.progressColor = [UIColor whiteColor];
+        _tabBar.layout.progressColor = MainColor;
         _tabBar.layout.normalTextFont = [UIFont systemFontOfSize:16];
         _tabBar.layout.selectedTextFont = [UIFont systemFontOfSize:19];
         [_tabBar registerClass:[TYTabPagerBarCell class] forCellWithReuseIdentifier:[TYTabPagerBarCell cellIdentifier]];
     }
     return _tabBar;
 }
-
-
 
 @end

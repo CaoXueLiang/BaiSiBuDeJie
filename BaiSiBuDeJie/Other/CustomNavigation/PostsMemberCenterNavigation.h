@@ -20,6 +20,6 @@
 @interface PostsMemberCenterNavigation : UIView
 @property (nonatomic,weak) id<PostsMemberCenterNavigationDelegate> delegate;
 @property (nonatomic,strong) PostsModel *model;
-- (void)scrollWithOffSetY:(CGFloat)offSetY;
+- (void)setAttributesWithOffSet:(CGFloat)offset;
 @end
 
