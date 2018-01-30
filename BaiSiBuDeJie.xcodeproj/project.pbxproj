@@ -74,6 +74,9 @@
 		C3766FEB20148F250028ACF6 /* CXLMineItermModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FEA20148F250028ACF6 /* CXLMineItermModel.m */; };
 		C3766FF12014C1DB0028ACF6 /* PostsCommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FF02014C1DB0028ACF6 /* PostsCommunityModel.m */; };
 		C3766FF42014C2CE0028ACF6 /* PostsThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FF32014C2CE0028ACF6 /* PostsThemeCell.m */; };
+		C3FEB5F62020B17000B81EAD /* CXLMemberCenterFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FEB5F52020B17000B81EAD /* CXLMemberCenterFootView.m */; };
+		C3FEB5F92020B24100B81EAD /* CXLMineCenterListView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FEB5F82020B24100B81EAD /* CXLMineCenterListView.m */; };
+		C3FEB5FC2020C96800B81EAD /* CXLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FEB5FB2020C96800B81EAD /* CXLTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -213,6 +216,12 @@
 		C3766FF02014C1DB0028ACF6 /* PostsCommunityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommunityModel.m; sourceTree = "<group>"; };
 		C3766FF22014C2CE0028ACF6 /* PostsThemeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsThemeCell.h; sourceTree = "<group>"; };
 		C3766FF32014C2CE0028ACF6 /* PostsThemeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsThemeCell.m; sourceTree = "<group>"; };
+		C3FEB5F42020B17000B81EAD /* CXLMemberCenterFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMemberCenterFootView.h; sourceTree = "<group>"; };
+		C3FEB5F52020B17000B81EAD /* CXLMemberCenterFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMemberCenterFootView.m; sourceTree = "<group>"; };
+		C3FEB5F72020B24100B81EAD /* CXLMineCenterListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineCenterListView.h; sourceTree = "<group>"; };
+		C3FEB5F82020B24100B81EAD /* CXLMineCenterListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMineCenterListView.m; sourceTree = "<group>"; };
+		C3FEB5FA2020C96800B81EAD /* CXLTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLTableView.h; sourceTree = "<group>"; };
+		C3FEB5FB2020C96800B81EAD /* CXLTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLTableView.m; sourceTree = "<group>"; };
 		E4BE72135AF97B716991F3DA /* Pods-BaiSiBuDeJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiSiBuDeJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -582,6 +591,12 @@
 				C3766FE62014898E0028ACF6 /* CXLMineCollectionViewCell.m */,
 				58DF35DC201B2C9000D28E39 /* CXLMemberCenterHeaderView.h */,
 				58DF35DD201B2C9000D28E39 /* CXLMemberCenterHeaderView.m */,
+				C3FEB5F42020B17000B81EAD /* CXLMemberCenterFootView.h */,
+				C3FEB5F52020B17000B81EAD /* CXLMemberCenterFootView.m */,
+				C3FEB5F72020B24100B81EAD /* CXLMineCenterListView.h */,
+				C3FEB5F82020B24100B81EAD /* CXLMineCenterListView.m */,
+				C3FEB5FA2020C96800B81EAD /* CXLTableView.h */,
+				C3FEB5FB2020C96800B81EAD /* CXLTableView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -777,6 +792,7 @@
 				58945BC3200CAEF300AE1AA5 /* PostsCommentDetailNormalLayout.m in Sources */,
 				5883B4D01FFCD6D600612B82 /* UIButton+Aliment.m in Sources */,
 				5899E4EC1FFB885F00AA3D4E /* DACircularProgressView.m in Sources */,
+				C3FEB5F62020B17000B81EAD /* CXLMemberCenterFootView.m in Sources */,
 				581BDF79200E0033008A342B /* ZFPlayerControlView.m in Sources */,
 				5899E4EB1FFB885B00AA3D4E /* DALabeledCircularProgressView.m in Sources */,
 				58E90C701FF6426D007E1ED5 /* MLNetWorkCache.m in Sources */,
@@ -815,6 +831,7 @@
 				58DF35DB201B18B000D28E39 /* PostsMemberCenterNavigation.m in Sources */,
 				C305D8CF2016209A00BC0215 /* PostsHomeNavigation.m in Sources */,
 				C3766FF12014C1DB0028ACF6 /* PostsCommunityModel.m in Sources */,
+				C3FEB5F92020B24100B81EAD /* CXLMineCenterListView.m in Sources */,
 				C3766FE72014898E0028ACF6 /* CXLMineCollectionViewCell.m in Sources */,
 				5899E4E11FFB550E00AA3D4E /* PostsModel.m in Sources */,
 				5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */,
@@ -835,6 +852,7 @@
 				586DB93720075FC800BE789D /* PostsDetailCommentModel.m in Sources */,
 				5899E4F21FFB893A00AA3D4E /* PostsVideoView.m in Sources */,
 				5899E4E41FFB6AED00AA3D4E /* PostsCell.m in Sources */,
+				C3FEB5FC2020C96800B81EAD /* CXLTableView.m in Sources */,
 				C3766FEB20148F250028ACF6 /* CXLMineItermModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

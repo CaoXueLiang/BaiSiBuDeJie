@@ -39,7 +39,7 @@
     [self addSubview:_contentView];
     
     _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_backButton setImage:[UIImage imageNamed:@"capture_nav_back_normal_480_44x44_"] forState:UIControlStateNormal];
+    [_backButton setImage:[UIImage imageNamed:@"commend_back_11x17_"] forState:UIControlStateNormal];
     [_backButton setTitle:@"返回" forState:UIControlStateNormal];
     [_backButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     _backButton.titleLabel.font = [UIFont systemFontOfSize:15];

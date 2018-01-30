@@ -7,12 +7,10 @@
 //
 
 #import "CXLMemberCenterHeaderView.h"
-#import "TYTabPagerBar.h"
 #import "CXLMineInfoModel.h"
 #import "UIButton+Aliment.h"
 
 @interface CXLMemberCenterHeaderView()
-<TYTabPagerBarDataSource,TYTabPagerBarDelegate>
 @property (nonatomic,strong) UIImageView *backImageview;
 @property (nonatomic,strong) UIButton *praisedButton;
 @property (nonatomic,strong) UIView *bottomView;
@@ -25,8 +23,6 @@
 @property (nonatomic,strong) UILabel *levelLabel;
 @property (nonatomic,strong) UIView *leftLine;
 @property (nonatomic,strong) UIView *rightLine;
-@property (nonatomic,strong) TYTabPagerBar *tabBar;
-@property (nonatomic,strong) NSArray *itermArray;
 @end
 
 static CGFloat const KtabBarHeight = 45;
@@ -42,16 +38,10 @@ static CGFloat const KbottomViewHeight = 100;
 }
 
 - (void)addSubViews{
-    [self addSubview:self.tabBar];
-    [self.tabBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self);
-        make.height.mas_equalTo(KtabBarHeight);
-    }];
-    
     [self addSubview:self.bottomView];
     [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
-        make.bottom.equalTo(self.tabBar.mas_top);
+        make.bottom.equalTo(self);
         make.height.mas_equalTo(KbottomViewHeight);
     }];
     
@@ -145,38 +135,10 @@ static CGFloat const KbottomViewHeight = 100;
     }
     _levelLabel.text = [NSString stringWithFormat:@"等级: LV%@",infoModel.level];
     [_praisedButton setTitle:infoModel.total_cmt_like_count forState:UIControlStateNormal];
-    [_praisedButton layoutImageTitleHorizontalOffSet:5];
-}
-
-#pragma mark - TYTabPagerBarDataSource
-- (NSInteger)numberOfItemsInPagerTabBar {
-    return self.itermArray.count;
-}
-
-- (UICollectionViewCell<TYTabPagerBarCellProtocol> *)pagerTabBar:(TYTabPagerBar *)pagerTabBar cellForItemAtIndex:(NSInteger)index {
-    UICollectionViewCell<TYTabPagerBarCellProtocol> *cell = [pagerTabBar dequeueReusableCellWithReuseIdentifier:[TYTabPagerBarCell cellIdentifier] forIndex:index];
-    cell.titleLabel.text = self.itermArray[index];
-    return cell;
-}
-
-#pragma mark - TYTabPagerBarDelegate
-- (CGFloat)pagerTabBar:(TYTabPagerBar *)pagerTabBar widthForItemAtIndex:(NSInteger)index {
-    NSString *title = self.itermArray[index];
-    return [pagerTabBar cellWidthForTitle:title];
-}
-
-- (void)pagerTabBar:(TYTabPagerBar *)pagerTabBar didSelectItemAtIndex:(NSInteger)index {
-    
+    [_praisedButton layoutImageTitleHorizontalOffSet:10];
 }
 
 #pragma mark - Setter && Getter
-- (NSArray *)itermArray{
-    if (!_itermArray) {
-        _itermArray = @[@"帖子",@"分享",@"评论"];
-    }
-    return _itermArray;
-}
-
 - (UIImageView *)backImageview{
     if (!_backImageview) {
         _backImageview = [[UIImageView alloc]init];
@@ -193,7 +155,11 @@ static CGFloat const KbottomViewHeight = 100;
         [_praisedButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _praisedButton.titleLabel.font = [UIFont systemFontOfSize:14];
         _praisedButton.userInteractionEnabled = NO;
-        [_praisedButton setBackgroundImage:[UIImage imageNamed:@"buttonFrameClick_70x29_"] forState:UIControlStateNormal];
+        [_praisedButton setBackgroundImage:[UIImage imageWithColor:[[UIColor blackColor] colorWithAlphaComponent:0.4] size:CGSizeMake(70, 30)] forState:UIControlStateNormal];
+        _praisedButton.layer.borderWidth = 1;
+        _praisedButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        _praisedButton.layer.cornerRadius = 30/2.0;
+        _praisedButton.layer.masksToBounds = YES;
     }
     return _praisedButton;
 }
@@ -292,21 +258,6 @@ static CGFloat const KbottomViewHeight = 100;
     return _rightLine;
 }
 
-- (TYTabPagerBar *)tabBar{
-    if (!_tabBar) {
-        _tabBar = [[TYTabPagerBar alloc]init];
-        _tabBar.layout.barStyle = TYPagerBarStyleProgressView;
-        _tabBar.dataSource = self;
-        _tabBar.delegate = self;
-        _tabBar.backgroundColor = [UIColor whiteColor];
-        _tabBar.layout.normalTextColor = [UIColor grayColor];
-        _tabBar.layout.selectedTextColor = MainColor;
-        _tabBar.layout.progressColor = MainColor;
-        _tabBar.layout.normalTextFont = [UIFont systemFontOfSize:16];
-        _tabBar.layout.selectedTextFont = [UIFont systemFontOfSize:19];
-        [_tabBar registerClass:[TYTabPagerBarCell class] forCellWithReuseIdentifier:[TYTabPagerBarCell cellIdentifier]];
-    }
-    return _tabBar;
-}
+
 
 @end
