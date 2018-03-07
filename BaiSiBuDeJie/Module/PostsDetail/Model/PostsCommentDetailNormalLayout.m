@@ -72,7 +72,7 @@
 
 - (void)p_layoutNickName{
     //去掉昵称的空格
-    NSString *nick = _commentModel.user.username;
+    NSString *nick = _commentModel.user.username ? : @"";
     NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
     nick = [nick stringByTrimmingCharactersInSet:set];
     NSMutableAttributedString *userString = [[NSMutableAttributedString alloc]initWithString:nick];

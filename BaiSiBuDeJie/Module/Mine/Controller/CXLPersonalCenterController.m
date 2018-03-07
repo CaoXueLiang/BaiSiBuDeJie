@@ -14,10 +14,10 @@
 #import "CXLMemberCenterFootView.h"
 #import "CXLTableView.h"
 
-static CGFloat const KHeaderViewHeight = 260;
+static CGFloat const KHeaderViewHeight = 300;
 static CGFloat const KMaxImageOffSet = 100;
 @interface CXLPersonalCenterController ()
-<UITableViewDelegate,PostsMemberCenterNavigationDelegate>
+<UITableViewDelegate,UITableViewDataSource,PostsMemberCenterNavigationDelegate>
 @property (nonatomic,strong) PostsModel *postModel;
 @property (nonatomic,strong) PostsMemberCenterNavigation *customNavigation;
 @property (nonatomic,strong) CXLMemberCenterHeaderView *headerView;
@@ -44,7 +44,26 @@ static CGFloat const KMaxImageOffSet = 100;
     [self.view addSubview:self.myTable];
     [self.view addSubview:self.customNavigation];
     [self.myTable addSubview:self.headerView];
-    self.myTable.tableFooterView = self.footView;
+    //self.myTable.tableFooterView = self.footView;
+}
+
+#pragma mark - UITableView M
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
+    }
+    // 添加悬浮菜单
+    [cell.contentView addSubview:self.footView];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return kScreenHeight;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
@@ -94,6 +113,7 @@ static CGFloat const KMaxImageOffSet = 100;
         _myTable.backgroundColor = [UIColor clearColor];
         _myTable.separatorColor = RGBLINE;
         _myTable.delegate = self;
+        _myTable.dataSource = self;
     }
     return _myTable;
 }
