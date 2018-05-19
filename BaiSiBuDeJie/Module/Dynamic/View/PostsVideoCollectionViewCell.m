@@ -23,7 +23,8 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self addSubViews];
-        self.contentView.backgroundColor = [UIColor clearColor];
+        //self.contentView.backgroundColor = [UIColor clearColor];
+        self.dk_backgroundColorPicker = DKColorPickerWithKey(CellBG);
     }
     return self;
 }

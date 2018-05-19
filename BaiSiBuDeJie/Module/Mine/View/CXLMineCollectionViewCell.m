@@ -26,7 +26,7 @@
 
 - (void)addSubViews{
     _itermButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_itermButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_itermButton dk_setTitleColorPicker:DKColorPickerWithKey(LabelColor) forState:UIControlStateNormal];
     _itermButton.userInteractionEnabled = NO;
     _itermButton.titleLabel.font = [UIFont systemFontOfSize:12.5];
     [self.contentView addSubview:_itermButton];

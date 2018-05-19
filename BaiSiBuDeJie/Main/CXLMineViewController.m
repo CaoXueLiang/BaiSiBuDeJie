@@ -10,16 +10,16 @@
 #import "CXLMineLoginCell.h"
 #import "CXLMineItermCell.h"
 
-@interface CXLMineViewController ()
-<UITableViewDelegate,UITableViewDataSource>
+@interface CXLMineViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *myTable;
+@property (nonatomic,strong) UIButton *switchButton;
 @end
 
 @implementation CXLMineViewController
 #pragma mark - Init Menthod
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBG);
     [self addSubViews];
     [self setNavigation];
 }
@@ -30,6 +30,22 @@
 
 - (void)setNavigation{
     self.navigationItem.title = @"我的";
+    UIButton *moonButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [moonButton setImage:[UIImage imageNamed:@"mine-moon-icon-click_20x20_"] forState:UIControlStateNormal];
+    [moonButton setImage:[UIImage imageNamed:@"mine-sun-icon_20x20_"] forState:UIControlStateSelected];
+    [moonButton addTarget:self action:@selector(switchTheme) forControlEvents:UIControlEventTouchUpInside];
+    self.switchButton = moonButton;
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithCustomView:moonButton];
+    self.navigationItem.rightBarButtonItem = rightButton;
+}
+
+- (void)switchTheme{
+    self.switchButton.selected = !self.switchButton.selected;
+    if (self.switchButton.selected) {
+        self.dk_manager.themeVersion = DKThemeVersionNight;
+    }else{
+        self.dk_manager.themeVersion = DKThemeVersionNormal;
+    }
 }
 
 #pragma mark - UITableView M
@@ -90,6 +106,7 @@
         [_myTable registerClass:[CXLMineLoginCell class] forCellReuseIdentifier:@"CXLMineLoginCell"];
         [_myTable registerClass:[CXLMineItermCell class] forCellReuseIdentifier:@"CXLMineItermCell"];
         _myTable.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _myTable.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBG);
         _myTable.delegate = self;
         _myTable.dataSource = self;
     }

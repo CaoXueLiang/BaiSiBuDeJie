@@ -45,7 +45,7 @@ CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
     tabBar.layout.barStyle = TYPagerBarStyleProgressView;
     tabBar.dataSource = self;
     tabBar.delegate = self;
-    tabBar.backgroundColor = MainColor;
+    tabBar.dk_backgroundColorPicker = DKColorPickerWithKey(NavigationBarColor);
     tabBar.layout.normalTextColor = [UIColor whiteColor];
     tabBar.layout.selectedTextColor = [UIColor whiteColor];
     tabBar.layout.progressColor = [UIColor whiteColor];
@@ -66,6 +66,7 @@ CXLTweetListVideoControllerDelegate,CXLTweetListViewControllerDelegate>
     pagerController.delegate = self;
     [self addChildViewController:pagerController];
     [self.view addSubview:pagerController.view];
+    pagerController.view.dk_backgroundColorPicker = DKColorPickerWithKey(NavigationBarColor);
     _pagerController = pagerController;
 }
 

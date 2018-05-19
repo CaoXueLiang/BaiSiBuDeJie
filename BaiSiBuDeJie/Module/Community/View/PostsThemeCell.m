@@ -23,6 +23,7 @@
     if (self) {
         [self addSubViews];
         self.selectedBackgroundView = self.selectedView;
+        self.dk_backgroundColorPicker = DKColorPickerWithKey(CellBG);
         self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     return self;
@@ -75,6 +76,7 @@
         _themeLabel = [UILabel new];
         _themeLabel.font = [UIFont systemFontOfSize:15];
         _themeLabel.textColor = [UIColor blackColor];
+        _themeLabel.dk_textColorPicker = DKColorPickerWithKey(DetailLabelColor);
     }
     return _themeLabel;
 }
@@ -84,6 +86,7 @@
         _updateLabel = [UILabel new];
         _updateLabel.font = [UIFont systemFontOfSize:12];
         _updateLabel.textColor = [UIColor lightGrayColor];
+        _themeLabel.dk_textColorPicker = DKColorPickerWithKey(LabelColor);
     }
     return _updateLabel;
 }

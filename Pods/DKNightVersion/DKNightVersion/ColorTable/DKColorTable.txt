@@ -1,0 +1,8 @@
+NORMAL   NIGHT
+#F2F2F2  #1A1A1A   TableViewBG
+#FFFFFF  #222222   CellBG
+#3A3A3A  #FFFFFF   LabelColor
+#BCBCBC  #FFFFFF   DetailLabelColor
+#F9F9F9  #1F1F1F   SeparatorLineColor
+#FF0000  #000000   NavigationBarColor
+#F9F9F9  #151515   TabBarColor

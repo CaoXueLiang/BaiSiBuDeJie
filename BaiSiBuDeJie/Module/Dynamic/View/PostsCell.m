@@ -33,6 +33,7 @@
     if (self) {
         [self addSubViews];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.dk_backgroundColorPicker = DKColorPickerWithKey(CellBG);
     }
     return self;
 }

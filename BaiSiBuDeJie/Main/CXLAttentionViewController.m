@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"社区";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBG);
     [self addSubViews];
     [self sendRequest];
 }
@@ -64,7 +64,8 @@
         [_myTable registerClass:[PostsThemeCell class] forCellReuseIdentifier:@"PostsThemeCell"];
         _myTable.delegate = self;
         _myTable.dataSource = self;
-        _myTable.separatorColor = RGBLINE;
+        _myTable.dk_separatorColorPicker = DKColorPickerWithKey(SeparatorLineColor);
+        _myTable.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBG);
         _myTable.tableFooterView = [UIView new];
     }
     return _myTable;

@@ -58,7 +58,7 @@
         layout.minimumLineSpacing = 0;
         layout.minimumInteritemSpacing = 0;
         _myCollection = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, 170) collectionViewLayout:layout];
-        _myCollection.backgroundColor = [UIColor whiteColor];
+        _myCollection.dk_backgroundColorPicker = DKColorPickerWithKey(CellBG);
         _myCollection.delegate = self;
         _myCollection.dataSource = self;
         [_myCollection registerClass:[CXLMineCollectionViewCell class] forCellWithReuseIdentifier:@"CXLMineCollectionViewCell"];

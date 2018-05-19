@@ -13,6 +13,17 @@
 @end
 
 @implementation CXLBaseNavigationController
+- (void)viewDidLoad{
+    [super viewDidLoad];
+    self.navigationBar.dk_barTintColorPicker = DKColorPickerWithKey(NavigationBarColor);
+    NSDictionary *textAttributes = @{
+                                     NSFontAttributeName: [UIFont boldSystemFontOfSize:17],
+                                     NSForegroundColorAttributeName: [UIColor whiteColor],
+                                     };
+    [self.navigationBar setTitleTextAttributes:textAttributes];
+    [self.navigationBar setShadowImage:[UIImage new]];
+}
+
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
     if (self.viewControllers.count > 0) {
         viewController.hidesBottomBarWhenPushed = YES;

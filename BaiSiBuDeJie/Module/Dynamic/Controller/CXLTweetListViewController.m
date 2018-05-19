@@ -33,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+    self.view.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBG);
     self.currentPage = 0;
     [self setRefresh];
     [self.view addSubview:self.myTable];
@@ -213,9 +214,10 @@
 - (UITableView *)myTable{
     if (!_myTable) {
         _myTable = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _myTable.backgroundColor = [UIColor clearColor];
+        //_myTable.backgroundColor = [UIColor clearColor];
         _myTable.tableFooterView = [UIView new];
-        _myTable.separatorColor = RGBLINE;
+        _myTable.dk_separatorColorPicker = DKColorPickerWithKey(SeparatorLineColor);
+        _myTable.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBG);
         [_myTable registerClass:[PostsCell class] forCellReuseIdentifier:@"PostsCell"];
         _myTable.delegate = self;
         _myTable.dataSource = self;

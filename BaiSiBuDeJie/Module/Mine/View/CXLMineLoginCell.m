@@ -21,6 +21,7 @@
     if (self) {
         [self addSubViews];
         self.selectedBackgroundView = self.selectView;
+        self.dk_backgroundColorPicker = DKColorPickerWithKey(CellBG);
     }
     return self;
 }
@@ -59,7 +60,8 @@
 - (UILabel *)nickNameLabel{
     if (!_nickNameLabel) {
         _nickNameLabel = [UILabel new];
-        _nickNameLabel.textColor = [UIColor blackColor];
+        _nickNameLabel.dk_textColorPicker = DKColorPickerWithKey(LabelColor);
+        //_nickNameLabel.textColor = [UIColor blackColor];
         _nickNameLabel.font = [UIFont systemFontOfSize:16];
         _nickNameLabel.text = @"登录/注册";
     }

@@ -1,31 +1,44 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - CHTCollectionViewWaterfallLayout (0.9.7):
     - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.7)
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
-  - CYLTabBarController (1.17.6)
+  - DKNightVersion (2.4.3):
+    - DKNightVersion/Core (= 2.4.3)
+    - DKNightVersion/CoreAnimation (= 2.4.3)
+    - DKNightVersion/UIKit (= 2.4.3)
+  - DKNightVersion/Core (2.4.3):
+    - DKNightVersion/Core/DeallocBlockExecutor (= 2.4.3)
+    - DKNightVersion/Core/extobjc (= 2.4.3)
+  - DKNightVersion/Core/DeallocBlockExecutor (2.4.3)
+  - DKNightVersion/Core/extobjc (2.4.3)
+  - DKNightVersion/CoreAnimation (2.4.3):
+    - DKNightVersion/Core
+  - DKNightVersion/UIKit (2.4.3):
+    - DKNightVersion/Core
   - FDFullscreenPopGesture (1.1)
-  - IQKeyboardManager (5.0.7)
+  - IQKeyboardManager (6.0.3)
   - Masonry (1.1.0)
-  - MJRefresh (3.1.15.1)
-  - SDWebImage (4.2.3):
-    - SDWebImage/Core (= 4.2.3)
-  - SDWebImage/Core (4.2.3)
-  - SVProgressHUD (2.2.2)
+  - MJRefresh (3.1.15.3)
+  - Reveal-SDK (14)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
+  - SVProgressHUD (2.2.5)
   - TYPagerController (2.1.2)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
@@ -43,11 +56,12 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - CHTCollectionViewWaterfallLayout
-  - CYLTabBarController
+  - DKNightVersion
   - FDFullscreenPopGesture
   - IQKeyboardManager
   - Masonry
   - MJRefresh
+  - Reveal-SDK
   - SDWebImage
   - SVProgressHUD
   - TYPagerController
@@ -59,15 +73,16 @@ DEPENDENCIES:
   - YYWebImage
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
-  CYLTabBarController: c374643dea6dadece8bdff9c70f7387f8ffd7d08
+  DKNightVersion: eaa80cc4014b4bae7d4b535fd87ecc6a3c2767b3
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
-  IQKeyboardManager: 0bfa4607d39924116b5c0c8b55b5d789288b5cba
+  IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJRefresh: 5f8552bc25ca8751c010f621c1098dbdaacbccd6
-  SDWebImage: 791bb72962b3492327ddcac4b1880bd1b5458431
-  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
+  Reveal-SDK: 55b5c5545233b680c2f8da734f202acc15d422b7
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   TYPagerController: 262556ecef99986d26ed77fb1288a198ed42f4af
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
@@ -76,6 +91,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 90bb37a65f2a85b913e6e390ac0878e7966b6289
+PODFILE CHECKSUM: 0a3656d65758e4f10839f7a3a15d3b71ed947043
 
 COCOAPODS: 1.3.1

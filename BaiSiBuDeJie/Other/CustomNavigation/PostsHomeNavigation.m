@@ -74,7 +74,8 @@
 - (UIView *)statusView{
     if (!_statusView) {
         _statusView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kStatusBarHeight)];
-        _statusView.backgroundColor = MainColor;
+        //_statusView.backgroundColor = MainColor;
+        _statusView.dk_backgroundColorPicker = DKColorPickerWithKey(NavigationBarColor);
     }
     return _statusView;
 }
@@ -82,7 +83,8 @@
 - (UIView *)navigationBarView{
     if (!_navigationBarView) {
         _navigationBarView = [[UIView alloc]initWithFrame:CGRectMake(0, kStatusBarHeight, kScreenWidth, kNavBarHeight)];
-        _navigationBarView.backgroundColor = MainColor;
+        //_navigationBarView.backgroundColor = MainColor;
+        _navigationBarView.dk_backgroundColorPicker = DKColorPickerWithKey(NavigationBarColor);
     }
     return _navigationBarView;
 }

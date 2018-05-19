@@ -5,7 +5,6 @@ target 'BaiSiBuDeJie' do
   pod 'YYText'
   pod 'YYCache'
   pod 'IQKeyboardManager'
-  pod 'CYLTabBarController'
   pod 'YYCategories'
   pod 'SVProgressHUD'
   pod 'AFNetworking'
@@ -17,5 +16,7 @@ target 'BaiSiBuDeJie' do
   pod 'YYWebImage'
   pod 'CHTCollectionViewWaterfallLayout'
   pod 'FDFullscreenPopGesture'
+  pod 'Reveal-SDK'
+  pod 'DKNightVersion'
 end
 

@@ -11,7 +11,6 @@
 		580391F31FFE0EBD0076C82A /* PostsVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 580391F21FFE0EBD0076C82A /* PostsVideoCollectionViewCell.m */; };
 		580391F61FFE12CB0076C82A /* CXLTweetListVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 580391F51FFE12CB0076C82A /* CXLTweetListVideoController.m */; };
 		580391FB1FFE27FD0076C82A /* PostsPublishView.m in Sources */ = {isa = PBXBuildFile; fileRef = 580391FA1FFE27FD0076C82A /* PostsPublishView.m */; };
-		5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB8E1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m */; };
 		5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB941FF38DE500D457A9 /* CXLEssenceViewController.m */; };
 		5807BB981FF38ED500D457A9 /* CXLNewestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB971FF38ED500D457A9 /* CXLNewestViewController.m */; };
 		5807BB9B1FF38EE800D457A9 /* CXLAttentionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5807BB9A1FF38EE800D457A9 /* CXLAttentionViewController.m */; };
@@ -37,7 +36,6 @@
 		5883B4C81FFC81E000612B82 /* PostsLayouts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4C71FFC81E000612B82 /* PostsLayouts.m */; };
 		5883B4CC1FFC873B00612B82 /* CXLConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4CB1FFC873B00612B82 /* CXLConst.m */; };
 		5883B4D01FFCD6D600612B82 /* UIButton+Aliment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5883B4CF1FFCD6A800612B82 /* UIButton+Aliment.m */; };
-		5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */; };
 		5893EB701FF3A42C00C59F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */; };
 		58945BBD200CA0C300AE1AA5 /* PostsCommentComplexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58945BBC200CA0C300AE1AA5 /* PostsCommentComplexCell.m */; };
 		58945BC0200CA10900AE1AA5 /* PostsCommentNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58945BBF200CA10900AE1AA5 /* PostsCommentNormalCell.m */; };
@@ -74,6 +72,8 @@
 		C3766FEB20148F250028ACF6 /* CXLMineItermModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FEA20148F250028ACF6 /* CXLMineItermModel.m */; };
 		C3766FF12014C1DB0028ACF6 /* PostsCommunityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FF02014C1DB0028ACF6 /* PostsCommunityModel.m */; };
 		C3766FF42014C2CE0028ACF6 /* PostsThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C3766FF32014C2CE0028ACF6 /* PostsThemeCell.m */; };
+		C3F649D020A98520004E3442 /* XLTarBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F649CC20A9851E004E3442 /* XLTarBarController.m */; };
+		C3F649D120A98520004E3442 /* XLTarBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3F649CE20A9851F004E3442 /* XLTarBar.m */; };
 		C3FEB5F62020B17000B81EAD /* CXLMemberCenterFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FEB5F52020B17000B81EAD /* CXLMemberCenterFootView.m */; };
 		C3FEB5F92020B24100B81EAD /* CXLMineCenterListView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FEB5F82020B24100B81EAD /* CXLMineCenterListView.m */; };
 		C3FEB5FC2020C96800B81EAD /* CXLTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3FEB5FB2020C96800B81EAD /* CXLTableView.m */; };
@@ -87,8 +87,6 @@
 		580391F51FFE12CB0076C82A /* CXLTweetListVideoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLTweetListVideoController.m; sourceTree = "<group>"; };
 		580391F91FFE27FD0076C82A /* PostsPublishView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsPublishView.h; sourceTree = "<group>"; };
 		580391FA1FFE27FD0076C82A /* PostsPublishView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsPublishView.m; sourceTree = "<group>"; };
-		5807BB8D1FF38C5C00D457A9 /* CXLTabBarControllerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLTabBarControllerConfig.h; sourceTree = "<group>"; };
-		5807BB8E1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLTabBarControllerConfig.m; sourceTree = "<group>"; };
 		5807BB931FF38DE500D457A9 /* CXLEssenceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLEssenceViewController.h; sourceTree = "<group>"; };
 		5807BB941FF38DE500D457A9 /* CXLEssenceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLEssenceViewController.m; sourceTree = "<group>"; };
 		5807BB961FF38ED500D457A9 /* CXLNewestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLNewestViewController.h; sourceTree = "<group>"; };
@@ -141,8 +139,6 @@
 		5883B4CB1FFC873B00612B82 /* CXLConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLConst.m; sourceTree = "<group>"; };
 		5883B4CE1FFCD6A800612B82 /* UIButton+Aliment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Aliment.h"; sourceTree = "<group>"; };
 		5883B4CF1FFCD6A800612B82 /* UIButton+Aliment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Aliment.m"; sourceTree = "<group>"; };
-		5893EB6C1FF39F1A00C59F40 /* CXLPlusButtonAddButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLPlusButtonAddButton.h; sourceTree = "<group>"; };
-		5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLPlusButtonAddButton.m; sourceTree = "<group>"; };
 		5893EB6F1FF3A42C00C59F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58945BBB200CA0C300AE1AA5 /* PostsCommentComplexCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsCommentComplexCell.h; sourceTree = "<group>"; };
 		58945BBC200CA0C300AE1AA5 /* PostsCommentComplexCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommentComplexCell.m; sourceTree = "<group>"; };
@@ -216,6 +212,10 @@
 		C3766FF02014C1DB0028ACF6 /* PostsCommunityModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsCommunityModel.m; sourceTree = "<group>"; };
 		C3766FF22014C2CE0028ACF6 /* PostsThemeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostsThemeCell.h; sourceTree = "<group>"; };
 		C3766FF32014C2CE0028ACF6 /* PostsThemeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostsThemeCell.m; sourceTree = "<group>"; };
+		C3F649CC20A9851E004E3442 /* XLTarBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLTarBarController.m; sourceTree = "<group>"; };
+		C3F649CD20A9851F004E3442 /* XLTarBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLTarBar.h; sourceTree = "<group>"; };
+		C3F649CE20A9851F004E3442 /* XLTarBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLTarBar.m; sourceTree = "<group>"; };
+		C3F649CF20A98520004E3442 /* XLTarBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLTarBarController.h; sourceTree = "<group>"; };
 		C3FEB5F42020B17000B81EAD /* CXLMemberCenterFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMemberCenterFootView.h; sourceTree = "<group>"; };
 		C3FEB5F52020B17000B81EAD /* CXLMemberCenterFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CXLMemberCenterFootView.m; sourceTree = "<group>"; };
 		C3FEB5F72020B24100B81EAD /* CXLMineCenterListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CXLMineCenterListView.h; sourceTree = "<group>"; };
@@ -420,6 +420,7 @@
 		58A92F641FF349D600E5D60C /* BaiSiBuDeJie */ = {
 			isa = PBXGroup;
 			children = (
+				C3F649C320A98209004E3442 /* Common */,
 				5883B4CD1FFCD69200612B82 /* Utility */,
 				5899E4E51FFB865A00AA3D4E /* Vendor */,
 				58E90C5F1FF6100C007E1ED5 /* Other */,
@@ -446,10 +447,7 @@
 		58A92F9B1FF34AB800E5D60C /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				5893EB6C1FF39F1A00C59F40 /* CXLPlusButtonAddButton.h */,
-				5893EB6D1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m */,
-				5807BB8D1FF38C5C00D457A9 /* CXLTabBarControllerConfig.h */,
-				5807BB8E1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m */,
+				C3F649CB20A984DD004E3442 /* TabBarController */,
 				5807BB9F1FF3902200D457A9 /* CXLBaseNavigationController.h */,
 				5807BBA01FF3902200D457A9 /* CXLBaseNavigationController.m */,
 				5807BB931FF38DE500D457A9 /* CXLEssenceViewController.h */,
@@ -658,6 +656,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C3F649C320A98209004E3442 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C3F649C420A98228004E3442 /* CustomUI */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C3F649C420A98228004E3442 /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		C3F649CB20A984DD004E3442 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				C3F649CD20A9851F004E3442 /* XLTarBar.h */,
+				C3F649CE20A9851F004E3442 /* XLTarBar.m */,
+				C3F649CF20A98520004E3442 /* XLTarBarController.h */,
+				C3F649CC20A9851E004E3442 /* XLTarBarController.m */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -752,6 +776,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie-resources.sh",
+				"${PODS_ROOT}/DKNightVersion/DKNightVersion/ColorTable/DKColorTable.txt",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
@@ -771,9 +796,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BaiSiBuDeJie/Pods-BaiSiBuDeJie-frameworks.sh",
+				"${PODS_ROOT}/Reveal-SDK/RevealServer-14/iOS/RevealServer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RevealServer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -817,8 +845,6 @@
 				58DF35E1201B32B200D28E39 /* CXLMineInfoModel.m in Sources */,
 				581BDF63200E0019008A342B /* UIView+CustomControlView.m in Sources */,
 				5807BB951FF38DE500D457A9 /* CXLEssenceViewController.m in Sources */,
-				5807BB8F1FF38C5C00D457A9 /* CXLTabBarControllerConfig.m in Sources */,
-				5893EB6E1FF39F1A00C59F40 /* CXLPlusButtonAddButton.m in Sources */,
 				581BDF77200E0033008A342B /* ASValueTrackingSlider.m in Sources */,
 				58945BC0200CA10900AE1AA5 /* PostsCommentNormalCell.m in Sources */,
 				58A92F751FF349D600E5D60C /* main.m in Sources */,
@@ -830,6 +856,7 @@
 				586CC7401FFF22FC00613B07 /* PostsDetailController.m in Sources */,
 				58DF35DB201B18B000D28E39 /* PostsMemberCenterNavigation.m in Sources */,
 				C305D8CF2016209A00BC0215 /* PostsHomeNavigation.m in Sources */,
+				C3F649D020A98520004E3442 /* XLTarBarController.m in Sources */,
 				C3766FF12014C1DB0028ACF6 /* PostsCommunityModel.m in Sources */,
 				C3FEB5F92020B24100B81EAD /* CXLMineCenterListView.m in Sources */,
 				C3766FE72014898E0028ACF6 /* CXLMineCollectionViewCell.m in Sources */,
@@ -837,6 +864,7 @@
 				5899E4FB1FFB985900AA3D4E /* PostsCommentView.m in Sources */,
 				581BDF7A200E0033008A342B /* ZFPlayerView.m in Sources */,
 				580391F61FFE12CB0076C82A /* CXLTweetListVideoController.m in Sources */,
+				C3F649D120A98520004E3442 /* XLTarBar.m in Sources */,
 				C300DA16200CF19800FA1936 /* PostsCommentDetailComplexLayout.m in Sources */,
 				58A92F671FF349D600E5D60C /* AppDelegate.m in Sources */,
 				5883B4C81FFC81E000612B82 /* PostsLayouts.m in Sources */,
@@ -971,7 +999,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 49YMBTW8W3;
+				DEVELOPMENT_TEAM = AWBA2L5NNX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BaiSiBuDeJie/PrefixHeader.pch";
 				INFOPLIST_FILE = BaiSiBuDeJie/Info.plist;
@@ -990,7 +1018,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 49YMBTW8W3;
+				DEVELOPMENT_TEAM = AWBA2L5NNX;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/BaiSiBuDeJie/PrefixHeader.pch";
 				INFOPLIST_FILE = BaiSiBuDeJie/Info.plist;

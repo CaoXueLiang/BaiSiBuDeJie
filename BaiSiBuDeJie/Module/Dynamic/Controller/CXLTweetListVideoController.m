@@ -134,7 +134,8 @@
         layout.minimumColumnSpacing = 10;
         layout.minimumInteritemSpacing = 10;
         _myCollection = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:layout];
-        _myCollection.backgroundColor = [UIColor colorWithHexString:@"f8f8f8"];
+        //_myCollection.backgroundColor = [UIColor colorWithHexString:@"f8f8f8"];
+        _myCollection.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBG);
         [_myCollection registerClass:[PostsVideoCollectionViewCell class] forCellWithReuseIdentifier:@"PostsVideoCollectionViewCell"];
         _myCollection.delegate = self;
         _myCollection.dataSource = self;
