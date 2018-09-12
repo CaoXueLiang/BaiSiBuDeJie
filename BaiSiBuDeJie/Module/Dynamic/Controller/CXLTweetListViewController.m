@@ -177,7 +177,7 @@
     NSString *urlString = @"";
     switch (self.type) {
         case PostsTypeEssence:
-            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/list/jingxuan/1/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
+            urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/list/jingxuan/1/bs02-iphone-4.6/0-20.json"];
             break;
         case PostsTypeVideo:
             urlString = [NSString stringWithFormat:@"http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.5.7/%d-20.json",_currentPage];
