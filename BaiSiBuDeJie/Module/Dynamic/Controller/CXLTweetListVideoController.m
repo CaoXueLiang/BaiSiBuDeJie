@@ -139,6 +139,11 @@
         [_myCollection registerClass:[PostsVideoCollectionViewCell class] forCellWithReuseIdentifier:@"PostsVideoCollectionViewCell"];
         _myCollection.delegate = self;
         _myCollection.dataSource = self;
+        if (@available(iOS 11.0, *)) {
+            _myCollection.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
     }
     return _myCollection;
 }

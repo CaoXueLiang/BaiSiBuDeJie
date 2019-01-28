@@ -30,13 +30,13 @@
 
 - (void)setNavigation{
     self.navigationItem.title = @"我的";
-    UIButton *moonButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [moonButton setImage:[UIImage imageNamed:@"mine-moon-icon-click_20x20_"] forState:UIControlStateNormal];
-    [moonButton setImage:[UIImage imageNamed:@"mine-sun-icon_20x20_"] forState:UIControlStateSelected];
-    [moonButton addTarget:self action:@selector(switchTheme) forControlEvents:UIControlEventTouchUpInside];
-    self.switchButton = moonButton;
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithCustomView:moonButton];
-    self.navigationItem.rightBarButtonItem = rightButton;
+//    UIButton *moonButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [moonButton setImage:[UIImage imageNamed:@"mine-moon-icon-click_20x20_"] forState:UIControlStateNormal];
+//    [moonButton setImage:[UIImage imageNamed:@"mine-sun-icon_20x20_"] forState:UIControlStateSelected];
+//    [moonButton addTarget:self action:@selector(switchTheme) forControlEvents:UIControlEventTouchUpInside];
+//    self.switchButton = moonButton;
+//    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithCustomView:moonButton];
+//    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 - (void)switchTheme{
@@ -109,6 +109,14 @@
         _myTable.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBG);
         _myTable.delegate = self;
         _myTable.dataSource = self;
+        if (@available(iOS 11.0, *)) {
+            _myTable.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            _myTable.estimatedRowHeight = 0;
+            _myTable.estimatedSectionFooterHeight = 0;
+            _myTable.estimatedSectionHeaderHeight = 0;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
     }
     return _myTable;
 }

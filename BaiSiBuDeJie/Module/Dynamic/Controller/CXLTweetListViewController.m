@@ -221,6 +221,14 @@
         [_myTable registerClass:[PostsCell class] forCellReuseIdentifier:@"PostsCell"];
         _myTable.delegate = self;
         _myTable.dataSource = self;
+        if (@available(iOS 11.0, *)) {
+            _myTable.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            _myTable.estimatedRowHeight = 0;
+            _myTable.estimatedSectionFooterHeight = 0;
+            _myTable.estimatedSectionHeaderHeight = 0;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
     }
     return _myTable;
 }

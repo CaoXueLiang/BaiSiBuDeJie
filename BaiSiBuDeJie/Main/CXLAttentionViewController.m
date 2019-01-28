@@ -60,13 +60,21 @@
 
 - (UITableView *)myTable{
     if (!_myTable) {
-        _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - KTopHeight) style:UITableViewStylePlain];
+        _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, KTopHeight, kScreenWidth, kScreenHeight - KTopHeight - KTarbarHeight) style:UITableViewStylePlain];
         [_myTable registerClass:[PostsThemeCell class] forCellReuseIdentifier:@"PostsThemeCell"];
         _myTable.delegate = self;
         _myTable.dataSource = self;
         _myTable.dk_separatorColorPicker = DKColorPickerWithKey(SeparatorLineColor);
         _myTable.dk_backgroundColorPicker = DKColorPickerWithKey(TableViewBG);
         _myTable.tableFooterView = [UIView new];
+        if (@available(iOS 11.0, *)) {
+            _myTable.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+            _myTable.estimatedRowHeight = 0;
+            _myTable.estimatedSectionFooterHeight = 0;
+            _myTable.estimatedSectionHeaderHeight = 0;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
     }
     return _myTable;
 }
