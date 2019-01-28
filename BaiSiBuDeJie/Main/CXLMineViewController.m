@@ -102,7 +102,7 @@
 #pragma mark - Setter && Getter
 - (UITableView *)myTable{
     if (!_myTable) {
-        _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - KTopHeight) style:UITableViewStyleGrouped];
+        _myTable = [[UITableView alloc]initWithFrame:CGRectMake(0, KTopHeight, kScreenWidth, kScreenHeight - KTopHeight - KTarbarHeight) style:UITableViewStyleGrouped];
         [_myTable registerClass:[CXLMineLoginCell class] forCellReuseIdentifier:@"CXLMineLoginCell"];
         [_myTable registerClass:[CXLMineItermCell class] forCellReuseIdentifier:@"CXLMineItermCell"];
         _myTable.separatorStyle = UITableViewCellSeparatorStyleNone;
